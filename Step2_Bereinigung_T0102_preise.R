@@ -1,0 +1,333 @@
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+# Saisonbereinigung T0102 Verwendung Preise
+#
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# Variablen aus MASTER Saisonbereigung.R erforderlich
+
+vcl_price <- per_hts(
+  vcl_AN111 = per_tramo(T102TS$impPI_L[, "AN111"], template = "RSA3", 
+                        # Transformation -------------------------------------------------------
+                        transform.function = "Log",
+                        # Outliers -------------------------------------------------------------
+                        outlier.enabled = FALSE,
+                        usrdef.outliersEnabled = TRUE, 
+                        usrdef.outliersType = c("LS"),
+                        usrdef.outliersDate = c("2009-01-01"),
+                        # Trading Days ---------------------------------------------------------
+                        #            usrdef.varEnabled = TRUE, 
+                        #            usrdef.var = td7, usrdef.varType = "Calendar", 
+                        #            tradingdays.option = "UserDefined",
+                        # Easter ---------------------------------------------------------------
+                        #            easter.type = "IncludeEaster", easter.duration = 6,
+                        # Arima-Model ----------------------------------------------------------
+                        automdl.enabled = FALSE, 
+                        arima.p  = 1, arima.d  = 1, arima.q  = 0, 
+                        arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+  # ====================================================================================
+  vcl_AN112 = per_tramo(T102TS$impPI_L[, "AN112"], template = "RSA3", 
+                        # Transformation -------------------------------------------------------
+                        transform.function = "Log",
+                        # Outliers -------------------------------------------------------------
+                        outlier.enabled = FALSE,
+                        usrdef.outliersEnabled = TRUE, 
+                        usrdef.outliersType = c("LS"),
+                        usrdef.outliersDate = c("2009-01-01"),
+                        # Trading Days ---------------------------------------------------------
+                        #             usrdef.varEnabled = TRUE, 
+                        #             usrdef.var = td7lY, usrdef.varType = "Calendar", 
+                        #             tradingdays.option = "UserDefined",
+                        # Easter ---------------------------------------------------------------
+                        #            easter.type = "IncludeEaster", easter.duration = 6,
+                        # Arima-Model ----------------------------------------------------------
+                        automdl.enabled = FALSE, 
+                        arima.p  = 1, arima.d  = 1, arima.q  = 0, 
+                        arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+  # ====================================================================================
+  vcl_AN115 = per_tramo(T102TS$impPI_L[, "AN115"], template = "RSA3",
+                        # Transformation -------------------------------------------------------
+                        transform.function = "None",
+                        # Outliers -------------------------------------------------------------
+                        outlier.enabled = FALSE, 
+                        usrdef.outliersEnabled = TRUE, 
+                        usrdef.outliersType = c("AO", "TC", "AO", "AO", "AO", "AO"),
+                        usrdef.outliersDate = c("2002-04-01", "2001-04-01",
+                                                "2020-01-01", "2020-04-01", "2020-07-01", "2020-10-01"),
+                        # Trading Days ---------------------------------------------------------
+                        #            usrdef.varEnabled = TRUE, 
+                        #            usrdef.var = td7, usrdef.varType = "Calendar", 
+                        #            tradingdays.option = "UserDefined",
+                        # Easter ---------------------------------------------------------------
+                        #            easter.type = "IncludeEaster", easter.duration = 6,
+                        # Arima-Model ----------------------------------------------------------
+                        automdl.enabled = FALSE, 
+                        arima.p  = 0, arima.d  = 1, arima.q  = 1, 
+                        arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
+  # ====================================================================================
+  vcl_AN117 = per_tramo(T102TS$impPI_L[, "AN117"], template = "RSA3",
+                        # Transformation -------------------------------------------------------
+                        transform.function = "Log",
+                        # Outliers -------------------------------------------------------------
+                        outlier.enabled = FALSE, 
+                                     usrdef.outliersEnabled = TRUE, 
+                                     usrdef.outliersType = c("AO", "AO", "AO", "AO"),
+                                     usrdef.outliersDate = c("2020-01-01", "2020-04-01", "2020-07-01", "2020-10-01"),
+                        # Trading Days ---------------------------------------------------------
+                        #            usrdef.varEnabled = TRUE, 
+                        #            usrdef.var = td7, usrdef.varType = "Calendar", 
+                        #            tradingdays.option = "UserDefined",
+                        # Easter ---------------------------------------------------------------
+                        #            easter.type = "IncludeEaster", easter.duration = 6,
+                        # Arima-Model ----------------------------------------------------------
+                        automdl.enabled = FALSE, 
+                        arima.p  = 0, arima.d  = 1, arima.q  = 2, 
+                        arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+  # ====================================================================================
+  vcl_P61 = per_tramo(T102TS$impPI_L[, "P61"], template = "RSA3",
+                      # Transformation -------------------------------------------------------
+                      transform.function = "Log",
+                      # Outliers -------------------------------------------------------------
+                      outlier.enabled = FALSE, 
+                      usrdef.outliersEnabled = TRUE, 
+                      usrdef.outliersType = c("LS", "LS", "LS", "LS"),
+                      usrdef.outliersDate = c("2010-04-01", "2008-10-01",
+                                              "2011-01-01", "2004-10-01"),
+                      # Trading Days ---------------------------------------------------------
+                      # usrdef.varEnabled = TRUE, 
+                      # usrdef.var = td7lY, usrdef.varType = "Calendar", 
+                      # tradingdays.option = "UserDefined",
+                      # Easter ---------------------------------------------------------------
+                      #            easter.type = "IncludeEaster", easter.duration = 6,
+                      # Arima-Model ----------------------------------------------------------
+                      automdl.enabled = FALSE, 
+                      arima.p  = 1, arima.d  = 1, arima.q  = 0, 
+                      arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
+  # ====================================================================================
+  vcl_P62 = per_tramo(T102TS$impPI_L[, "P62"], template = "RSA3",
+                      # Transformation -------------------------------------------------------
+                      transform.function = "Log",
+                      # Outliers -------------------------------------------------------------
+                      outlier.enabled = FALSE, 
+                      usrdef.outliersEnabled = TRUE, 
+                      usrdef.outliersType = c("AO"),
+                      usrdef.outliersDate = c("2011-10-01"),
+                      # Trading Days ---------------------------------------------------------
+                      #usrdef.varEnabled = TRUE, 
+                      #usrdef.var = td7lY, usrdef.varType = "Calendar", 
+                      #tradingdays.option = "UserDefined",
+                      # Easter ---------------------------------------------------------------
+                      # easter.type = "IncludeEaster", easter.duration = 6,
+                      # Arima-Model ----------------------------------------------------------
+                      automdl.enabled = FALSE, 
+                      arima.p  = 0, arima.d  = 1, arima.q  = 1, 
+                      arima.bp = 0, arima.bd = 1, arima.bq = 0, arima.mu = FALSE),
+  # ====================================================================================
+  vcl_P71 = per_tramo(T102TS$impPI_L[, "P71"], template = "RSA3", 
+                      # Transformation -------------------------------------------------------
+                      transform.function = "Log",
+                      # Outliers -------------------------------------------------------------
+                      outlier.enabled = FALSE, 
+                       usrdef.outliersEnabled = TRUE, 
+                       usrdef.outliersType = c("LS"),
+                       usrdef.outliersDate = c("2009-01-01"),
+                      # Trading Days ---------------------------------------------------------
+                      # usrdef.varEnabled = TRUE, 
+                      # usrdef.var = td7lY, usrdef.varType = "Calendar", 
+                      # tradingdays.option = "UserDefined",
+                      # Easter ---------------------------------------------------------------
+                      #easter.type = "IncludeEaster", easter.duration = 6,
+                      # Arima-Model ----------------------------------------------------------
+                      automdl.enabled = FALSE, ######
+                      arima.p  = 0, arima.d  = 1, arima.q  = 1, 
+                      arima.bp = 1, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
+  # =====================================================================================
+  vcl_P72 = per_tramo(T102TS$impPI_L[, "P72"], template = "RSA3", 
+                      # Transformation ------------------------------------------------------- 
+                      transform.function = "Log",
+                      # Outliers -------------------------------------------------------------
+                      outlier.enabled = FALSE, 
+                      #usrdef.outliersEnabled = TRUE, 
+                      #usrdef.outliersType = c("LS"),
+                      #usrdef.outliersDate = c("2009-01-01"),
+                      # Trading Days ---------------------------------------------------------
+                      #            usrdef.varEnabled = TRUE, 
+                      #            usrdef.var = td7, usrdef.varType = "Calendar", 
+                      #            tradingdays.option = "UserDefined",
+                      # Easter ---------------------------------------------------------------
+                      #            easter.type = "IncludeEaster", easter.duration = 6,
+                      # Arima-Model ----------------------------------------------------------
+                      automdl.enabled = FALSE, 
+                      arima.p  = 1, arima.d  = 1, arima.q  = 1, 
+                      arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+  # =====================================================================================
+  vcl_P31_S14 = per_tramo(T102TS$impPI_L[, "P31_S14"], template = "RSA3", 
+                          # Transformation -------------------------------------------------------  
+                          transform.function = "Log",
+                          # Outliers -------------------------------------------------------------
+                          outlier.enabled = FALSE, 
+                          usrdef.outliersEnabled = TRUE, 
+                          usrdef.outliersType = c("LS", "AO", "AO", "AO", "AO"),
+                          usrdef.outliersDate = c("2008-10-01","2020-01-01", "2020-04-01", "2020-07-01", "2020-10-01"),
+                          # Trading Days ---------------------------------------------------------
+                          #            usrdef.varEnabled = TRUE, 
+                          #            usrdef.var = td7, usrdef.varType = "Calendar", 
+                          #            tradingdays.option = "UserDefined",
+                          # Easter ---------------------------------------------------------------
+                          #            easter.type = "IncludeEaster", easter.duration = 6,
+                          # Arima-Model ----------------------------------------------------------
+                          automdl.enabled = FALSE,
+                          arima.p  = 0, arima.d  = 1, arima.q  = 0, 
+                          arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+  # =====================================================================================
+  vcl_P31_S15 = per_tramo(T102TS$impPI_L[, "P31_S15"], template = "RSA3",
+                          # Transformation -------------------------------------------------------
+                          transform.function = "Log",
+                          # Outliers -------------------------------------------------------------
+                          outlier.enabled = FALSE, 
+                          usrdef.outliersEnabled = TRUE, 
+                          usrdef.outliersType = c("AO", "AO", "AO", "AO", "AO", "AO"),
+                          usrdef.outliersDate = c("1998-07-01", "1999-04-01",
+                                                  "2020-01-01", "2020-04-01", "2020-07-01", "2020-10-01"),
+                          # Trading Days ---------------------------------------------------------
+                          #             usrdef.varEnabled = TRUE, 
+                          #             usrdef.var = td7, usrdef.varType = "Calendar", 
+                          #             tradingdays.option = "UserDefined",
+                          # Easter ---------------------------------------------------------------
+                          #               easter.type = "IncludeEaster", easter.duration = 6,
+                          # Arima-Model ----------------------------------------------------------
+                          automdl.enabled = FALSE, 
+                          arima.p  = 1, arima.d  = 1, arima.q  = 1, 
+                          arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+  
+  # =====================================================================================
+  vcl_P31_S13 = per_tramo(T102TS$impPI_L[, "P31_S13"], template = "RSA3",
+                          # Transformation -------------------------------------------------------
+                          transform.function = "None",
+                          # Outliers -------------------------------------------------------------
+                          outlier.enabled = FALSE, 
+                          usrdef.outliersEnabled = TRUE, 
+                          usrdef.outliersType = c("AO", "TC", "AO"),
+                          usrdef.outliersDate = c("2001-10-01", "2000-10-01", 
+                                                  "2002-01-01"),
+                          # Trading Days ---------------------------------------------------------
+                          #             usrdef.varEnabled = TRUE, 
+                          #             usrdef.var = td7, usrdef.varType = "Calendar", 
+                          #             tradingdays.option = "UserDefined",
+                          # Easter ---------------------------------------------------------------
+                          #               easter.type = "IncludeEaster", easter.duration = 6,
+                          # Arima-Model ----------------------------------------------------------
+                          automdl.enabled = FALSE, 
+                          arima.p  = 0, arima.d  = 1, arima.q  = 1, 
+                          arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE),
+  # =======================================================================================
+  vcl_P32_S13 = per_tramo(T102TS$impPI_L[, "P32_S13"], template = "RSA3",
+                          # Transformation -------------------------------------------------------
+                          transform.function = "None",
+                          # Outliers -------------------------------------------------------------
+                          outlier.enabled = FALSE, 
+                          usrdef.outliersEnabled = TRUE, 
+                          usrdef.outliersType = c("LS", "AO", "LS"),
+                          usrdef.outliersDate = c("2004-10-01", "2001-10-01", 
+                                                  "2005-04-01"),
+                          # Trading Days ---------------------------------------------------------
+                          #             usrdef.varEnabled = TRUE, 
+                          #             usrdef.var = td7, usrdef.varType = "Calendar", 
+                          #             tradingdays.option = "UserDefined",
+                          # Easter ---------------------------------------------------------------
+                          #               easter.type = "IncludeEaster", easter.duration = 6,
+                          # Arima-Model ----------------------------------------------------------
+                          automdl.enabled = FALSE, 
+                          arima.p  = 3, arima.d  = 1, arima.q  = 0, 
+                          arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+  # =======================================================================================
+  vcl_N1131G = per_tramo(T102TS$impPI_L[, "N1131G"], template = "RSA3",
+                         # Transformation -------------------------------------------------------
+                         transform.function = "Log",
+                         # Outliers -------------------------------------------------------------
+                         outlier.enabled = FALSE, 
+                         usrdef.outliersEnabled = TRUE, 
+                         usrdef.outliersType = c("AO", "AO", "AO", "AO", "AO"),
+                         usrdef.outliersDate = c("2019-04-01","2020-01-01", "2020-04-01", "2020-07-01", "2020-10-01"),
+                         # Trading Days ---------------------------------------------------------
+                         #             usrdef.varEnabled = TRUE, 
+                         #             usrdef.var = td7, usrdef.varType = "Calendar", 
+                         #             tradingdays.option = "UserDefined",
+                         # Easter ---------------------------------------------------------------
+                         #easter.type = "IncludeEaster", easter.duration = 6,
+                         # Arima-Model ----------------------------------------------------------
+                         automdl.enabled = FALSE, 
+                         arima.p  = 0, arima.d  = 1, arima.q  = 1, 
+                         arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+  # ======================================================================================
+  vcl_N1132G = per_tramo(T102TS$impPI_L[, "N1132G"], template = "RSA3",
+                         # Transformation -------------------------------------------------------
+                         transform.function = "Log",
+                         # Outliers -------------------------------------------------------------
+                         outlier.enabled = FALSE, 
+                         usrdef.outliersEnabled = TRUE, 
+                         usrdef.outliersType = c("AO", "TC"),
+                         usrdef.outliersDate = c("2012-07-01", "2005-04-01"),
+                         # Trading Days ---------------------------------------------------------
+                         #             usrdef.varEnabled = TRUE, 
+                         #             usrdef.var = td7, usrdef.varType = "Calendar", 
+                         #             tradingdays.option = "UserDefined",
+                         # Easter ---------------------------------------------------------------
+                         #easter.type = "IncludeEaster", easter.duration = 6,
+                         # Arima-Model ----------------------------------------------------------
+                         automdl.enabled = FALSE, 
+                         arima.p  = 0, arima.d  = 1, arima.q  = 0, 
+                         arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
+  # ======================================================================================
+  vcl_N11OG = per_tramo(T102TS$impPI_L[, "N11OG"], template = "RSA3",
+                        # Transformation -------------------------------------------------------
+                        transform.function = "Log",
+                        # Outliers -------------------------------------------------------------
+                        outlier.enabled = FALSE, 
+                        usrdef.outliersEnabled = TRUE, 
+                        usrdef.outliersType = c("AO", "LS"),
+                        usrdef.outliersDate = c("2007-10-01", "2012-01-01"),
+                        # Trading Days ---------------------------------------------------------
+                        #             usrdef.varEnabled = TRUE, 
+                        #             usrdef.var = td7, usrdef.varType = "Calendar", 
+                        #             tradingdays.option = "UserDefined",
+                        # Easter ---------------------------------------------------------------
+                        #easter.type = "IncludeEaster", easter.duration = 6,
+                        # Arima-Model ----------------------------------------------------------
+                        automdl.enabled = FALSE, 
+                        arima.p  = 0, arima.d  = 1, arima.q  = 0, 
+                        arima.bp = 1, arima.bd = 0, arima.bq = 0, arima.mu = TRUE),
+  vcl_P5 = per_tramo(T102TS$impPI_L[, "P5"], template = "RSA3",
+                        # Transformation -------------------------------------------------------
+                        transform.function = "Log",
+                        # Outliers -------------------------------------------------------------
+                        outlier.enabled = FALSE, 
+                        # usrdef.outliersEnabled = FALSE, 
+                        # usrdef.outliersType = c("AO", "LS"),
+                        # usrdef.outliersDate = c("2007-10-01", "2012-01-01"),
+                        # Trading Days ---------------------------------------------------------
+                        #             usrdef.varEnabled = TRUE, 
+                        #             usrdef.var = td7, usrdef.varType = "Calendar", 
+                        #             tradingdays.option = "UserDefined",
+                        # Easter ---------------------------------------------------------------
+                        #easter.type = "IncludeEaster", easter.duration = 6,
+                        # Arima-Model ----------------------------------------------------------
+                        automdl.enabled = FALSE, 
+                        arima.p  = 3, arima.d  = 1, arima.q  = 1, 
+                        arima.bp = 1, arima.bd = 0, arima.bq = 0, arima.mu = TRUE)
+  
+)
+
+vcl_price$run()
+
+
+
+#-------------------------------------------------------------------------------
+
+T102Adj_impPI_L <- lapply(vcl_price$components, function(x){
+  x$output$final$series
+})
+
+
+
+
