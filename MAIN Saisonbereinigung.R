@@ -2,60 +2,35 @@
 #
 # QVGR SAISONBEREINIGUNG MASTERFILE
 #
-# Stand Februar 2021
-# Autoren: Julia knöbl, Markus Fröhlich
+# Stand April 2021
+# Autoren: Julia Knöbl, Markus Fröhlich
+# qvgr@statistik.gv.at
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 rm(list=ls())
 
 # Pakete laden--------------------------
+# devtools::install_github("statistikat/persephone")
+# devtools::install_github("statistikat/chainSTAT")
 library(persephone)
+library(chainSTAT)
 library(dplyr)
 library(tsbox)
 library(data.table)
-library(chainSTAT)
-
-# library(tidyr)
-# library(DirVSTAT)
-# library(tseries)
-# library(dataSTAT)
 
 
-
-# Tabellen für Saisonbereinigung erstellen -------------
-# auf Basis von ADJ_LEVEL
-# Code von Julia Knöbl
+# Tabellen für Saisonbereinigung laden -------------
+# Variablendukmenation in README.md
 source("Step1_LoadInput.R")
 
-
-# Einstellungen Saisonbereigigung ---------
-## Arbeitstage generieren =================
-td7 <- gen_td(ff = 4, hd = list("01-01", "01-06", "05-01", "easter+1", "easter+39",
-                                "easter+50", "easter+60", "08-15", "10-26", "11-01",
-                                "12-08", "12-24", "12-25", "12-26", "12-31"),
-              weight = c(rep(1,11), 0.5, rep(1,2), 0.5))
-td7 <- td7[[3]]
-
-# QNA-Reihen beginnen 1995
-td7 <- window(td7, start = c(1995, 1), freq = 4)
-td7lY <- td7
-
-# Working day regressor
-td5 <- as.data.frame(td7lY)
-td5lY <- td5 %>% rowwise() %>% summarize(wd5 = Monday + Tuesday + Wednesday + Thursday +
-                                           Friday - (5/2)*Saturday, lpYear) %>% 
-  ts(start = c(1995, 1), freq = 4)
-
-# wenn lpYear nicht zu laden geht:
+# Trading Days laden ---------
 load("TD5lY.Rds")
 load("TD7lY.Rds")
 td7 <- td7lY[,1:6]
 td5 <- td5lY[,"wd5"]
 
 # Bereinigung-------------------------------------------
-# Modelle werden mit der neuen Jahresrechnung von Markus Fröhlich geprüft
-# unterjährig von QVGR ausgeführt
-# Code von Markus Fröhlich
+# Modelle werden einmal jährlich upgedated, Außreißer nach Bedarf gesetzt.
 
 
 # _ T0101 Entstehung ----------------
