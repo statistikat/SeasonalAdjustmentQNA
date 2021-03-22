@@ -14,13 +14,11 @@ T102TS0$vol[c(51, 52, 54, 56, 59) , 17] <- T102TS$vol[c(51, 52, 54, 56, 59) , 17
 T102TS0$vol[c(51, 52, 54, 56, 59) , 27] <- T102TS$vol[c(51, 52, 54, 56, 59) , 27] - 
   euroFight[c(3, 4, 6, 8, 11)]
 
-# write.table(T102TS0, paste0(mlauf,"/J2020/SB/QNA/q2_2020/T121a.csv"),sep=";",
-#             row.names = FALSE)
 
 # Variablen aus MASTER Saisonbereigung.R erforderlich
 
-vcl_vol <- per_hts(
-  vcl_AN111 = per_tramo(T102TS$vol[, "AN111"], template = "RSA3", 
+vcl_vol <- perHts(
+  vcl_AN111 = perTramo(T102TS$vol[, "AN111"], template = "RSA3", 
                         # Transformation -------------------------------------------------------
                         transform.function = "Log",
                         # Outliers -------------------------------------------------------------
@@ -39,7 +37,7 @@ vcl_vol <- per_hts(
                         arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                         arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
-  vcl_AN112 = per_tramo(T102TS$vol[, "AN112"], template = "RSA3", 
+  vcl_AN112 = perTramo(T102TS$vol[, "AN112"], template = "RSA3", 
                         # Transformation -------------------------------------------------------
                         transform.function = "Log",
                         # Outliers -------------------------------------------------------------
@@ -58,7 +56,7 @@ vcl_vol <- per_hts(
                         arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                         arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
-  vcl_AN115 = per_tramo(T102TS$vol[, "AN115"], template = "RSA3",
+  vcl_AN115 = perTramo(T102TS$vol[, "AN115"], template = "RSA3",
                         # Transformation -------------------------------------------------------
                         transform.function = "Log",
                         # Outliers -------------------------------------------------------------
@@ -77,7 +75,7 @@ vcl_vol <- per_hts(
                         arima.p  = 0, arima.d  = 1, arima.q  = 0, 
                         arima.bp = 1, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
-  vcl_AN117 = per_tramo(T102TS$vol[, "AN117"], template = "RSA3",
+  vcl_AN117 = perTramo(T102TS$vol[, "AN117"], template = "RSA3",
                         # Transformation -------------------------------------------------------
                         transform.function = "Log",
                         # Outliers -------------------------------------------------------------
@@ -96,7 +94,7 @@ vcl_vol <- per_hts(
                         arima.p  = 1, arima.d  = 0, arima.q  = 0, 
                         arima.bp = 1, arima.bd = 1, arima.bq = 0, arima.mu = TRUE),
   # ====================================================================================
-  vcl_P61 = per_tramo(T102TS$vol[, "P61"], template = "RSA3",
+  vcl_P61 = perTramo(T102TS$vol[, "P61"], template = "RSA3",
                       # Transformation -------------------------------------------------------
                       transform.function = "Log",
                       # Outliers -------------------------------------------------------------
@@ -117,7 +115,7 @@ vcl_vol <- per_hts(
                       arima.p  = 0, arima.d  = 1, arima.q  = 2, 
                       arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
-  vcl_P62 = per_tramo(T102TS$vol[, "P62"], template = "RSA3",
+  vcl_P62 = perTramo(T102TS$vol[, "P62"], template = "RSA3",
                       # Transformation -------------------------------------------------------
                       transform.function = "Log",
                       # Outliers -------------------------------------------------------------
@@ -136,7 +134,7 @@ vcl_vol <- per_hts(
                       arima.p  = 1, arima.d  = 0, arima.q  = 0, 
                       arima.bp = 0, arima.bd = 1, arima.bq = 0, arima.mu = TRUE),
   # ====================================================================================
-  vcl_P71 = per_tramo(T102TS0$vol[, "P71"], template = "RSA3", 
+  vcl_P71 = perTramo(T102TS0$vol[, "P71"], template = "RSA3", 
                       # Transformation -------------------------------------------------------
                       transform.function = "Log",
                       # Outliers -------------------------------------------------------------
@@ -155,7 +153,7 @@ vcl_vol <- per_hts(
                       arima.p  = 0, arima.d  = 1, arima.q  = 0, 
                       arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # =====================================================================================
-  vcl_P72 = per_tramo(T102TS$vol[, "P72"], template = "RSA3", 
+  vcl_P72 = perTramo(T102TS$vol[, "P72"], template = "RSA3", 
                       # Transformation ------------------------------------------------------- 
                       transform.function = "Log",
                       # Outliers -------------------------------------------------------------
@@ -174,7 +172,7 @@ vcl_vol <- per_hts(
                       arima.p  = 1, arima.d  = 0, arima.q  = 0, 
                       arima.bp = 1, arima.bd = 1, arima.bq = 1, arima.mu = TRUE),
   # =====================================================================================
-  vcl_P31_S14 = per_tramo(T102TS$vol[, "P31_S14"], template = "RSA3", 
+  vcl_P31_S14 = perTramo(T102TS$vol[, "P31_S14"], template = "RSA3", 
                           # Transformation -------------------------------------------------------  
                           transform.function = "Log",
                           # Outliers -------------------------------------------------------------
@@ -196,7 +194,7 @@ vcl_vol <- per_hts(
   # vcl_P31_S15 wird gestückelt !!
   
   # =====================================================================================
-  vcl_P31_S13 = per_tramo(T102TS$vol[, "P31_S13"], template = "RSA3",
+  vcl_P31_S13 = perTramo(T102TS$vol[, "P31_S13"], template = "RSA3",
                           # Transformation -------------------------------------------------------
                           transform.function = "Log",
                           # Outliers -------------------------------------------------------------
@@ -215,7 +213,7 @@ vcl_vol <- per_hts(
                           arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                           arima.bp = 0, arima.bd = 1, arima.bq = 0, arima.mu = FALSE),
   # =======================================================================================
-  vcl_P32_S13 = per_tramo(T102TS$vol[, "P32_S13"], template = "RSA3",
+  vcl_P32_S13 = perTramo(T102TS$vol[, "P32_S13"], template = "RSA3",
                           # Transformation -------------------------------------------------------
                           transform.function = "Log",
                           # Outliers -------------------------------------------------------------
@@ -234,7 +232,7 @@ vcl_vol <- per_hts(
                           arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                           arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # =======================================================================================
-  vcl_N1131G = per_tramo(T102TS$vol[, "N1131G"], template = "RSA3",
+  vcl_N1131G = perTramo(T102TS$vol[, "N1131G"], template = "RSA3",
                          # Transformation -------------------------------------------------------
                          transform.function = "Log",
                          # Outliers -------------------------------------------------------------
@@ -253,7 +251,7 @@ vcl_vol <- per_hts(
                          arima.p  = 1, arima.d  = 0, arima.q  = 0, 
                          arima.bp = 1, arima.bd = 0, arima.bq = 0, arima.mu = TRUE),
   # ======================================================================================
-  vcl_N1132G = per_tramo(T102TS$vol[, "N1132G"], template = "RSA3",
+  vcl_N1132G = perTramo(T102TS$vol[, "N1132G"], template = "RSA3",
                          # Transformation -------------------------------------------------------
                          transform.function = "Log",
                          # Outliers -------------------------------------------------------------
@@ -272,7 +270,7 @@ vcl_vol <- per_hts(
                          arima.p  = 1, arima.d  = 0, arima.q  = 0, 
                          arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE),
   # ======================================================================================
-  vcl_N11OG = per_tramo(T102TS0$vol[, "N11OG"], template = "RSA3",
+  vcl_N11OG = perTramo(T102TS0$vol[, "N11OG"], template = "RSA3",
                         # Transformation -------------------------------------------------------
                         transform.function = "Log",
                         # Outliers -------------------------------------------------------------
@@ -303,7 +301,7 @@ vcl_vol$run()
 
 ##        P31_S15:
 
-vcl_P31_S15a = per_tramo(window(T102TS$vol[, "P31_S15"], end = c(2007, 4)), template = "RSA3",
+vcl_P31_S15a = perTramo(window(T102TS$vol[, "P31_S15"], end = c(2007, 4)), template = "RSA3",
                          # Transformation -------------------------------------------------------
                          transform.function = "Log",
                          # Outliers -------------------------------------------------------------
@@ -322,7 +320,7 @@ vcl_P31_S15a = per_tramo(window(T102TS$vol[, "P31_S15"], end = c(2007, 4)), temp
                          arima.p  = 1, arima.d  = 1, arima.q  = 0, 
                          arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = TRUE)
 
-vcl_P31_S15b = per_tramo(window(T102TS$vol[, "P31_S15"], start = c(2007, 1)), template = "RSA3",
+vcl_P31_S15b = perTramo(window(T102TS$vol[, "P31_S15"], start = c(2007, 1)), template = "RSA3",
                          # Transformation -------------------------------------------------------
                          transform.function = "Log",
                          # Outliers -------------------------------------------------------------

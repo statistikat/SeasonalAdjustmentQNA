@@ -8,7 +8,7 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 rm(list=ls())
-
+setwd("SeasonalAdjustmentQNA")
 # Pakete laden--------------------------
 # devtools::install_github("statistikat/persephone")
 # devtools::install_github("statistikat/chainSTAT")
@@ -20,7 +20,7 @@ library(data.table)
 
 
 # Tabellen für Saisonbereinigung laden -------------
-# Variablendukmenation in README.md
+# Variablendokumenation in README.md
 source("Step1_LoadInput.R")
 
 # Trading Days laden ---------

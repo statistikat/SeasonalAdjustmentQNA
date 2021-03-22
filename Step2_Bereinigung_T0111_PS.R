@@ -9,9 +9,9 @@
 # SAL -------------------
 
 
-vert_PS_SAL <- per_hts(
+vert_PS_SAL <- perHts(
   # Hier wurden AT6 plus Easter identifiziert (Grenzwert)
-  vert_A = per_tramo(T111TS[, "SAL_PS_W2_A"], template = "RSA3", 
+  vert_A = perTramo(T111TS[, "SAL_PS_W2_A"], template = "RSA3", 
                      # Transformation -------------------------------------------------------
                      transform.function = "Log",
                      # Outliers -------------------------------------------------------------
@@ -32,7 +32,7 @@ vert_PS_SAL <- per_hts(
                      arima.p  = 0, arima.d  = 1, arima.q  = 0, 
                      arima.bp = 0, arima.bd = 1, arima.bq = 0, arima.mu = TRUE),
   # ====================================================================================
-  vert_BTE = per_tramo(T111TS[, "SAL_PS_W2_BTE"], template = "RSA3", 
+  vert_BTE = perTramo(T111TS[, "SAL_PS_W2_BTE"], template = "RSA3", 
                        # Transformation -------------------------------------------------------
                        transform.function = "Log",
                        # Outliers -------------------------------------------------------------
@@ -54,7 +54,7 @@ vert_PS_SAL <- per_hts(
                        arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                        arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
-  vert_C = per_tramo(T111TS[, "SAL_PS_W2_C"], template = "RSA3",
+  vert_C = perTramo(T111TS[, "SAL_PS_W2_C"], template = "RSA3",
                      # Transformation -------------------------------------------------------
                      transform.function = "Log",
                      # Outliers -------------------------------------------------------------
@@ -76,7 +76,7 @@ vert_PS_SAL <- per_hts(
                      arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                      arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
-  vert_F = per_tramo(T111TS[, "SAL_PS_W2_F"], template = "RSA3",
+  vert_F = perTramo(T111TS[, "SAL_PS_W2_F"], template = "RSA3",
                      # Transformation -------------------------------------------------------
                      transform.function = "None",
                      # Outliers -------------------------------------------------------------
@@ -97,7 +97,7 @@ vert_PS_SAL <- per_hts(
                      arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                      arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
-  vert_GTI = per_tramo(T111TS[, "SAL_PS_W2_GTI"] , template = "RSA3",
+  vert_GTI = perTramo(T111TS[, "SAL_PS_W2_GTI"] , template = "RSA3",
                        # Transformation -------------------------------------------------------
                        transform.function = "Log",
                        # Outliers -------------------------------------------------------------
@@ -118,7 +118,7 @@ vert_PS_SAL <- per_hts(
                        arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                        arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
-  vert_J = per_tramo(T111TS[, "SAL_PS_W2_J"], template = "RSA3", 
+  vert_J = perTramo(T111TS[, "SAL_PS_W2_J"], template = "RSA3", 
                      # Transformation -------------------------------------------------------
                      transform.function = "None",
                      # Outliers -------------------------------------------------------------
@@ -139,7 +139,7 @@ vert_PS_SAL <- per_hts(
                      arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                      arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # =====================================================================================
-  vert_K = per_tramo(T111TS[, "SAL_PS_W2_K"], template = "RSA3",
+  vert_K = perTramo(T111TS[, "SAL_PS_W2_K"], template = "RSA3",
                     # Transformation -------------------------------------------------------
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
@@ -159,7 +159,7 @@ vert_PS_SAL <- per_hts(
                     arima.p  = 0, arima.d  = 1, arima.q  = 0,
                     arima.bp = 1, arima.bd = 1, arima.bq = 0, arima.mu = FALSE),
   # =====================================================================================
-  vert_L = per_tramo(T111TS[, "SAL_PS_W2_L"], template = "RSA3", 
+  vert_L = perTramo(T111TS[, "SAL_PS_W2_L"], template = "RSA3", 
                      # Transformation -------------------------------------------------------
                      transform.function = "Log",
                      # Outliers -------------------------------------------------------------
@@ -179,7 +179,7 @@ vert_PS_SAL <- per_hts(
                      arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                      arima.bp = 1, arima.bd = 1, arima.bq = 0, arima.mu = FALSE),
   # =====================================================================================
-  vert_M_N = per_tramo(T111TS[, "SAL_PS_W2_M_N"], template = "RSA3", 
+  vert_M_N = perTramo(T111TS[, "SAL_PS_W2_M_N"], template = "RSA3", 
                       # Transformation -------------------------------------------------------
                       transform.function = "Log",
                       # Outliers -------------------------------------------------------------
@@ -199,7 +199,7 @@ vert_PS_SAL <- per_hts(
                       arima.p  = 1, arima.d  = 1, arima.q  = 0, 
                       arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # =====================================================================================
-  vert_OTQ = per_tramo(T111TS[, "SAL_PS_W2_OTQ"], template = "RSA3", 
+  vert_OTQ = perTramo(T111TS[, "SAL_PS_W2_OTQ"], template = "RSA3", 
                        # Transformation -------------------------------------------------------        
                        transform.function = "Log",
                        # Outliers -------------------------------------------------------------
@@ -219,7 +219,7 @@ vert_PS_SAL <- per_hts(
                        arima.p  = 0, arima.d  = 1, arima.q  = 0, 
                        arima.bp = 1, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # =====================================================================================
-  vert_RTU = per_tramo(T111TS[, "SAL_PS_W2_RTU"], template = "RSA3", 
+  vert_RTU = perTramo(T111TS[, "SAL_PS_W2_RTU"], template = "RSA3", 
                        # Transformation -------------------------------------------------------  
                        transform.function = "Log",
                        # Outliers -------------------------------------------------------------
@@ -252,9 +252,9 @@ T111Adj_PS_SAL <- lapply(vert_PS_SAL$components, function(x){
 # Verteilung Personen SELF -------------------
 
 
-vert_PS_SELF <- per_hts(
+vert_PS_SELF <- perHts(
   # Hier wurden AT6 plus Easter identifiziert (Grenzwert)
-  vert_A = per_tramo(T111TS[, "SELF_PS_W2_A"], template = "RSA3", 
+  vert_A = perTramo(T111TS[, "SELF_PS_W2_A"], template = "RSA3", 
                      # Transformation -------------------------------------------------------
                      transform.function = "None",
                      # Outliers -------------------------------------------------------------
@@ -273,7 +273,7 @@ vert_PS_SELF <- per_hts(
                      arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                      arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
-  vert_BTE = per_tramo(T111TS[, "SELF_PS_W2_BTE"], template = "RSA3", 
+  vert_BTE = perTramo(T111TS[, "SELF_PS_W2_BTE"], template = "RSA3", 
                        # Transformation -------------------------------------------------------
                        transform.function = "Log",
                        # Outliers -------------------------------------------------------------
@@ -292,7 +292,7 @@ vert_PS_SELF <- per_hts(
                        arima.p  = 1, arima.d  = 0, arima.q  = 0, 
                        arima.bp = 1, arima.bd = 0, arima.bq = 0, arima.mu = TRUE),
   # ====================================================================================
-  vert_C = per_tramo(T111TS[, "SELF_PS_W2_C"], template = "RSA3",
+  vert_C = perTramo(T111TS[, "SELF_PS_W2_C"], template = "RSA3",
                      # Transformation -------------------------------------------------------
                      transform.function = "Log",
                      # Outliers -------------------------------------------------------------
@@ -311,7 +311,7 @@ vert_PS_SELF <- per_hts(
                      arima.p  = 1, arima.d  = 0, arima.q  = 0, 
                      arima.bp = 1, arima.bd = 0, arima.bq = 0, arima.mu = TRUE),
   # ====================================================================================
-  vert_F = per_tramo(T111TS[, "SELF_PS_W2_F"], template = "RSA3",
+  vert_F = perTramo(T111TS[, "SELF_PS_W2_F"], template = "RSA3",
                      # Transformation -------------------------------------------------------
                      transform.function = "None",
                      # Outliers -------------------------------------------------------------
@@ -330,7 +330,7 @@ vert_PS_SELF <- per_hts(
                      arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                      arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
-  vert_GTI = per_tramo(T111TS[, "SELF_PS_W2_GTI"] , template = "RSA3",
+  vert_GTI = perTramo(T111TS[, "SELF_PS_W2_GTI"] , template = "RSA3",
                        # Transformation -------------------------------------------------------
                        transform.function = "None",
                        # Outliers -------------------------------------------------------------
@@ -350,7 +350,7 @@ vert_PS_SELF <- per_hts(
                        arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                        arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = TRUE),
   # ====================================================================================
-  vert_J = per_tramo(T111TS[, "SELF_PS_W2_J"], template = "RSA3", 
+  vert_J = perTramo(T111TS[, "SELF_PS_W2_J"], template = "RSA3", 
                      # Transformation -------------------------------------------------------
                      transform.function = "None",
                      # Outliers -------------------------------------------------------------
@@ -369,7 +369,7 @@ vert_PS_SELF <- per_hts(
                      arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                      arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = TRUE),
   # =====================================================================================
-  vert_K = per_tramo(T111TS[, "SELF_PS_W2_K"], template = "RSA3", 
+  vert_K = perTramo(T111TS[, "SELF_PS_W2_K"], template = "RSA3", 
                      # Transformation -------------------------------------------------------
                      transform.function = "None",
                      # Outliers -------------------------------------------------------------
@@ -389,7 +389,7 @@ vert_PS_SELF <- per_hts(
                      arima.p  = 0, arima.d  = 1, arima.q  = 0, 
                      arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
   # =====================================================================================
-  vert_L = per_tramo(T111TS[, "SELF_PS_W2_L"], template = "RSA3", 
+  vert_L = perTramo(T111TS[, "SELF_PS_W2_L"], template = "RSA3", 
                      # Transformation -------------------------------------------------------
                      transform.function = "None",
                      # Outliers -------------------------------------------------------------
@@ -408,7 +408,7 @@ vert_PS_SELF <- per_hts(
                      arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                      arima.bp = 1, arima.bd = 0, arima.bq = 0, arima.mu = TRUE),
   # =====================================================================================
-  vert_M_N = per_tramo(T111TS[, "SELF_PS_W2_M_N"], template = "RSA3", 
+  vert_M_N = perTramo(T111TS[, "SELF_PS_W2_M_N"], template = "RSA3", 
                       # Transformation -------------------------------------------------------
                       transform.function = "None",
                       # Outliers -------------------------------------------------------------
@@ -427,7 +427,7 @@ vert_PS_SELF <- per_hts(
                       arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                       arima.bp = 1, arima.bd = 0, arima.bq = 1, arima.mu = FALSE),
   # =====================================================================================
-  vert_OTQ = per_tramo(T111TS[, "SELF_PS_W2_OTQ"], template = "RSA3", 
+  vert_OTQ = perTramo(T111TS[, "SELF_PS_W2_OTQ"], template = "RSA3", 
                        # Transformation -------------------------------------------------------        
                        transform.function = "None",
                        # Outliers -------------------------------------------------------------
@@ -447,7 +447,7 @@ vert_PS_SELF <- per_hts(
                        arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                        arima.bp = 1, arima.bd = 0, arima.bq = 0, arima.mu = TRUE),
   # =====================================================================================
-  vert_RTU = per_tramo(T111TS[, "SELF_PS_W2_RTU"], template = "RSA3", 
+  vert_RTU = perTramo(T111TS[, "SELF_PS_W2_RTU"], template = "RSA3", 
                        # Transformation -------------------------------------------------------  
                        transform.function = "None",
                        # Outliers -------------------------------------------------------------

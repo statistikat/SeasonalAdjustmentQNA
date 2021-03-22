@@ -6,9 +6,9 @@
 
 # Variablen aus MASTER Saisonbereigung.R erforderlich
 
-kons_vol <- per_hts(
+kons_vol <- perHts(
   # Hier wurden AT6 plus Easter identifiziert (Grenzwert)
-  p311 = per_tramo(T117TS$vol[, "P311"], template = "RSA3", 
+  p311 = perTramo(T117TS$vol[, "P311"], template = "RSA3", 
                    # Transformation -------------------------------------------------------
                    transform.function = "Log",
                    # Outliers -------------------------------------------------------------
@@ -28,7 +28,7 @@ kons_vol <- per_hts(
                    arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                    arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
-  p312 = per_tramo(T117TS$vol[, "P312"], template = "RSA3", 
+  p312 = perTramo(T117TS$vol[, "P312"], template = "RSA3", 
                    # Transformation -------------------------------------------------------
                    transform.function = "Log",
                    # Outliers -------------------------------------------------------------
@@ -48,7 +48,7 @@ kons_vol <- per_hts(
                    arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                    arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
-  p313 = per_tramo(T117TS$vol[, "P313"], template = "RSA3",
+  p313 = perTramo(T117TS$vol[, "P313"], template = "RSA3",
                    # Transformation -------------------------------------------------------
                    transform.function = "Log",
                    # Outliers -------------------------------------------------------------
@@ -69,7 +69,7 @@ kons_vol <- per_hts(
                    arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE),
   
   # ====================================================================================
-  p314 = per_tramo(T117TS$vol[, "P314"], template = "RSA3",
+  p314 = perTramo(T117TS$vol[, "P314"], template = "RSA3",
                    # Transformation -------------------------------------------------------
                    transform.function = "Log",
                    # Outliers -------------------------------------------------------------

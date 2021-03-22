@@ -6,9 +6,9 @@
 
 # Variablen aus MASTER Saisonbereigung.R erforderlich
 
-ent_price <- per_hts(
+ent_price <- perHts(
   # Hier wurden AT6 plus Easter identifiziert (Grenzwert)
-  ent_A = per_tramo(T101TS$impPI_L[, "A"], template = "RSA3", 
+  ent_A = perTramo(T101TS$impPI_L[, "A"], template = "RSA3", 
                     # Transformation -------------------------------------------------------
                     transform.function = "None",
                     # Outliers -------------------------------------------------------------
@@ -27,7 +27,7 @@ ent_price <- per_hts(
                     arima.p  = 3, arima.d  = 0, arima.q  = 0, 
                     arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
   # ====================================================================================
-  ent_BTE = per_tramo(T101TS$impPI_L[, "BTE"], template = "RSA3", 
+  ent_BTE = perTramo(T101TS$impPI_L[, "BTE"], template = "RSA3", 
                       # Transformation -------------------------------------------------------
                       transform.function = "Log",
                       # Outliers -------------------------------------------------------------
@@ -46,7 +46,7 @@ ent_price <- per_hts(
                       arima.p  = 1, arima.d  = 1, arima.q  = 0, 
                       arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
   # ====================================================================================
-  ent_C = per_tramo(T101TS$impPI_L[, "C"], template = "RSA3",
+  ent_C = perTramo(T101TS$impPI_L[, "C"], template = "RSA3",
                     # Transformation -------------------------------------------------------
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
@@ -66,7 +66,7 @@ ent_price <- per_hts(
                     arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
   
   # ====================================================================================
-  ent_D21 = per_tramo(T101TS$impPI_L[, "D21"] , template = "RSA3",
+  ent_D21 = perTramo(T101TS$impPI_L[, "D21"] , template = "RSA3",
                       # Transformation -------------------------------------------------------
                       transform.function = "Log",
                       # Outliers -------------------------------------------------------------
@@ -85,7 +85,7 @@ ent_price <- per_hts(
                       arima.p  = 2, arima.d  = 1, arima.q  = 1, 
                       arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
-  ent_D31 = per_tramo(T101TS$impPI_L[, "D31"] , template = "RSA3",
+  ent_D31 = perTramo(T101TS$impPI_L[, "D31"] , template = "RSA3",
                       # Transformation -------------------------------------------------------
                       transform.function = "Log",
                       # Outliers -------------------------------------------------------------
@@ -105,7 +105,7 @@ ent_price <- per_hts(
                       arima.p  = 3, arima.d  = 1, arima.q  = 1, 
                       arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
   # ====================================================================================
-  ent_F = per_tramo(T101TS$impPI_L[, "F"], template = "RSA3",
+  ent_F = perTramo(T101TS$impPI_L[, "F"], template = "RSA3",
                     # Transformation -------------------------------------------------------
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
@@ -124,7 +124,7 @@ ent_price <- per_hts(
                     arima.p  = 1, arima.d  = 1, arima.q  = 0, 
                     arima.bp = 1, arima.bd = 0, arima.bq = 1, arima.mu = TRUE),
   # ====================================================================================
-  ent_G = per_tramo(T101TS$impPI_L[, "G"], template = "RSA3",
+  ent_G = perTramo(T101TS$impPI_L[, "G"], template = "RSA3",
                     # Transformation -------------------------------------------------------
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
@@ -143,7 +143,7 @@ ent_price <- per_hts(
                     arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                     arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
-  ent_H = per_tramo(T101TS$impPI_L[, "H"], template = "RSA3",
+  ent_H = perTramo(T101TS$impPI_L[, "H"], template = "RSA3",
                     # Transformation -------------------------------------------------------
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
@@ -162,7 +162,7 @@ ent_price <- per_hts(
                     arima.p  = 0, arima.d  = 1, arima.q  = 0, 
                     arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
-  ent_I = per_tramo(T101TS$impPI_L[, "I"], template = "RSA3",
+  ent_I = perTramo(T101TS$impPI_L[, "I"], template = "RSA3",
                     # Transformation -------------------------------------------------------
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
@@ -181,7 +181,7 @@ ent_price <- per_hts(
                     arima.p  = 0, arima.d  = 1, arima.q  = 0, 
                     arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
-  ent_J = per_tramo(T101TS$impPI_L[, "J"], template = "RSA3", 
+  ent_J = perTramo(T101TS$impPI_L[, "J"], template = "RSA3", 
                     # Transformation -------------------------------------------------------
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
@@ -201,7 +201,7 @@ ent_price <- per_hts(
                     arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                     arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
   # =====================================================================================
-  ent_K = per_tramo(T101TS$impPI_L[, "K"], template = "RSA3", 
+  ent_K = perTramo(T101TS$impPI_L[, "K"], template = "RSA3", 
                     # Transformation -------------------------------------------------------
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
@@ -222,7 +222,7 @@ ent_price <- per_hts(
                     arima.p  = 0, arima.d  = 1, arima.q  = 0, 
                     arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
   # =====================================================================================
-  ent_L = per_tramo(T101TS$impPI_L[, "L"], template = "RSA3", 
+  ent_L = perTramo(T101TS$impPI_L[, "L"], template = "RSA3", 
                     # Transformation -------------------------------------------------------
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
@@ -241,7 +241,7 @@ ent_price <- per_hts(
                     arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                     arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = TRUE),
   # =====================================================================================
-  ent_M_N = per_tramo(T101TS$impPI_L[, "M_N"], template = "RSA3", 
+  ent_M_N = perTramo(T101TS$impPI_L[, "M_N"], template = "RSA3", 
                      # Transformation -------------------------------------------------------
                      transform.function = "Log",
                      # Outliers -------------------------------------------------------------
@@ -261,7 +261,7 @@ ent_price <- per_hts(
                      arima.p  = 1, arima.d  = 1, arima.q  = 0, 
                      arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = TRUE),
   # =====================================================================================
-  ent_OTQ = per_tramo(T101TS$impPI_L[, "OTQ"], template = "RSA3", 
+  ent_OTQ = perTramo(T101TS$impPI_L[, "OTQ"], template = "RSA3", 
                       # Transformation -------------------------------------------------------        
                       transform.function = "None",
                       # Outliers -------------------------------------------------------------
@@ -280,7 +280,7 @@ ent_price <- per_hts(
                       arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                       arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # =====================================================================================
-  ent_RTU = per_tramo(T101TS$impPI_L[, "RTU"], template = "RSA3", 
+  ent_RTU = perTramo(T101TS$impPI_L[, "RTU"], template = "RSA3", 
                       # Transformation -------------------------------------------------------  
                       transform.function = "Log",
                       # Outliers -------------------------------------------------------------

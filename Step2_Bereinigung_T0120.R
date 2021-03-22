@@ -6,8 +6,8 @@
 
 # Variablen aus MASTER Saisonbereigung.R erforderlich
 
-exp120_vol <- per_hts(
-   p6U2 = per_tramo(window(T120TS$vol[, "P6_U2"], start = c(2008,1)), template = "RSA3", 
+exp120_vol <- perHts(
+   p6U2 = perTramo(window(T120TS$vol[, "P6_U2"], start = c(2008,1)), template = "RSA3", 
                    # Transformation -------------------------------------------------------
                    transform.function = "Log",
                    # Outliers -------------------------------------------------------------
@@ -28,7 +28,7 @@ exp120_vol <- per_hts(
                    arima.bp = 0, arima.bd = 1, arima.bq = 0, arima.mu = FALSE
                    ),
   # ====================================================================================
-  p6U3 = per_tramo(window(T120TS$vol[, "P6_U3"], start = c(2008,1)), template = "RSA3",
+  p6U3 = perTramo(window(T120TS$vol[, "P6_U3"], start = c(2008,1)), template = "RSA3",
                    # Transformation -------------------------------------------------------
                    transform.function = "Log",
                    # Outliers -------------------------------------------------------------
@@ -49,7 +49,7 @@ exp120_vol <- per_hts(
                    arima.p  = 3, arima.d  = 0, arima.q  = 0, 
                    arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
-  p6D0 = per_tramo(window(T120TS$vol[, "P6_D0"], start = c(2008,1)), template = "RSA3",
+  p6D0 = perTramo(window(T120TS$vol[, "P6_D0"], start = c(2008,1)), template = "RSA3",
                    # Transformation -------------------------------------------------------
                    transform.function = "Log",
                    # Outliers -------------------------------------------------------------
@@ -79,33 +79,9 @@ T120Adj_Vol <- lapply(exp120_vol$components, function(x){
 })
 
 
-# p6 = per_tramo(T120TS$vol[, "P6"], template = "RSA3", 
-#                # Transformation -------------------------------------------------------
-#                transform.function = "Log",
-#                # Outliers -------------------------------------------------------------
-#                outlier.enabled = FALSE,
-#                usrdef.outliersEnabled = TRUE, 
-#                usrdef.outliersType = c("LS", "AO"),
-#                usrdef.outliersDate = c("2009-01-01", "2020-04-01"),
-#                # Trading Days ---------------------------------------------------------
-#                usrdef.varEnabled = TRUE, 
-#                usrdef.var = td7lY, usrdef.varType = "Calendar", 
-#                tradingdays.option = "UserDefined",
-#                # Easter ---------------------------------------------------------------
-#                #easter.type = "IncludeEaster", easter.duration = 6,
-#                # Arima-Model ----------------------------------------------------------
-#                automdl.enabled = FALSE, 
-#                arima.p  = 2, arima.d  = 1, arima.q  = 0, 
-#                arima.bp = 1, arima.bd = 1, arima.bq = 0, arima.mu = FALSE)
-# p6$run()
 
-
-#T120Adj_Vol$P6 <- p6$output$final$series
-
-
-
-exp120_price <- per_hts(
-  p6U2 = per_tramo(window(T120TS$impPI_L[, "P6_U2"], start = c(2008,1)), template = "RSA3", 
+exp120_price <- perHts(
+  p6U2 = perTramo(window(T120TS$impPI_L[, "P6_U2"], start = c(2008,1)), template = "RSA3", 
                    # Transformation -------------------------------------------------------
                    transform.function = "Log",
                    # Outliers -------------------------------------------------------------
@@ -125,7 +101,7 @@ exp120_price <- per_hts(
                    arima.p  = 2, arima.d  = 0, arima.q  = 0, 
                    arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = TRUE),
   # ====================================================================================
-  p6U3 = per_tramo(window(T120TS$impPI_L[, "P6_U3"], start = c(2008,1)), template = "RSA3",
+  p6U3 = perTramo(window(T120TS$impPI_L[, "P6_U3"], start = c(2008,1)), template = "RSA3",
                    # Transformation -------------------------------------------------------
                    transform.function = "Log",
                    # Outliers -------------------------------------------------------------
@@ -146,7 +122,7 @@ exp120_price <- per_hts(
                    arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
   
   # ====================================================================================
-  p6D0 = per_tramo(window(T120TS$impPI_L[, "P6_D0"], start = c(2008,1)), template = "RSA3",
+  p6D0 = perTramo(window(T120TS$impPI_L[, "P6_D0"], start = c(2008,1)), template = "RSA3",
                    # Transformation -------------------------------------------------------
                    transform.function = "Log",
                    # Outliers -------------------------------------------------------------
@@ -174,28 +150,3 @@ exp120_price$run()
 T120Adj_impPI_L <- lapply(exp120_price$components, function(x){
  x$output$final$series
 })
-
-
-# p6 = per_tramo(T120TS$impPI_L[, "P6"], template = "RSA3", 
-#                # Transformation -------------------------------------------------------
-#                transform.function = "Log",
-#                # Outliers -------------------------------------------------------------
-#                outlier.enabled = FALSE,
-#                usrdef.outliersEnabled = TRUE, 
-#                usrdef.outliersType = c("LS", "LS"),
-#                usrdef.outliersDate = c("2010-04-01", "2011-01-01"),
-#                # Trading Days ---------------------------------------------------------
-#                #usrdef.varEnabled = TRUE, 
-#                #usrdef.var = td7lY, usrdef.varType = "Calendar", 
-#                #tradingdays.option = "UserDefined",
-#                # Easter ---------------------------------------------------------------
-#                #easter.type = "IncludeEaster", easter.duration = 6,
-#                # Arima-Model ----------------------------------------------------------
-#                automdl.enabled = FALSE, 
-#                arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-#                arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = TRUE)
-# p6$run()
-# 
-
-#T120Adj_impPI_L$P6 <- p6$output$final$series
-

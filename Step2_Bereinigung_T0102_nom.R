@@ -8,8 +8,8 @@
 
 # Variablen aus MASTER Saisonbereigung.R erforderlich
 
-verw_nom <- per_hts(
-  verw_N13G = per_tramo(T102TS$nom[, "N13G"], template = "RSA3", # nicht saisonal
+verw_nom <- perHts(
+  verw_N13G = perTramo(T102TS$nom[, "N13G"], template = "RSA3", # nicht saisonal
                         # Transformation -------------------------------------------------------
                         transform.function = "None",
                         # Outliers -------------------------------------------------------------
@@ -28,7 +28,7 @@ verw_nom <- per_hts(
                         arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                         arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
-  verw_P52 = per_tramo(T102TS$nom[, "P52"], template = "RSA3", 
+  verw_P52 = perTramo(T102TS$nom[, "P52"], template = "RSA3", 
                         # Transformation -------------------------------------------------------
                         transform.function = "None",
                         # Outliers -------------------------------------------------------------

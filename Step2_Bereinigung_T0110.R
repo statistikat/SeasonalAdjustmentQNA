@@ -7,7 +7,7 @@
 # Variablen aus MASTER Saisonbereigung.R erforderlich
 
 
-pb_SAL = per_tramo(T110TS[, "SAL_PS_W0__T"], template = "RSA3", 
+pb_SAL = perTramo(T110TS[, "SAL_PS_W0__T"], template = "RSA3", 
                    # Transformation -------------------------------------------------------
                    transform.function = "None",
                    # Outliers -------------------------------------------------------------
@@ -32,7 +32,7 @@ T110Adj_sa <- list()
 T110Adj_sa$SAL_PS_W0__T <- pb_SAL$output$final$series
 
 
-pb_SELF = per_tramo(T110TS[, "SELF_PS_W0__T"], template = "RSA3", 
+pb_SELF = perTramo(T110TS[, "SELF_PS_W0__T"], template = "RSA3", 
                     # Transformation -------------------------------------------------------
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------

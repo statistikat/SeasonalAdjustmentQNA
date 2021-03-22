@@ -1,8 +1,8 @@
 
 
-ent_vol <- per_hts(
+ent_vol <- perHts(
   # Hier wurden AT6 plus Easter identifiziert (Grenzwert)
-  ent_A = per_tramo(T101TS$vol[, "A"], template = "RSA3", 
+  ent_A = perTramo(T101TS$vol[, "A"], template = "RSA3", 
                     # Transformation -------------------------------------------------------
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
@@ -22,7 +22,7 @@ ent_vol <- per_hts(
                     arima.p  = 0, arima.d  = 1, arima.q  = 0, 
                     arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
-  ent_BTE = per_tramo(T101TS$vol[, "BTE"], template = "RSA3", 
+  ent_BTE = perTramo(T101TS$vol[, "BTE"], template = "RSA3", 
                       # Transformation -------------------------------------------------------
                       transform.function = "Log",
                       # Outliers -------------------------------------------------------------
@@ -42,7 +42,7 @@ ent_vol <- per_hts(
                       arima.p  = 0, arima.d  = 1, arima.q  = 0, 
                       arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
-  ent_C = per_tramo(T101TS$vol[, "C"], template = "RSA3",
+  ent_C = perTramo(T101TS$vol[, "C"], template = "RSA3",
                     # Transformation -------------------------------------------------------
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
@@ -63,7 +63,7 @@ ent_vol <- per_hts(
                     arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   
   # ====================================================================================
-  ent_D31 = per_tramo(T101TS$vol[, "D31"] , template = "RSA3",
+  ent_D31 = perTramo(T101TS$vol[, "D31"] , template = "RSA3",
                       # Transformation -------------------------------------------------------
                       transform.function = "Log",
                       # Outliers -------------------------------------------------------------
@@ -83,7 +83,7 @@ ent_vol <- per_hts(
                       arima.p  = 0, arima.d  = 0, arima.q  = 0, 
                       arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
-  ent_F = per_tramo(T101TS$vol[, "F"], template = "RSA3",
+  ent_F = perTramo(T101TS$vol[, "F"], template = "RSA3",
                     # Transformation -------------------------------------------------------
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
@@ -102,7 +102,7 @@ ent_vol <- per_hts(
                     arima.p  = 0, arima.d  = 1, arima.q  = 0, 
                     arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
-  ent_G = per_tramo(T101TS$vol[, "G"], template = "RSA3",
+  ent_G = perTramo(T101TS$vol[, "G"], template = "RSA3",
                     # Transformation -------------------------------------------------------
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
@@ -121,7 +121,7 @@ ent_vol <- per_hts(
                     arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                     arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
-  ent_H = per_tramo(T101TS$vol[, "H"], template = "RSA3",
+  ent_H = perTramo(T101TS$vol[, "H"], template = "RSA3",
                     # Transformation -------------------------------------------------------
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
@@ -141,7 +141,7 @@ ent_vol <- per_hts(
                     arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                     arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
-  ent_I = per_tramo(T101TS$vol[, "I"], template = "RSA3",
+  ent_I = perTramo(T101TS$vol[, "I"], template = "RSA3",
                     # Transformation -------------------------------------------------------
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
@@ -161,7 +161,7 @@ ent_vol <- per_hts(
                     arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                     arima.bp = 0, arima.bd = 1, arima.bq = 0, arima.mu = FALSE),
   # ====================================================================================
-  #ent_GVA = per_tramo(ent_ts[, "ent_GVA"], template = "RSA3",
+  #ent_GVA = perTramo(ent_ts[, "ent_GVA"], template = "RSA3",
   #                   # Transformation -------------------------------------------------------
   #                   transform.function = "Log",
   #                   # Outliers -------------------------------------------------------------
@@ -181,7 +181,7 @@ ent_vol <- per_hts(
   #                   arima.p  = 2, arima.d  = 1, arima.q  = 0, 
   #                   arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # =====================================================================================
-  ent_J = per_tramo(T101TS$vol[, "J"], template = "RSA3", 
+  ent_J = perTramo(T101TS$vol[, "J"], template = "RSA3", 
                     # Transformation -------------------------------------------------------
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
@@ -201,7 +201,7 @@ ent_vol <- per_hts(
                     arima.p  = 3, arima.d  = 1, arima.q  = 0, 
                     arima.bp = 1, arima.bd = 1, arima.bq = 0, arima.mu = FALSE),
   # =====================================================================================
-  ent_K = per_tramo(T101TS$vol[, "K"], template = "RSA3", 
+  ent_K = perTramo(T101TS$vol[, "K"], template = "RSA3", 
                     # Transformation -------------------------------------------------------
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
@@ -220,7 +220,7 @@ ent_vol <- per_hts(
                     arima.p  = 0, arima.d  = 1, arima.q  = 0, 
                     arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # =====================================================================================
-  ent_L = per_tramo(T101TS$vol[, "L"], template = "RSA3", 
+  ent_L = perTramo(T101TS$vol[, "L"], template = "RSA3", 
                     # Transformation -------------------------------------------------------
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
@@ -239,7 +239,7 @@ ent_vol <- per_hts(
                     arima.p  = 0, arima.d  = 1, arima.q  = 0, 
                     arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # =====================================================================================
-  ent_M_N = per_tramo(T101TS$vol[, "M_N"], template = "RSA3", 
+  ent_M_N = perTramo(T101TS$vol[, "M_N"], template = "RSA3", 
                       # Transformation -------------------------------------------------------
                       transform.function = "Log",
                       # Outliers -------------------------------------------------------------
@@ -259,7 +259,7 @@ ent_vol <- per_hts(
                       arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # =====================================================================================
   
-  ent_OTQ = per_tramo(T101TS$vol[, "OTQ"], template = "RSA3", 
+  ent_OTQ = perTramo(T101TS$vol[, "OTQ"], template = "RSA3", 
                       # Transformation -------------------------------------------------------        
                       transform.function = "Log",
                       # Outliers -------------------------------------------------------------
@@ -278,7 +278,7 @@ ent_vol <- per_hts(
                       arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                       arima.bp = 1, arima.bd = 1, arima.bq = 0, arima.mu = FALSE),
   # =====================================================================================
-  ent_RTU = per_tramo(T101TS$vol[, "RTU"], template = "RSA3", 
+  ent_RTU = perTramo(T101TS$vol[, "RTU"], template = "RSA3", 
                       # Transformation -------------------------------------------------------  
                       transform.function = "Log",
                       # Outliers -------------------------------------------------------------
@@ -310,7 +310,7 @@ ent_vol$run()
 
 ##        P31_S15:
 
-ent_D21a = per_tramo(window(T101TS$vol[, "D21"], end = c(2012,4)), template = "RSA3",
+ent_D21a = perTramo(window(T101TS$vol[, "D21"], end = c(2012,4)), template = "RSA3",
                      # Transformation -----------------------------------------
                      transform.function = "Log",
                      # Outliers -----------------------------------------------
@@ -329,7 +329,7 @@ ent_D21a = per_tramo(window(T101TS$vol[, "D21"], end = c(2012,4)), template = "R
                      arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                      arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE)
 # ============================================================================
-ent_D21b = per_tramo(window(T101TS$vol[, "D21"], start = c(2012,1)), template = "RSA3",
+ent_D21b = perTramo(window(T101TS$vol[, "D21"], start = c(2012,1)), template = "RSA3",
                      # Transformation -----------------------------------------
                      transform.function = "Log",
                      # Outliers -----------------------------------------------
@@ -371,7 +371,8 @@ ent_D21 <- cbind(y = T101TS$vol[, "D21"], sa = ent_D21_sa,
 #-------------------------------------------------------------------------------
 
 # BIP Gesamt ###################################################################
-ent_BIP = per_tramo(T101TS$vol[, "BIP"], template = "RSA3",
+# nur zum Vergleich
+ent_BIP = perTramo(T101TS$vol[, "BIP"], template = "RSA3",
                     # Transformation -------------------------------------------------------
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
