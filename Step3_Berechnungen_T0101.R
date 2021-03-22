@@ -4,7 +4,9 @@
 #
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Variablen aus MASTER Saisonbereigung.R erforderlich
+# Vorraussetzung: 
+# - Step2_Bereinigung_T0101_vol.R
+# - Step2_Bereinigung_T0101_preise.R
 
 # Volumen ----
 T101Adj_vol <- lapply(ent_vol$components, function(x){
@@ -27,7 +29,8 @@ names(T101Adj_impPI_L) <- gsub("ent_", "", names(T101Adj_impPI_L))
 
 T101Y <- list(vol = do.call(cbind,lapply(T101Adj_vol, `[`, i = ,j = "sa")),
               impPI_L = do.call(cbind,lapply(T101Adj_impPI_L, `[`, i = ,j = "sa")))
-T101Y$nom <- `colnames<-`(T101Y$vol*T101Y$impPI_L[, colnames(T101Y$vol)] / 100, colnames(T101Y$vol))
+T101Y$nom <- `colnames<-`(T101Y$vol * T101Y$impPI_L[, colnames(T101Y$vol)] / 100, 
+                          colnames(T101Y$vol))
 
 
 T101Y$vjp <- lapply(names(T101Adj_vol), function(x){
@@ -35,16 +38,6 @@ T101Y$vjp <- lapply(names(T101Adj_vol), function(x){
 }) %>%
   `names<-`(names(T101Adj_vol)) %>%
   do.call(cbind, .)
-
-
-# T101nom_sa <- mapply(function(x, y) {
-#   x[, 2] * y[, 2]/100
-# }, x = T101Adj_vol, y = T101Adj_impPI_L)
-
-# Trend rechnet das WIFO
-# T101nom_t <- mapply(function(x, y) {
-#   x[, 3] * y[, 3]/100
-# }, x = T101Adj_vol, y = T101Adj_impPI_L)
 
 
 # _ Summen --------------------------------------
@@ -65,14 +58,6 @@ T101Y_neu <- lapply(c("nom", "vjp"), function(b){
 
 T101Y_neu$vol <- chainlinkDF(T101Y_neu)
 
-lapply(colnames(T101Y_neu$nom), function(x){
-  cbind(nom = T101Y_neu$nom[,x],
-        vol = T101Y_neu$vol[,x]) %>%
-    dygraphs::dygraph(main = x)
-})
-
-
-
 T101Y_sums <- list(nom = T101Y_neu$nom[, c("BIP", "GVA", "A", "C", "BTE", "F", "G", "H", "I", "J", "K", "L", "M_N", "OTQ", "RTU", "D21", "D31", "D21X31", "YA1")],
                    vol = T101Y_neu$vol[, c("BIP", "GVA", "A", "C", "BTE", "F", "GTI", "J", "K", "L", "M_N", "OTQ", "RTU", "D21", "D31", "D21X31", "YA1")])
   
@@ -81,12 +66,12 @@ T101Y_sums <- list(nom = T101Y_neu$nom[, c("BIP", "GVA", "A", "C", "BTE", "F", "
 # Arbeitstagsbereinigt ------------------------------------------------
 
 # bei multiplikativer Verknüpfung (log)
-# td_fac <- 1 + Obj$output$regarima$model$effects[, 2] + Obj$output$regarima$model$effects[, 3]
+# td_fac <- 1 + Obj$output$regarima$model$effects[, "tde"] + Obj$output$regarima$model$effects[, "ee"]
 # Y_cal <- y/td_fac
 
 # Bei additiver Verknüpfung:
 #   
-#   td_fac <- Obj$output$regarima$model$effects[, 2] + Obj$output$regarima$model$effects[, 3]
+#   td_fac <- Obj$output$regarima$model$effects[, "tde"] + Obj$output$regarima$model$effects[, "ee"]
 # Y_cal <- y - td_fac
 
 T101_td_fac <- lapply(ent_vol$components, function(x){
@@ -95,7 +80,7 @@ T101_td_fac <- lapply(ent_vol$components, function(x){
   do.call(cbind, .)
 colnames(T101_td_fac) <- gsub("ent_", "", colnames(T101_td_fac))
 
-# d21 hat keine TD effekte, dehalb nimm den 1 von D31!
+# D21 hat keine TD effekte, deshalb ist der TD Faktor 1, da D21 Zusammengestückelt ist, nehmen wir den TD Faktor von D31 (hat auch keinen effekt).
 T101_td_fac <- ts_c(T101_td_fac, D21 = T101_td_fac[, "D31"])
 
 

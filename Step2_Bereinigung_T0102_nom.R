@@ -4,21 +4,21 @@
 #
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#die Reihen, die auch negativ werden können
+# Nur Reihen, die auch negativ werden können, werden nominell bereingt (Nettozugang an Wertsachen und Lager)
 
-# Variablen aus MASTER Saisonbereigung.R erforderlich
+# T102TS muss geladen sein
 
 verw_nom <- perHts(
-  verw_N13G = perTramo(T102TS$nom[, "N13G"], template = "RSA3", # nicht saisonal
+  verw_N13G = perTramo(T102TS$nom[, "N13G"], template = "RSA3", # nicht saisonal --> sa == orig !!!
                         # Transformation -------------------------------------------------------
                         transform.function = "None",
                         # Outliers -------------------------------------------------------------
                         outlier.enabled = TRUE,
-                        usrdef.outliersEnabled = FALSE, 
-                        usrdef.outliersType = c("TC",  "AO", "AO", "AO", "AO"),
-                        usrdef.outliersDate = c("2008-01-01","2020-01-01", "2020-04-01", "2020-07-01", "2020-10-01"),
+                        # usrdef.outliersEnabled = FALSE, 
+                        # usrdef.outliersType = c("TC",  "AO", "AO", "AO", "AO"),
+                        # usrdef.outliersDate = c("2008-01-01","2020-01-01", "2020-04-01", "2020-07-01", "2020-10-01"),
                         # Trading Days ---------------------------------------------------------
-                        #            usrdef.varEnabled = TRUE, 
+                        #            usrdef.varEnabled = FALSE, 
                         #            usrdef.var = td7, usrdef.varType = "Calendar", 
                         #            tradingdays.option = "UserDefined",
                         # Easter ---------------------------------------------------------------
@@ -37,7 +37,7 @@ verw_nom <- perHts(
                         usrdef.outliersType = c("LS", "AO", "AO", "AO", "AO"),
                         usrdef.outliersDate = c("2019-10-01","2020-01-01", "2020-04-01", "2020-07-01", "2020-10-01"),
                         # Trading Days ---------------------------------------------------------
-                        #             usrdef.varEnabled = TRUE, 
+                        #             usrdef.varEnabled = FALSE, 
                         #             usrdef.var = td7lY, usrdef.varType = "Calendar", 
                         #             tradingdays.option = "UserDefined",
                         # Easter ---------------------------------------------------------------
