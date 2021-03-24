@@ -4,7 +4,8 @@
 #
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Variablen aus MASTER Saisonbereigung.R erforderlich
+# Vorraussetzung: 
+# - Step2_Bereinigung_T0120.R
 
 T120Adj_Vol <- `names<-`(T120Adj_Vol, toupper(names(T120Adj_Vol)))
 T120Adj_impPI_L <- `names<-`(T120Adj_impPI_L, toupper(names(T120Adj_impPI_L)))

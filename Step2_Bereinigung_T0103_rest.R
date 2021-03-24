@@ -4,7 +4,7 @@
 #
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Variablen aus MASTER Saisonbereigung.R erforderlich
+# T103TS muss geladen sein
 
 vert_rest <- perHts(
   vert_D2 = perTramo(T103TS[, "D2"], template = "RSA3", 
@@ -17,11 +17,11 @@ vert_rest <- perHts(
                       usrdef.outliersDate = c("2020-01-01","2020-04-01", "2020-07-01",
                                               "2020-10-01"),
                       # Trading Days ---------------------------------------------------------
-                      #            usrdef.varEnabled = TRUE, 
-                      #            usrdef.var = td7, usrdef.varType = "Calendar", 
-                      #            tradingdays.option = "UserDefined",
+                      # usrdef.varEnabled = FALSE, 
+                      # usrdef.var = NA, usrdef.varType = "Calendar", 
+                      # tradingdays.option = "UserDefined",
                       # Easter ---------------------------------------------------------------
-                      #            easter.type = "IncludeEaster", easter.duration = 6,
+                      # easter.type = NA, easter.duration = 6,
                       # Arima-Model ----------------------------------------------------------
                       automdl.enabled = FALSE,
                       arima.p  = 1, arima.d  = 0, arima.q  = 0, 
@@ -37,11 +37,11 @@ vert_rest <- perHts(
                       usrdef.outliersDate = c("2016-04-01", "2020-01-01", "2020-04-01", 
                                               "2020-07-01", "2020-10-01"),
                       # Trading Days ---------------------------------------------------------
-                      #            usrdef.varEnabled = TRUE, 
-                      #            usrdef.var = td7, usrdef.varType = "Calendar", 
-                      #            tradingdays.option = "UserDefined",
+                      # usrdef.varEnabled = FALSE, 
+                      # usrdef.var = NA, usrdef.varType = "Calendar", 
+                      # tradingdays.option = "UserDefined",
                       # Easter ---------------------------------------------------------------
-                      #            easter.type = "IncludeEaster", easter.duration = 6,
+                      # easter.type = NA, easter.duration = 6,
                       # Arima-Model ----------------------------------------------------------
                       automdl.enabled = FALSE,
                       arima.p  = 0, arima.d  = 1, arima.q  = 1, 
@@ -49,8 +49,6 @@ vert_rest <- perHts(
 )
 
 vert_rest$run()
-
-# D2 sollte eventuell gestückelt werden
 
 T103Adj_rest <- lapply(vert_rest$components, function(x){
   x$output$final$series

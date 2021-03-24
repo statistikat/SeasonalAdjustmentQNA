@@ -19,11 +19,11 @@ kons_price <- perHts(
                                            "1995-10-01", "2020-01-01", "2020-04-01",
                                            "2020-07-01", "2020-10-01"),
                    # Trading Days ---------------------------------------------------------
-                   #usrdef.varEnabled = TRUE,
-                   #usrdef.var = td5, usrdef.varType = "Calendar",
-                   #tradingdays.option = "UserDefined",
+                   # usrdef.varEnabled = FALSE,
+                   # usrdef.var = NA, usrdef.varType = "Calendar",
+                   # tradingdays.option = "UserDefined",
                    # Easter ---------------------------------------------------------------
-                   #easter.type = "IncludeEaster", easter.duration = 6,
+                   # easter.type = NA, easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE,
                    arima.p  = 1, arima.d  = 1, arima.q  = 0,
@@ -35,15 +35,15 @@ kons_price <- perHts(
                    # Outliers -------------------------------------------------------------
                    outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE, 
-                   usrdef.outliersType = c("AO", "TC", "TC"),
-                   usrdef.outliersDate = c("2018-01-01", "2016-10-01",
+                   usrdef.outliersType = c("TC", "AO", "TC"),
+                   usrdef.outliersDate = c("2016-10-01", "2018-01-01", 
                                            "2019-07-01"),
                    # Trading Days ---------------------------------------------------------
-                   #usrdef.varEnabled = TRUE, 
-                   #usrdef.var = td5, usrdef.varType = "Calendar", 
-                   #tradingdays.option = "UserDefined",
+                   # usrdef.varEnabled = FALSE, 
+                   # usrdef.var = NA, usrdef.varType = "Calendar", 
+                   # tradingdays.option = "UserDefined",
                    # Easter ---------------------------------------------------------------
-                   #            easter.type = "IncludeEaster", easter.duration = 6,
+                   # easter.type = NA, easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
                    arima.p  = 0, arima.d  = 1, arima.q  = 1, 
@@ -58,11 +58,11 @@ kons_price <- perHts(
                    usrdef.outliersType = c("AO"),
                    usrdef.outliersDate = c("2018-04-01"),
                    # Trading Days ---------------------------------------------------------
-                   #usrdef.varEnabled = TRUE, 
-                   #usrdef.var = td5lY, usrdef.varType = "Calendar", 
-                   #tradingdays.option = "UserDefined",
+                   # usrdef.varEnabled = FALSE, 
+                   # usrdef.var = NA, usrdef.varType = "Calendar", 
+                   # tradingdays.option = "UserDefined",
                    # Easter ---------------------------------------------------------------
-                   #easter.type = "IncludeEaster", easter.duration = 6,
+                   # easter.type = NA, easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
                    arima.p  = 0, arima.d  = 1, arima.q  = 1, 
@@ -74,15 +74,15 @@ kons_price <- perHts(
                    transform.function = "Log",
                    # Outliers -------------------------------------------------------------
                    outlier.enabled = FALSE, 
-                   #usrdef.outliersEnabled = TRUE, 
-                   #usrdef.outliersType = c("LS", "AO"),
-                   #usrdef.outliersDate = c("2008-10-01", "1995-10-01"),
+                   # usrdef.outliersEnabled = FALSE,
+                   # usrdef.outliersType = NA,
+                   # usrdef.outliersDate = NA,
                    # Trading Days ---------------------------------------------------------
-                   #usrdef.varEnabled = TRUE, 
-                   #usrdef.var = td5, usrdef.varType = "Calendar", 
-                   #tradingdays.option = "UserDefined",
+                   # usrdef.varEnabled = FALSE, 
+                   # usrdef.var = NA, usrdef.varType = "Calendar", 
+                   # tradingdays.option = "UserDefined",
                    # Easter ---------------------------------------------------------------
-                   #            easter.type = "IncludeEaster", easter.duration = 6,
+                   # easter.type = NA, easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
                    arima.p  = 0, arima.d  = 1, arima.q  = 1, 

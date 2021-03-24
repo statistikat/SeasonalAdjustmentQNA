@@ -4,8 +4,10 @@
 #
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Variablen aus MASTER Saisonbereigung.R erforderlich
-
+# Vorraussetzung: 
+# - Step2_Bereinigung_T0103_D11.R
+# - Step2_Bereinigung_T0103_D12.R
+# - Step2_Bereinigung_T0103_rest.R
 
 
 # umbenennen damit es nachher wieder passt

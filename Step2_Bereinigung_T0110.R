@@ -4,7 +4,7 @@
 #
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Variablen aus MASTER Saisonbereigung.R erforderlich
+# T110TS muss geladen sein
 
 
 pb_SAL = perTramo(T110TS[, "SAL_PS_W0__T"], template = "RSA3", 
@@ -16,11 +16,11 @@ pb_SAL = perTramo(T110TS[, "SAL_PS_W0__T"], template = "RSA3",
                    usrdef.outliersType = c("AO","AO","AO","AO"),
                    usrdef.outliersDate = c("2020-01-01", "2020-04-01","2020-07-01", "2020-10-01"),
                    # Trading Days ---------------------------------------------------------
-                   #usrdef.varEnabled = TRUE, 
-                   #usrdef.var = td7lY, usrdef.varType = "Calendar", 
-                   #tradingdays.option = "UserDefined",
+                   # usrdef.varEnabled = FALSE,
+                   # usrdef.var = NA, usrdef.varType = "Calendar",
+                   # tradingdays.option = "UserDefined",
                    # Easter ---------------------------------------------------------------
-                   #easter.type = "IncludeEaster", easter.duration = 6,
+                   # easter.type = NA, easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
                    arima.p  = 1, arima.d  = 1, arima.q  = 0, 
@@ -41,11 +41,11 @@ pb_SELF = perTramo(T110TS[, "SELF_PS_W0__T"], template = "RSA3",
                     usrdef.outliersType = c("LS"),
                     usrdef.outliersDate = c("1996-01-01"),
                     # Trading Days ---------------------------------------------------------
-                    #usrdef.varEnabled = TRUE, 
-                    #usrdef.var = td7lY, usrdef.varType = "Calendar", 
-                    #tradingdays.option = "UserDefined",
+                    # usrdef.varEnabled = FALSE,
+                    # usrdef.var = NA, usrdef.varType = "Calendar",
+                    # tradingdays.option = "UserDefined",
                     # Easter ---------------------------------------------------------------
-                    #easter.type = "IncludeEaster", easter.duration = 6,
+                    # easter.type = NA, easter.duration = 6,
                     # Arima-Model ----------------------------------------------------------
                     automdl.enabled = FALSE, 
                     arima.p  = 1, arima.d  = 0, arima.q  = 0, 

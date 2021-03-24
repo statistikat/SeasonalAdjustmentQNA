@@ -4,7 +4,7 @@
 #
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Variablen aus MASTER Saisonbereigung.R erforderlich
+# T117TS muss geladen sein
 
 kons_vol <- perHts(
   # Hier wurden AT6 plus Easter identifiziert (Grenzwert)
@@ -22,7 +22,7 @@ kons_vol <- perHts(
                    usrdef.var = td7, usrdef.varType = "Calendar", 
                    tradingdays.option = "UserDefined",
                    # Easter ---------------------------------------------------------------
-                   #easter.type = "IncludeEaster", easter.duration = 6,
+                   # easter.type = NA, easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
                    arima.p  = 0, arima.d  = 1, arima.q  = 1, 
@@ -38,11 +38,11 @@ kons_vol <- perHts(
                    usrdef.outliersDate = c("2020-01-01" , "2020-04-01", "2020-07-01",
                                            "2020-10-01"),
                    # Trading Days ---------------------------------------------------------
-                   #usrdef.varEnabled = TRUE, 
-                   #usrdef.var = td5, usrdef.varType = "Calendar", 
-                   #tradingdays.option = "UserDefined",
+                   # usrdef.varEnabled = FALSE,
+                   # usrdef.var = NA, usrdef.varType = "Calendar",
+                   # tradingdays.option = "UserDefined",
                    # Easter ---------------------------------------------------------------
-                   #            easter.type = "IncludeEaster", easter.duration = 6,
+                   # easter.type = NA, easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
                    arima.p  = 0, arima.d  = 1, arima.q  = 1, 
@@ -58,11 +58,11 @@ kons_vol <- perHts(
                    usrdef.outliersDate = c( "2020-01-01", "2020-04-01", "2020-07-01",
                                             "2020-10-01"),
                    # Trading Days ---------------------------------------------------------
-                   #usrdef.varEnabled = TRUE, 
-                   #usrdef.var = td5lY, usrdef.varType = "Calendar", 
-                   #tradingdays.option = "UserDefined",
+                   # usrdef.varEnabled = FALSE,
+                   # usrdef.var = NA, usrdef.varType = "Calendar",
+                   # tradingdays.option = "UserDefined",
                    # Easter ---------------------------------------------------------------
-                   #easter.type = "IncludeEaster", easter.duration = 6,
+                   # easter.type = NA, easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
                    arima.p  = 1, arima.d  = 0, arima.q  = 0, 
@@ -79,18 +79,16 @@ kons_vol <- perHts(
                    usrdef.outliersDate = c("2020-01-01", "2020-04-01", "2020-07-01",
                                            "2020-10-01"),
                    # Trading Days ---------------------------------------------------------
-                   #usrdef.varEnabled = TRUE, 
-                   #usrdef.var = td5, usrdef.varType = "Calendar", 
-                   #tradingdays.option = "UserDefined",
+                   # usrdef.varEnabled = FALSE,
+                   # usrdef.var = NA, usrdef.varType = "Calendar",
+                   # tradingdays.option = "UserDefined",
                    # Easter ---------------------------------------------------------------
-                   #            easter.type = "IncludeEaster", easter.duration = 6,
+                   # easter.type = NA, easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
                    arima.p  = 1, arima.d  = 1, arima.q  = 0, 
                    arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE)
   # ====================================================================================
-
-  
 )
 
 kons_vol$run()

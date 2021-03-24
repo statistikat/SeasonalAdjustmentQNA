@@ -4,18 +4,19 @@
 #
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Variablen aus MASTER Saisonbereigung.R erforderlich
+# T121TS muss geladen sein
 
 T121TS0 <- copy(T121TS)
 
 # Eurofighter wird eliminiert 
-euroFight <- ts(c(0, 0, 106, 276, 0, 266, 0, 363, 0, 0, 90, 0), start = c(2007, 1),
+euroFight <- ts(c(0, 0, 106, 276, 
+                  0, 266, 0, 363, 
+                  0, 0, 90, 0), 
+                start = c(2007, 1),
                 freq = 4)
-T121TS0$vol[c(51, 52, 54, 56, 59) , 1] <- T121TS$vol[c(51, 52, 54, 56, 59) , 1] - 
-  euroFight[c(3, 4, 6, 8, 11)]
-T121TS0$vol[c(54, 56, 59) , 2] <- T121TS$vol[c(54, 56, 59) , 2] - 
-                                  euroFight[c(6, 8, 11)]
 
+# T121TS0$vol[time(T121TS0$vol)>=2007 & time(T121TS0$vol) < 2010, "P7"] <-  T121TS$vol[, "P7"] - euroFight
+T121TS0$vol[time(T121TS0$vol)>=2007 & time(T121TS0$vol) < 2010, "P7_B0"] <-  T121TS$vol[, "P7_B0"] - euroFight
 
 imp121_vol <- perHts(
    P7U2 = perTramo(window(T121TS0$vol[, "P7_U2"], start = c(2008,1)), template = "RSA3", 
@@ -32,7 +33,7 @@ imp121_vol <- perHts(
                    usrdef.var = td5, usrdef.varType = "Calendar", 
                    tradingdays.option = "UserDefined",
                    # Easter ---------------------------------------------------------------
-                   #            easter.type = "IncludeEaster", easter.duration = 6,
+                   # easter.type = NA, easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
                    arima.p  = 0, arima.d  = 1, arima.q  = 1, 
@@ -52,7 +53,7 @@ imp121_vol <- perHts(
                    usrdef.var = td5, usrdef.varType = "Calendar", 
                    tradingdays.option = "UserDefined",
                    # Easter ---------------------------------------------------------------
-                   #easter.type = "IncludeEaster", easter.duration = 6,
+                   # easter.type = NA, easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
                    arima.p  = 0, arima.d  = 1, arima.q  = 0, 
@@ -68,11 +69,11 @@ imp121_vol <- perHts(
                    usrdef.outliersDate = c("2020-01-01", "2020-04-01",
                                            "2020-07-01", "2020-10-01"),
                    # Trading Days ---------------------------------------------------------
-                   #usrdef.varEnabled = TRUE, 
-                   #usrdef.var = td5, usrdef.varType = "Calendar", 
-                   #tradingdays.option = "UserDefined",
+                   # usrdef.varEnabled = FALSE, 
+                   # usrdef.var = NA, usrdef.varType = "Calendar", 
+                   # tradingdays.option = "UserDefined",
                    # Easter ---------------------------------------------------------------
-                   #            easter.type = "IncludeEaster", easter.duration = 6,
+                   # easter.type = NA, easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = TRUE, 
                    arima.p  = 1, arima.d  = 1, arima.q  = 0,
@@ -92,17 +93,11 @@ T121Adj_Vol <- lapply(imp121_vol$components, function(x){
 
 # Eurofighter "rückabwickeln"
 T121Adj_Vola <- copy(T121Adj_Vol)
-T121Adj_Vola$P7[c(51, 52, 54, 56, 59) , 1] <- T121Adj_Vol$P7[c(51, 52, 54, 56, 59) , 1] + 
-  euroFight[c(3, 4, 6, 8, 11)]
-T121Adj_Vola$P7[c(51, 52, 54, 56, 59) , 2] <- T121Adj_Vol$P7[c(51, 52, 54, 56, 59) , 2] + 
-  euroFight[c(3, 4, 6, 8, 11)]
-T121Adj_Vola$P7[, 5] <- T121Adj_Vola$P7[, 2] / T121Adj_Vola$P7[, 3]
 
-T121Adj_Vola$P7U2[c(2, 4, 7) , 1] <- T121Adj_Vol$P7U2[c(2, 4, 7) , 1] + 
-  euroFight[c(6, 8, 11)]
-T121Adj_Vola$P7U2[c(2, 4, 7) , 2] <- T121Adj_Vol$P7U2[c(2, 4, 7) , 2] + 
-  euroFight[c(6, 8, 11)]
-T121Adj_Vola$P7U2[, 5] <- T121Adj_Vola$P7U2[, 2] / T121Adj_Vola$P7U2[, 3]
+# importe
+T121Adj_Vola$P7U2[time(T121Adj_Vola$P7U2)>=2007 & time(T121Adj_Vola$P7U2) < 2010 , "y"] <- T121Adj_Vol$P7U2[, "y"] + euroFight
+T121Adj_Vola$P7U2[time(T121Adj_Vola$P7U2)>=2007 & time(T121Adj_Vola$P7U2) < 2010 , "sa"] <- T121Adj_Vol$P7U2[, "sa"] + euroFight
+T121Adj_Vola$P7U2[, "i"] <- T121Adj_Vola$P7U2[, "sa"] / T121Adj_Vola$P7U2[, "t"]
 
 
 #####################
@@ -118,11 +113,11 @@ imp121_price <- perHts(
                    usrdef.outliersDate = c("2014-01-01", "2020-01-01", "2020-04-01",
                                            "2020-07-01", "2020-10-01"),
                    # Trading Days ---------------------------------------------------------
-                   #usrdef.varEnabled = TRUE, 
-                   #usrdef.var = td5, usrdef.varType = "Calendar", 
-                   #tradingdays.option = "UserDefined",
+                   # usrdef.varEnabled = FALSE, 
+                   # usrdef.var = NA, usrdef.varType = "Calendar", 
+                   # tradingdays.option = "UserDefined",
                    # Easter ---------------------------------------------------------------
-                   #            easter.type = "IncludeEaster", easter.duration = 6,
+                   # easter.type = NA, easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
                    arima.p  = 2, arima.d  = 0, arima.q  = 0, 
@@ -138,11 +133,11 @@ imp121_price <- perHts(
                    usrdef.outliersDate = c("2009-01-01", "2020-01-01", "2020-04-01",
                                            "2020-07-01", "2020-10-01"),
                    # Trading Days ---------------------------------------------------------
-                   #usrdef.varEnabled = TRUE, 
-                   #usrdef.var = td5lY, usrdef.varType = "Calendar", 
-                   #tradingdays.option = "UserDefined",
+                   # usrdef.varEnabled = FALSE, 
+                   # usrdef.var = NA, usrdef.varType = "Calendar", 
+                   # tradingdays.option = "UserDefined",
                    # Easter ---------------------------------------------------------------
-                   #easter.type = "IncludeEaster", easter.duration = 6,
+                   # easter.type = NA, easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
                    arima.p  = 0, arima.d  = 1, arima.q  = 1, 
@@ -159,11 +154,11 @@ imp121_price <- perHts(
                    usrdef.outliersDate = c("2009-01-01", "2020-01-01", "2020-04-01",
                                            "2020-07-01", "2020-10-01"),
                    # Trading Days ---------------------------------------------------------
-                   #usrdef.varEnabled = TRUE, 
-                   #usrdef.var = td5, usrdef.varType = "Calendar", 
-                   #tradingdays.option = "UserDefined",
+                   # usrdef.varEnabled = FALSE, 
+                   # usrdef.var = NA, usrdef.varType = "Calendar", 
+                   # tradingdays.option = "UserDefined",
                    # Easter ---------------------------------------------------------------
-                   #            easter.type = "IncludeEaster", easter.duration = 6,
+                   # easter.type = NA, easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
                    arima.p  = 0, arima.d  = 1, arima.q  = 0, 

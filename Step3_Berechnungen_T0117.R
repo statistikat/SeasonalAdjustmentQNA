@@ -4,7 +4,9 @@
 #
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Variablen aus MASTER Saisonbereigung.R erforderlich
+# Vorraussetzung: 
+# - Step2_Bereinigung_T0117_vol.R
+# - Step2_Bereinigung_T0117_preise.R
 
 
 T117Adj_Vol <- `names<-`(T117Adj_Vol, toupper(names(T117Adj_Vol)))
@@ -42,13 +44,3 @@ T117Y_sums <- lapply(c("nom", "vol"), function(b){
        P31K = T117Y_add[[b]][, "P31K"])
 }) %>%
   `names<-`(c("nom", "vol"))
-
-
-# __ Indirekt bereinigte nominelle Reihen =====
-# T117nom_sa <- mapply(function(x, y) {
-#   x[, 2] * y[, 2]/100
-# }, x = T117Adj_Vol, y = T117Adj_impPI_L)
-# 
-# T117nom_t <- mapply(function(x, y) {
-#   x[, 3] * y[, 3]/100
-# }, x = T117Adj_Vol, y = T117Adj_impPI_L)
