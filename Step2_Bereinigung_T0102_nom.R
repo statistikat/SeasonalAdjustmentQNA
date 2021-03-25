@@ -15,14 +15,14 @@ verw_nom <- perHts(
                         # Outliers -------------------------------------------------------------
                         outlier.enabled = TRUE,
                         # usrdef.outliersEnabled = FALSE, 
-                        # usrdef.outliersType = c("TC",  "AO", "AO", "AO", "AO"),
-                        # usrdef.outliersDate = c("2008-01-01","2020-01-01", "2020-04-01", "2020-07-01", "2020-10-01"),
+                        # usrdef.outliersType = NA,
+                        # usrdef.outliersDate = NA,
                         # Trading Days ---------------------------------------------------------
-                        #            usrdef.varEnabled = FALSE, 
-                        #            usrdef.var = td7, usrdef.varType = "Calendar", 
-                        #            tradingdays.option = "UserDefined",
+                        # usrdef.varEnabled = FALSE, 
+                        # usrdef.var = NA, usrdef.varType = "Calendar", 
+                        # tradingdays.option = "UserDefined",
                         # Easter ---------------------------------------------------------------
-                        #            easter.type = "IncludeEaster", easter.duration = 6,
+                        # easter.type = NA, easter.duration = 6,
                         # Arima-Model ----------------------------------------------------------
                         automdl.enabled = TRUE, 
                         arima.p  = 0, arima.d  = 1, arima.q  = 1, 
@@ -37,11 +37,11 @@ verw_nom <- perHts(
                         usrdef.outliersType = c("LS", "AO", "AO", "AO", "AO"),
                         usrdef.outliersDate = c("2019-10-01","2020-01-01", "2020-04-01", "2020-07-01", "2020-10-01"),
                         # Trading Days ---------------------------------------------------------
-                        #             usrdef.varEnabled = FALSE, 
-                        #             usrdef.var = td7lY, usrdef.varType = "Calendar", 
-                        #             tradingdays.option = "UserDefined",
+                        # usrdef.varEnabled = FALSE, 
+                        # usrdef.var = NA, usrdef.varType = "Calendar", 
+                        # tradingdays.option = "UserDefined",
                         # Easter ---------------------------------------------------------------
-                        #            easter.type = "IncludeEaster", easter.duration = 6,
+                        # easter.type = NA, easter.duration = 6,
                         # Arima-Model ----------------------------------------------------------
                         automdl.enabled = FALSE, 
                         arima.p  = 1, arima.d  = 0, arima.q  = 0, 

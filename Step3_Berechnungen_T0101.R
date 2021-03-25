@@ -8,21 +8,8 @@
 # - Step2_Bereinigung_T0101_vol.R
 # - Step2_Bereinigung_T0101_preise.R
 
-# Volumen ----
-T101Adj_vol <- lapply(ent_vol$components, function(x){
-  x$output$final$series
-})
-# d21 wird geteilt wegen Bruch
-T101Adj_vol$D21 <- ent_D21
 
 names(T101Adj_vol) <- gsub("ent_", "", names(T101Adj_vol))
-
-# Preise --------
-T101Adj_impPI_L <- lapply(ent_price$components, function(x){
-  x$output$final$series
-})
-
-
 names(T101Adj_impPI_L) <- gsub("ent_", "", names(T101Adj_impPI_L))
 
 # Indirekt bereinigte nominelle Reihen --------------
