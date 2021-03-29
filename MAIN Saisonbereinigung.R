@@ -10,8 +10,10 @@
 rm(list=ls())
 setwd("SeasonalAdjustmentQNA")
 # Pakete laden--------------------------
+# wenn noch nicht installiert (bei Bedarf evtl. aktualisieren)
 # devtools::install_github("statistikat/persephone")
 # devtools::install_github("statistikat/chainSTAT")
+
 library(persephone)
 library(chainSTAT)
 library(dplyr)
