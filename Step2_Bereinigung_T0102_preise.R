@@ -51,9 +51,11 @@ vcl_price <- perHts(
                         # Outliers -------------------------------------------------------------
                         outlier.enabled = FALSE, 
                         usrdef.outliersEnabled = TRUE, 
-                        usrdef.outliersType = c("AO", "TC", "AO", "AO", "AO", "AO"),
+                        usrdef.outliersType = c("AO", "TC", "AO", "AO", "AO", "AO", "AO"),
                         usrdef.outliersDate = c("2002-04-01", "2001-04-01",
-                                                "2020-01-01", "2020-04-01", "2020-07-01", "2020-10-01"),
+                                                "2020-01-01", "2020-04-01", 
+                                                "2020-07-01", "2020-10-01", 
+                                                "2021-01-01"),
                         # Trading Days ---------------------------------------------------------
                         # usrdef.varEnabled = FALSE, 
                         # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -71,8 +73,9 @@ vcl_price <- perHts(
                         # Outliers -------------------------------------------------------------
                         outlier.enabled = FALSE, 
                                      usrdef.outliersEnabled = TRUE, 
-                                     usrdef.outliersType = c("AO", "AO", "AO", "AO"),
-                                     usrdef.outliersDate = c("2020-01-01", "2020-04-01", "2020-07-01", "2020-10-01"),
+                                     usrdef.outliersType = c("AO", "AO", "AO", "AO", "AO"),
+                                     usrdef.outliersDate = c("2020-01-01", "2020-04-01", "2020-07-01", 
+                                                             "2020-10-01", "2021-01-01"),
                         # Trading Days ---------------------------------------------------------
                         # usrdef.varEnabled = FALSE, 
                         # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -167,8 +170,8 @@ vcl_price <- perHts(
                           # Outliers -------------------------------------------------------------
                           outlier.enabled = FALSE, 
                           usrdef.outliersEnabled = TRUE, 
-                          usrdef.outliersType = c("LS", "AO", "AO", "AO", "AO"),
-                          usrdef.outliersDate = c("2008-10-01","2020-01-01", "2020-04-01", "2020-07-01", "2020-10-01"),
+                          usrdef.outliersType = c("LS", "AO", "AO", "AO", "AO", "AO"),
+                          usrdef.outliersDate = c("2008-10-01","2020-01-01", "2020-04-01", "2020-07-01", "2020-10-01", "2021-01-01"),
                           # Trading Days ---------------------------------------------------------
                           # usrdef.varEnabled = FALSE, 
                           # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -186,9 +189,9 @@ vcl_price <- perHts(
                           # Outliers -------------------------------------------------------------
                           outlier.enabled = FALSE, 
                           usrdef.outliersEnabled = TRUE, 
-                          usrdef.outliersType = c("AO", "AO", "AO", "AO", "AO", "AO"),
+                          usrdef.outliersType = c("AO", "AO", "AO", "AO", "AO", "AO", "AO"),
                           usrdef.outliersDate = c("1998-07-01", "1999-04-01",
-                                                  "2020-01-01", "2020-04-01", "2020-07-01", "2020-10-01"),
+                                                  "2020-01-01", "2020-04-01", "2020-07-01", "2020-10-01", "2021-01-01"),
                           # Trading Days ---------------------------------------------------------
                           # usrdef.varEnabled = FALSE, 
                           # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -247,8 +250,8 @@ vcl_price <- perHts(
                          # Outliers -------------------------------------------------------------
                          outlier.enabled = FALSE, 
                          usrdef.outliersEnabled = TRUE, 
-                         usrdef.outliersType = c("AO", "AO", "AO", "AO", "AO"),
-                         usrdef.outliersDate = c("2019-04-01","2020-01-01", "2020-04-01", "2020-07-01", "2020-10-01"),
+                         usrdef.outliersType = c("AO", "AO", "AO", "AO", "AO", "AO"),
+                         usrdef.outliersDate = c("2019-04-01","2020-01-01", "2020-04-01", "2020-07-01", "2020-10-01", "2021-01-01"),
                          # Trading Days ---------------------------------------------------------
                          # usrdef.varEnabled = FALSE, 
                          # usrdef.var = NA, usrdef.varType = "Calendar", 
