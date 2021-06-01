@@ -15,7 +15,7 @@ devtools::install_github("statistikat/chainSTAT")
 ```
 
 
-### How use this Code
+### How to use this Code
 `MAIN Saisonbereinigung.R` performs all steps needed for the seasonal adjustment of QNA aggregates and calculates the sums. It calls all of the following steps:
 
 #### Step 1 Loading Data
@@ -25,7 +25,7 @@ The script `Step1_LoadInput.R` loads the files into the Global Environment.
 The scripts `Step2_Bereinigung_T01xxx.R` perform the adjustments using the `persephone` package.
 
 #### Step 3 Computing Sums
-The scripts `Step3_Bechnungen_T01xxx.R` derive adjusted series at cup and sums of aggregates. Series at cup are derived by multiplying adjusted vol series and deflators. Volume series are only defined for non-negative aggregates, so in those cases the series are adjusted at current prices. As volume series are not additive we need adjusted series at pyp to derive sums of aggregates. We follow the [Handbook for quarterly national accounts](https://ec.europa.eu/eurostat/documents/3859598/5936013/KS-GQ-13-004-EN.PDF/3544793c-0bde-4381-a7ad-a5cfe5d8c8d0) (§7.93) and use the seasonal factors of volume series to derive adjusted pyp series. 
+The scripts `Step3_Berechnungen_T01xxx.R` derive adjusted series at cup and sums of aggregates. Series at cup are derived by multiplying adjusted vol series and deflators. Volume series are only defined for non-negative aggregates, so in those cases the series are adjusted at current prices. As volume series are not additive we need adjusted series at pyp to derive sums of aggregates. We follow the [Handbook for quarterly national accounts](https://ec.europa.eu/eurostat/documents/3859598/5936013/KS-GQ-13-004-EN.PDF/3544793c-0bde-4381-a7ad-a5cfe5d8c8d0) (§7.93) and use the seasonal factors of volume series to derive adjusted pyp series. 
 
 ### Data
 The folder `data` contains the tables compiled by STAT and transmitted to Eurostat. Files can be imported using `load()`.
