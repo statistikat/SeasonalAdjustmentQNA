@@ -169,3 +169,7 @@ Table 121 refers to Imports. The file `T121.R` contains a list with 4 elements r
 |QNA|QVGR| Quarterly National Accounts|
 |vol|vol|chainlinked volumes|
 
+# Work with unpublished data (for internal use only)
+
+Data is generated in the repository 'qvgr_saisonbereinigung' (internal project and saved there until release). To update models for yearly revisions checkout branch JR20yy and make sure that `release` in `Step1_LoadInput`is set to `F`.
+
