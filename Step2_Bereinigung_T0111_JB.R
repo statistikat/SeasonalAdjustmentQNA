@@ -17,10 +17,10 @@ vert_JB_SAL <- perHts(
                      # Outliers -------------------------------------------------------------
                      outlier.enabled = FALSE,
                      usrdef.outliersEnabled = TRUE, 
-                     usrdef.outliersType = c("TC","AO",  "AO", "AO","AO", "AO", "AO", "AO"),
-                     usrdef.outliersDate = c("2007-01-01","2008-01-01", "2009-07-01", 
-                                             "2020-01-01", "2020-04-01","2020-07-01",
-                                             "2020-10-01", "2021-01-01"),
+                     usrdef.outliersType = c("TC", "AO",
+                                             "AO", "AO"),
+                     usrdef.outliersDate = c("2007-01-01", "2008-01-01",
+                                             "2008-10-01", "2020-04-01"),
                      # Trading Days ---------------------------------------------------------
                      # usrdef.varEnabled = FALSE, 
                      # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -29,8 +29,8 @@ vert_JB_SAL <- perHts(
                      # easter.type = NA, easter.duration = 6,
                      # Arima-Model ----------------------------------------------------------
                      automdl.enabled = FALSE, 
-                     arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                     arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+                     arima.p  = 1, arima.d  = 0, arima.q  = 0, 
+                     arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE),
   # ====================================================================================
   vert_BTE = perTramo(T111TS[, "SAL_JB_W2_BTE"], template = "RSA3", 
                        # Transformation -------------------------------------------------------
@@ -38,9 +38,8 @@ vert_JB_SAL <- perHts(
                        # Outliers -------------------------------------------------------------
                        outlier.enabled = FALSE,
                        usrdef.outliersEnabled = TRUE, 
-                       usrdef.outliersType = c("TC", "AO", "AO", "AO", "AO", "AO"),
-                       usrdef.outliersDate = c("2013-01-01","2020-01-01", "2020-04-01",
-                                               "2020-07-01", "2020-10-01", "2021-01-01"),
+                       usrdef.outliersType = c("TC", "LS"),
+                       usrdef.outliersDate = c("2013-01-01","2020-04-01"),
                        # Trading Days ---------------------------------------------------------
                        # usrdef.varEnabled = FALSE, 
                        # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -58,10 +57,10 @@ vert_JB_SAL <- perHts(
                      # Outliers -------------------------------------------------------------
                      outlier.enabled = FALSE, 
                      usrdef.outliersEnabled = TRUE, 
-                     usrdef.outliersType = c("LS","LS", "TC", "AO", "AO", "AO", "AO", "AO"),
-                     usrdef.outliersDate = c("2002-01-01","2009-07-01", "2013-01-01",
-                                             "2020-01-01", "2020-04-01","2020-07-01", 
-                                             "2020-10-01", "2021-01-01"),
+                     usrdef.outliersType = c("LS", "LS",
+                                             "TC", "LS"),
+                     usrdef.outliersDate = c("2002-01-01", "2009-07-01",
+                                             "2013-01-01", "2020-04-01"),
                      # Trading Days ---------------------------------------------------------
                      # usrdef.varEnabled = FALSE, 
                      # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -79,10 +78,10 @@ vert_JB_SAL <- perHts(
                      # Outliers -------------------------------------------------------------
                      outlier.enabled = FALSE, 
                      usrdef.outliersEnabled = TRUE, 
-                     usrdef.outliersType = c("AO","TC", "AO", "AO", "AO", "AO", "AO"),
+                     usrdef.outliersType = c("AO","TC",
+                                             "AO"),
                      usrdef.outliersDate = c("1996-01-01","2013-01-01", 
-                                             "2020-01-01", "2020-04-01",
-                                             "2020-07-01", "2020-10-01", "2021-01-01"),
+                                             "2020-04-01"),
                      # Trading Days ---------------------------------------------------------
                      # usrdef.varEnabled = FALSE, 
                      # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -91,7 +90,7 @@ vert_JB_SAL <- perHts(
                      # easter.type = NA, easter.duration = 6,
                      # Arima-Model ----------------------------------------------------------
                      automdl.enabled = FALSE, 
-                     arima.p  = 0, arima.d  = 1, arima.q  = 1, 
+                     arima.p  = 1, arima.d  = 0, arima.q  = 0, 
                      arima.bp = 0, arima.bd = 1, arima.bq = 0, arima.mu = FALSE),
   # ====================================================================================
   vert_GTI = perTramo(T111TS[, "SAL_JB_W2_GTI"] , template = "RSA3",
@@ -100,9 +99,10 @@ vert_JB_SAL <- perHts(
                        # Outliers -------------------------------------------------------------
                        outlier.enabled = FALSE, 
                        usrdef.outliersEnabled = TRUE, 
-                       usrdef.outliersType = c("AO", "AO", "AO", "AO", "AO"),
-                       usrdef.outliersDate = c("2020-01-01", "2020-04-01", "2020-07-01", 
-                                               "2020-10-01", "2021-01-01"),
+                       usrdef.outliersType = c("AO", "AO",
+                                               "AO", "AO", "AO"),
+                       usrdef.outliersDate = c("1998-04-01", "2012-10-01",
+                                               "2020-04-01"),
                        # Trading Days ---------------------------------------------------------
                        # usrdef.varEnabled = FALSE, 
                        # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -111,8 +111,8 @@ vert_JB_SAL <- perHts(
                        # easter.type = NA, easter.duration = 6,
                        # Arima-Model ----------------------------------------------------------
                        automdl.enabled = FALSE, 
-                       arima.p  = 0, arima.d  = 1, arima.q  = 0, 
-                       arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+                       arima.p  = 1, arima.d  = 1, arima.q  = 0, 
+                       arima.bp = 0, arima.bd = 1, arima.bq = 0, arima.mu = FALSE),
   # ====================================================================================
   vert_J = perTramo(T111TS[, "SAL_JB_W2_J"], template = "RSA3", 
                      # Transformation -------------------------------------------------------
@@ -139,9 +139,8 @@ vert_JB_SAL <- perHts(
                      # Outliers -------------------------------------------------------------
                      outlier.enabled = FALSE, 
                      usrdef.outliersEnabled = TRUE, 
-                     usrdef.outliersType = c("AO", "AO", "AO", "AO", "AO", "AO"),
-                     usrdef.outliersDate = c("2013-01-01", "2020-01-01", "2020-04-01",
-                                             "2020-07-01", "2020-10-01", "2021-01-01"),
+                     usrdef.outliersType = c("AO", "AO"),
+                     usrdef.outliersDate = c("2013-01-01", "2009-01-01"),
                      # Trading Days ---------------------------------------------------------
                      # usrdef.varEnabled = FALSE, 
                      # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -151,7 +150,7 @@ vert_JB_SAL <- perHts(
                      # Arima-Model ----------------------------------------------------------
                      automdl.enabled = FALSE, ######
                      arima.p  = 1, arima.d  = 0, arima.q  = 0, 
-                     arima.bp = 1, arima.bd = 0, arima.bq = 1, arima.mu = TRUE),
+                     arima.bp = 1, arima.bd = 0, arima.bq = 0, arima.mu = TRUE),
   # =====================================================================================
   vert_M_N = perTramo(T111TS[, "SAL_JB_W2_M_N"], template = "RSA3", 
                       # Transformation -------------------------------------------------------
@@ -159,10 +158,10 @@ vert_JB_SAL <- perHts(
                       # Outliers -------------------------------------------------------------
                       outlier.enabled = FALSE, 
                       usrdef.outliersEnabled = TRUE, 
-                      usrdef.outliersType = c("LS", "LS", "AO", "AO", "AO", "AO", "AO"),
+                      usrdef.outliersType = c("LS", "LS",
+                                              "TC"),
                       usrdef.outliersDate = c("1998-07-01", "2009-04-01",
-                                              "2020-01-01", "2020-04-01",
-                                              "2020-07-01", "2020-10-01", "2021-01-01"),
+                                              "2020-04-01"),
                       # Trading Days ---------------------------------------------------------
                       # usrdef.varEnabled = FALSE, 
                       # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -181,8 +180,8 @@ vert_JB_SAL <- perHts(
                        # Outliers -------------------------------------------------------------
                        outlier.enabled = FALSE, 
                        usrdef.outliersEnabled = TRUE, 
-                       usrdef.outliersType = c("TC"),
-                       usrdef.outliersDate = c("2009-10-01"),
+                       usrdef.outliersType = c("TC", "AO"),
+                       usrdef.outliersDate = c("2002-01-01", "2013-01-01"),
                        # Trading Days ---------------------------------------------------------
                        # usrdef.varEnabled = FALSE, 
                        # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -191,7 +190,7 @@ vert_JB_SAL <- perHts(
                        # easter.type = NA, easter.duration = 6,
                        # Arima-Model ----------------------------------------------------------
                        automdl.enabled = FALSE, 
-                       arima.p  = 2, arima.d  = 1, arima.q  = 0, 
+                       arima.p  = 0, arima.d  = 1, arima.q  = 0, 
                        arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # =====================================================================================
   vert_RTU = perTramo(T111TS[, "SAL_JB_W2_RTU"], template = "RSA3", 
@@ -200,9 +199,8 @@ vert_JB_SAL <- perHts(
                        # Outliers -------------------------------------------------------------
                        outlier.enabled = FALSE, 
                        usrdef.outliersEnabled = TRUE, 
-                       usrdef.outliersType = c("AO", "AO", "AO", "AO", "AO", "AO"),
-                       usrdef.outliersDate = c("1999-10-01", "2020-01-01", "2020-04-01",
-                                               "2020-07-01", "2020-10-01", "2021-01-01"),
+                       usrdef.outliersType = c("AO", "AO"),
+                       usrdef.outliersDate = c("1999-10-01", "2020-04-01"),
                        # Trading Days ---------------------------------------------------------
                        # usrdef.varEnabled = FALSE, 
                        # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -245,8 +243,8 @@ vert_Kb = perTramo(window(T111TS[, "SAL_JB_W2_K"], start = c(2003,1)), template 
                    # Outliers -------------------------------------------------------------
                    outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE,
-                   usrdef.outliersType = c("LS"),
-                   usrdef.outliersDate = c("2015-01-01"),
+                   usrdef.outliersType = c("LS", "TC"),
+                   usrdef.outliersDate = c("2015-01-01", "2014-01-01"),
                    # Trading Days ---------------------------------------------------------
                    # usrdef.varEnabled = FALSE,
                    # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -255,7 +253,7 @@ vert_Kb = perTramo(window(T111TS[, "SAL_JB_W2_K"], start = c(2003,1)), template 
                    # easter.type = NA, easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, ######
-                   arima.p  = 0, arima.d  = 1, arima.q  = 0,
+                   arima.p  = 0, arima.d  = 1, arima.q  = 1,
                    arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE)
 
 vert_Ka$run()
@@ -305,9 +303,9 @@ vert_JB_SELF <- perHts(
                      transform.function = "Log",
                      # Outliers -------------------------------------------------------------
                      outlier.enabled = FALSE,
-                     usrdef.outliersEnabled = TRUE, 
-                     usrdef.outliersType = c( "AO", "AO", "AO", "AO", "AO"),
-                     usrdef.outliersDate = c("2020-01-01", "2020-04-01","2020-07-01", "2020-10-01", "2021-01-01"),
+                     usrdef.outliersEnabled = FALSE, 
+                     #usrdef.outliersType = c( "AO", "AO", "AO", "AO", "AO"),
+                     #usrdef.outliersDate = c("2020-01-01", "2020-04-01","2020-07-01", "2020-10-01", "2021-01-01"),
                      # Trading Days ---------------------------------------------------------
                      # usrdef.varEnabled = FALSE, 
                      # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -317,7 +315,7 @@ vert_JB_SELF <- perHts(
                      # Arima-Model ----------------------------------------------------------
                      automdl.enabled = FALSE, 
                      arima.p  = 0, arima.d  = 1, arima.q  = 0, 
-                     arima.bp = 1, arima.bd = 0, arima.bq = 1, arima.mu = FALSE),
+                     arima.bp = 1, arima.bd = 0, arima.bq = 1, arima.mu = TRUE),
   # ====================================================================================
   vert_BTE = perTramo(T111TS[, "SELF_JB_W2_BTE"], template = "RSA3", 
                        # Transformation -------------------------------------------------------
@@ -364,8 +362,10 @@ vert_JB_SELF <- perHts(
                      # Outliers -------------------------------------------------------------
                      outlier.enabled = FALSE, 
                      usrdef.outliersEnabled = TRUE, 
-                     usrdef.outliersType = c("LS", "LS"),
-                     usrdef.outliersDate = c("1996-01-01", "2003-04-01"),
+                     usrdef.outliersType = c("TC", "LS",
+                                             "TC"),
+                     usrdef.outliersDate = c("1996-01-01", "2003-04-01",
+                                             "2004-10-01"),
                      # Trading Days ---------------------------------------------------------
                      # usrdef.varEnabled = FALSE, 
                      # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -374,8 +374,8 @@ vert_JB_SELF <- perHts(
                      # easter.type = NA, easter.duration = 6,
                      # Arima-Model ----------------------------------------------------------
                      automdl.enabled = FALSE, 
-                     arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                     arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+                     arima.p  = 2, arima.d  = 1, arima.q  = 0, 
+                     arima.bp = 1, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
   # ====================================================================================
   vert_GTI = perTramo(T111TS[, "SELF_JB_W2_GTI"] , template = "RSA3",
                        # Transformation -------------------------------------------------------
@@ -394,7 +394,7 @@ vert_JB_SELF <- perHts(
                        # Arima-Model ----------------------------------------------------------
                        automdl.enabled = FALSE, 
                        arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                       arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+                       arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE),
   # ====================================================================================
   vert_J = perTramo(T111TS[, "SELF_JB_W2_J"], template = "RSA3", 
                      # Transformation -------------------------------------------------------
@@ -452,7 +452,7 @@ vert_JB_SELF <- perHts(
                      # Arima-Model ----------------------------------------------------------
                      automdl.enabled = FALSE, ######
                      arima.p  = 0, arima.d  = 1, arima.q  = 0, 
-                     arima.bp = 1, arima.bd = 0, arima.bq = 1, arima.mu = FALSE),
+                     arima.bp = 0, arima.bd = 0, arima.bq = 1, arima.mu = TRUE),
   # =====================================================================================
   vert_M_N = perTramo(T111TS[, "SELF_JB_W2_M_N"], template = "RSA3", 
                       # Transformation -------------------------------------------------------
@@ -480,10 +480,10 @@ vert_JB_SELF <- perHts(
                        # Outliers -------------------------------------------------------------
                        outlier.enabled = FALSE, 
                        usrdef.outliersEnabled = TRUE, 
-                       usrdef.outliersType = c("LS", "LS","AO", "AO","AO", "AO","AO", "AO"),
-                       usrdef.outliersDate = c("1996-01-01", "2008-10-01", "2009-01-01", 
-                                               "2020-01-01", "2020-04-01", "2020-07-01", 
-                                               "2020-10-01", "2021-01-01"),
+                       usrdef.outliersType = c("LS", "TC",
+                                               "AO"),
+                       usrdef.outliersDate = c("1996-01-01", "2008-10-01",
+                                               "2009-01-01"),
                        # Trading Days ---------------------------------------------------------
                        # usrdef.varEnabled = FALSE, 
                        # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -492,8 +492,8 @@ vert_JB_SELF <- perHts(
                        # easter.type = NA, easter.duration = 6,
                        # Arima-Model ----------------------------------------------------------
                        automdl.enabled = FALSE, 
-                       arima.p  = 2, arima.d  = 1, arima.q  = 1, 
-                       arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+                       arima.p  = 1, arima.d  = 0, arima.q  = 1, 
+                       arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE),
   # =====================================================================================
   vert_RTU = perTramo(T111TS[, "SELF_JB_W2_RTU"], template = "RSA3", 
                        # Transformation -------------------------------------------------------  
@@ -501,9 +501,8 @@ vert_JB_SELF <- perHts(
                        # Outliers -------------------------------------------------------------
                        outlier.enabled = FALSE, 
                        usrdef.outliersEnabled = TRUE, 
-                       usrdef.outliersType = c("AO", "AO", "AO", "AO", "AO", "AO"),
-                       usrdef.outliersDate = c("2012-10-01", "2020-01-01", "2020-04-01",
-                                               "2020-07-01", "2020-10-01", "2021-01-01"),
+                       usrdef.outliersType = c("AO", "AO"),
+                       usrdef.outliersDate = c("2012-10-01", "2020-04-01"),
                        # Trading Days ---------------------------------------------------------
                        # usrdef.varEnabled = FALSE, 
                        # usrdef.var = NA, usrdef.varType = "Calendar", 

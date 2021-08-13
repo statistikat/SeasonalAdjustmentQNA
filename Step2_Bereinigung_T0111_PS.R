@@ -17,12 +17,10 @@ vert_PS_SAL <- perHts(
                      # Outliers -------------------------------------------------------------
                      outlier.enabled = FALSE,
                      usrdef.outliersEnabled = TRUE, 
-                     usrdef.outliersType = c("AO", "AO", "AO","AO", 
-                                             "AO", "AO", "AO"),
+                     usrdef.outliersType = c("AO", "AO",
+                                             "AO"),
                      usrdef.outliersDate = c("2009-01-01", "2009-07-01",
-                                             "2020-01-01", "2020-04-01",
-                                             "2020-07-01", "2020-10-01", 
-                                             "2021-01-01"),
+                                             "2020-04-01"),
                      # Trading Days ---------------------------------------------------------
                      # usrdef.varEnabled = FALSE, 
                      # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -31,7 +29,7 @@ vert_PS_SAL <- perHts(
                      # easter.type = NA, easter.duration = 6,
                      # Arima-Model ----------------------------------------------------------
                      automdl.enabled = FALSE, 
-                     arima.p  = 0, arima.d  = 1, arima.q  = 0, 
+                     arima.p  = 1, arima.d  = 0, arima.q  = 0, 
                      arima.bp = 0, arima.bd = 1, arima.bq = 0, arima.mu = TRUE),
   # ====================================================================================
   vert_BTE = perTramo(T111TS[, "SAL_PS_W2_BTE"], template = "RSA3", 
@@ -40,12 +38,10 @@ vert_PS_SAL <- perHts(
                        # Outliers -------------------------------------------------------------
                        outlier.enabled = FALSE,
                        usrdef.outliersEnabled = TRUE, 
-                       usrdef.outliersType = c("LS", "LS", "LS", "AO", 
-                                               "AO", "AO", "AO"),
+                       usrdef.outliersType = c("LS", "LS", 
+                                               "LS", "LS"),
                        usrdef.outliersDate = c("1996-01-01", "2009-04-01",
-                                               "2009-07-01", "2020-01-01", 
-                                               "2020-04-01", "2020-07-01", 
-                                               "2020-10-01"),
+                                               "2009-07-01", "2020-04-01"),
                        # Trading Days ---------------------------------------------------------
                        # usrdef.varEnabled = FALSE, 
                        # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -63,12 +59,10 @@ vert_PS_SAL <- perHts(
                      # Outliers -------------------------------------------------------------
                      outlier.enabled = FALSE, 
                      usrdef.outliersEnabled = TRUE, 
-                     usrdef.outliersType = c("LS", "LS", "LS", "AO", 
-                                             "AO", "AO", "AO"),
-                     usrdef.outliersDate = c("1996-01-01", "2009-04-01", 
-                                             "2009-07-01", "2020-01-01", 
-                                             "2020-04-01", "2020-07-01", 
-                                             "2020-10-01"),
+                     usrdef.outliersType = c("LS", "LS", 
+                                             "LS", "LS"),
+                     usrdef.outliersDate = c("1996-01-01", "2009-04-01",
+                                             "2009-07-01", "2020-04-01"),
                      # Trading Days ---------------------------------------------------------
                      # usrdef.varEnabled = FALSE, 
                      # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -86,11 +80,10 @@ vert_PS_SAL <- perHts(
                      # Outliers -------------------------------------------------------------
                      outlier.enabled = FALSE, 
                      usrdef.outliersEnabled = TRUE, 
-                     usrdef.outliersType = c("AO", "AO", "TC", "AO", 
-                                             "AO", "AO", "AO"),
-                     usrdef.outliersDate = c("2005-01-01","2006-01-01", "2008-01-01", 
-                                             "2020-01-01", "2020-04-01","2020-07-01",
-                                             "2020-10-01"),
+                     usrdef.outliersType = c("AO", "AO", 
+                                             "TC", "AO"),
+                     usrdef.outliersDate = c("2005-01-01","2006-01-01",
+                                             "2008-01-01","2020-04-01"),
                      # Trading Days ---------------------------------------------------------
                      # usrdef.varEnabled = FALSE, 
                      # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -122,21 +115,17 @@ vert_PS_SAL <- perHts(
                        # easter.type = NA, easter.duration = 6,
                        # Arima-Model ----------------------------------------------------------
                        automdl.enabled = FALSE, 
-                       arima.p  = 0, arima.d  = 1, arima.q  = 1, 
+                       arima.p  = 0, arima.d  = 1, arima.q  = 0, 
                        arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
   vert_J = perTramo(T111TS[, "SAL_PS_W2_J"], template = "RSA3", 
                      # Transformation -------------------------------------------------------
-                     transform.function = "None",
+                     transform.function = "Log",
                      # Outliers -------------------------------------------------------------
                      outlier.enabled = FALSE, 
                      usrdef.outliersEnabled = TRUE, 
-                     usrdef.outliersType = c("AO", "LS", "AO", "AO",
-                                             "AO", "AO", "AO"),
-                     usrdef.outliersDate = c("2006-10-01", "2000-01-01",
-                                             "2020-01-01", "2020-04-01",
-                                             "2020-07-01", "2020-10-01", 
-                                             "2021-01-01"),
+                     usrdef.outliersType = c("AO", "LS"),
+                     usrdef.outliersDate = c("2006-10-01", "2000-01-01"),
                      # Trading Days ---------------------------------------------------------
                      # usrdef.varEnabled = FALSE, 
                      # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -145,7 +134,7 @@ vert_PS_SAL <- perHts(
                      # easter.type = NA, easter.duration = 6,
                      # Arima-Model ----------------------------------------------------------
                      automdl.enabled = FALSE, 
-                     arima.p  = 0, arima.d  = 1, arima.q  = 1, 
+                     arima.p  = 0, arima.d  = 1, arima.q  = 0, 
                      arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # =====================================================================================
   vert_K = perTramo(T111TS[, "SAL_PS_W2_K"], template = "RSA3",
@@ -153,11 +142,11 @@ vert_PS_SAL <- perHts(
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
                     outlier.enabled = FALSE,
-                    usrdef.outliersEnabled = TRUE,
-                    usrdef.outliersType = c("AO", "AO","AO", "AO", "AO"),
-                    usrdef.outliersDate = c("2020-01-01", "2020-04-01",
-                                            "2020-07-01", "2020-10-01", 
-                                            "2021-01-01"),
+                    usrdef.outliersEnabled = FALSE,
+                    #usrdef.outliersType = c("AO", "AO","AO", "AO", "AO"),
+                    #usrdef.outliersDate = c("2020-01-01", "2020-04-01",
+                    #                        "2020-07-01", "2020-10-01", 
+                    #                        "2021-01-01"),
                     # Trading Days ---------------------------------------------------------
                     # usrdef.varEnabled = FALSE,
                     # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -175,10 +164,8 @@ vert_PS_SAL <- perHts(
                      # Outliers -------------------------------------------------------------
                      outlier.enabled = FALSE, 
                      usrdef.outliersEnabled = TRUE, 
-                     usrdef.outliersType = c("AO", "AO", "AO","AO", 
-                                             "AO", "AO"),
-                     usrdef.outliersDate = c("2015-01-01","2020-01-01", "2020-04-01",
-                                             "2020-07-01", "2020-10-01", "2021-01-01"),
+                     usrdef.outliersType = c("AO"),
+                     usrdef.outliersDate = c("2015-01-01"),
                      # Trading Days ---------------------------------------------------------
                      # usrdef.varEnabled = FALSE, 
                      # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -196,9 +183,10 @@ vert_PS_SAL <- perHts(
                       # Outliers -------------------------------------------------------------
                       outlier.enabled = FALSE, 
                       usrdef.outliersEnabled = TRUE, 
-                      usrdef.outliersType = c("AO", "AO","AO", "AO", "AO"),
-                      usrdef.outliersDate = c("2020-01-01", "2020-04-01","2020-07-01", 
-                                              "2020-10-01", "2021-01-01"),
+                      usrdef.outliersType = c("AO", "LS",
+                                              "TC"),
+                      usrdef.outliersDate = c("2009-01-01", "2009-04-01",
+                                              "2020-04-01"),
                       # Trading Days ---------------------------------------------------------
                       # usrdef.varEnabled = FALSE, 
                       # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -207,7 +195,7 @@ vert_PS_SAL <- perHts(
                       # easter.type = NA, easter.duration = 6,
                       # Arima-Model ----------------------------------------------------------
                       automdl.enabled = FALSE,
-                      arima.p  = 1, arima.d  = 1, arima.q  = 0, 
+                      arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                       arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # =====================================================================================
   vert_OTQ = perTramo(T111TS[, "SAL_PS_W2_OTQ"], template = "RSA3", 
@@ -216,9 +204,8 @@ vert_PS_SAL <- perHts(
                        # Outliers -------------------------------------------------------------
                        outlier.enabled = FALSE, 
                        usrdef.outliersEnabled = TRUE,
-                       usrdef.outliersType = c("AO", "AO","AO", "AO", "AO"),
-                       usrdef.outliersDate = c("2020-01-01", "2020-04-01",
-                                               "2020-07-01", "2020-10-01", "2021-01-01"),
+                       usrdef.outliersType = c("LS"),
+                       usrdef.outliersDate = c("2009-01-01"),
                        # Trading Days ---------------------------------------------------------
                        # usrdef.varEnabled = FALSE, 
                        # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -227,8 +214,8 @@ vert_PS_SAL <- perHts(
                        # easter.type = NA, easter.duration = 6,
                        # Arima-Model ----------------------------------------------------------
                        automdl.enabled = FALSE, 
-                       arima.p  = 0, arima.d  = 1, arima.q  = 0, 
-                       arima.bp = 1, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+                       arima.p  = 0, arima.d  = 1, arima.q  = 1, 
+                       arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # =====================================================================================
   vert_RTU = perTramo(T111TS[, "SAL_PS_W2_RTU"], template = "RSA3", 
                        # Transformation -------------------------------------------------------  
@@ -236,9 +223,8 @@ vert_PS_SAL <- perHts(
                        # Outliers -------------------------------------------------------------
                        outlier.enabled = FALSE, 
                        usrdef.outliersEnabled = TRUE, 
-                       usrdef.outliersType = c("LS", "AO", "AO","AO", "AO", "AO"),
-                       usrdef.outliersDate = c("2004-01-01", "2020-01-01", "2020-04-01",
-                                               "2020-07-01", "2020-10-01", "2021-01-01"),
+                       usrdef.outliersType = c("AO", "AO"),
+                       usrdef.outliersDate = c("2020-04-01", "2021-01-01"),
                        # Trading Days ---------------------------------------------------------
                        # usrdef.varEnabled = FALSE, 
                        # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -300,7 +286,7 @@ vert_PS_SELF <- perHts(
                        # easter.type = NA, easter.duration = 6,
                        # Arima-Model ----------------------------------------------------------
                        automdl.enabled = FALSE, 
-                       arima.p  = 1, arima.d  = 0, arima.q  = 0, 
+                       arima.p  = 2, arima.d  = 0, arima.q  = 0, 
                        arima.bp = 1, arima.bd = 0, arima.bq = 0, arima.mu = TRUE),
   # ====================================================================================
   vert_C = perTramo(T111TS[, "SELF_PS_W2_C"], template = "RSA3",
@@ -319,8 +305,8 @@ vert_PS_SELF <- perHts(
                      # easter.type = NA, easter.duration = 6,
                      # Arima-Model ----------------------------------------------------------
                      automdl.enabled = FALSE, 
-                     arima.p  = 1, arima.d  = 0, arima.q  = 0, 
-                     arima.bp = 1, arima.bd = 0, arima.bq = 0, arima.mu = TRUE),
+                     arima.p  = 0, arima.d  = 1, arima.q  = 1, 
+                     arima.bp = 1, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
   # ====================================================================================
   vert_F = perTramo(T111TS[, "SELF_PS_W2_F"], template = "RSA3",
                      # Transformation -------------------------------------------------------
@@ -347,10 +333,8 @@ vert_PS_SELF <- perHts(
                        # Outliers -------------------------------------------------------------
                        outlier.enabled = FALSE, 
                        usrdef.outliersEnabled = TRUE, 
-                       usrdef.outliersType = c("LS", "AO", "AO", "AO", 
-                                               "AO", "AO"),
-                       usrdef.outliersDate = c("1996-01-01","2020-01-01", "2020-04-01",
-                                               "2020-07-01", "2020-10-01", "2021-01-01"),
+                       usrdef.outliersType = c("LS"),
+                       usrdef.outliersDate = c("1996-01-01"),
                        # Trading Days ---------------------------------------------------------
                        # usrdef.varEnabled = FALSE, 
                        # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -360,7 +344,7 @@ vert_PS_SELF <- perHts(
                        # Arima-Model ----------------------------------------------------------
                        automdl.enabled = FALSE, 
                        arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                       arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = TRUE),
+                       arima.bp = 1, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
   # ====================================================================================
   vert_J = perTramo(T111TS[, "SELF_PS_W2_J"], template = "RSA3", 
                      # Transformation -------------------------------------------------------
@@ -368,8 +352,10 @@ vert_PS_SELF <- perHts(
                      # Outliers -------------------------------------------------------------
                      outlier.enabled = FALSE, 
                      usrdef.outliersEnabled = TRUE, 
-                     usrdef.outliersType = c("AO"),
-                     usrdef.outliersDate = c("2001-01-01"),
+                     usrdef.outliersType = c("AO", "TC",
+                                             "TC"),
+                     usrdef.outliersDate = c("2001-01-01", "1998-01-01",
+                                             "2006-01-01"),
                      # Trading Days ---------------------------------------------------------
                      # usrdef.varEnabled = FALSE, 
                      # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -379,7 +365,7 @@ vert_PS_SELF <- perHts(
                      # Arima-Model ----------------------------------------------------------
                      automdl.enabled = FALSE, 
                      arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                     arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = TRUE),
+                     arima.bp = 0, arima.bd = 0, arima.bq = 1, arima.mu = TRUE),
   # =====================================================================================
   vert_K = perTramo(T111TS[, "SELF_PS_W2_K"], template = "RSA3", 
                      # Transformation -------------------------------------------------------
@@ -398,7 +384,7 @@ vert_PS_SELF <- perHts(
                      # easter.type = NA, easter.duration = 6,
                      # Arima-Model ----------------------------------------------------------
                      automdl.enabled = FALSE, ######
-                     arima.p  = 0, arima.d  = 1, arima.q  = 0, 
+                     arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                      arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
   # =====================================================================================
   vert_L = perTramo(T111TS[, "SELF_PS_W2_L"], template = "RSA3", 
@@ -417,7 +403,7 @@ vert_PS_SELF <- perHts(
                      # easter.type = NA, easter.duration = 6,
                      # Arima-Model ----------------------------------------------------------
                      automdl.enabled = FALSE, ######
-                     arima.p  = 0, arima.d  = 1, arima.q  = 1, 
+                     arima.p  = 0, arima.d  = 1, arima.q  = 0, 
                      arima.bp = 1, arima.bd = 0, arima.bq = 0, arima.mu = TRUE),
   # =====================================================================================
   vert_M_N = perTramo(T111TS[, "SELF_PS_W2_M_N"], template = "RSA3", 
@@ -437,7 +423,7 @@ vert_PS_SELF <- perHts(
                       # Arima-Model ----------------------------------------------------------
                       automdl.enabled = FALSE,
                       arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                      arima.bp = 1, arima.bd = 0, arima.bq = 1, arima.mu = FALSE),
+                      arima.bp = 1, arima.bd = 0, arima.bq = 1, arima.mu = TRUE),
   # =====================================================================================
   vert_OTQ = perTramo(T111TS[, "SELF_PS_W2_OTQ"], template = "RSA3", 
                        # Transformation -------------------------------------------------------        
