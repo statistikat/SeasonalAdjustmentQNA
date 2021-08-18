@@ -43,7 +43,7 @@ imp121_vol <- perHts(
                    transform.function = "Log",
                    # Outliers -------------------------------------------------------------
                    outlier.enabled = FALSE, 
-                   usrdef.outliersEnabled = TRUE, 
+                   usrdef.outliersEnabled = TRUE,
                    usrdef.outliersType = c("LS", "LS",
                                            "TC"),
                    usrdef.outliersDate = c("2009-01-01", "2020-01-01", 

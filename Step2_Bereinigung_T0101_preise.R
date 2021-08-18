@@ -305,7 +305,7 @@ ent_price <- perHts(
                       arima.p  = 2, arima.d  = 1, arima.q  = 1, 
                       arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE)
   # =====================================================================================
-  
+
 )
 
 ent_price$run()

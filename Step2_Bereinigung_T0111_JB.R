@@ -514,7 +514,7 @@ vert_JB_SELF <- perHts(
                        arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                        arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE)
   # =====================================================================================
-  
+ 
 )
 
 vert_JB_SELF $run()

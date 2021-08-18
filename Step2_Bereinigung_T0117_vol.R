@@ -71,7 +71,7 @@ kons_vol <- perHts(
                    # Transformation -------------------------------------------------------
                    transform.function = "Log",
                    # Outliers -------------------------------------------------------------
-                   outlier.enabled = FALSE, 
+                   outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE, 
                    usrdef.outliersType = c("AO", "AO", "AO", "AO", "AO"),
                    usrdef.outliersDate = c("2020-01-01", "2020-04-01", "2020-07-01",

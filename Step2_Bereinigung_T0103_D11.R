@@ -223,7 +223,7 @@ vert_D11 <- perHts(
                        # Transformation -------------------------------------------------------  
                        transform.function = "Log",
                        # Outliers -------------------------------------------------------------
-                       outlier.enabled = FALSE, 
+                       outlier.enabled = FALSE,
                        usrdef.outliersEnabled = TRUE, 
                        usrdef.outliersType = c("AO", "AO",
                                                "AO"),

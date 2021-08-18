@@ -3,7 +3,7 @@
 # Saisonbereigigung T0101 Entstehung Volumen
 #
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~
-# T101TS muss geladen sein
+# T101TS muss geladen sein 
 
 ent_vol <- perHts(
   # Hier wurden AT6 plus Easter identifiziert (Grenzwert)

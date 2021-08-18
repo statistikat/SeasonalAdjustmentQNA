@@ -92,7 +92,6 @@ kons_price <- perHts(
 
 kons_price$run()
 
-
 ################################################################################
 # Reihen, die Stückweise bereinigt wurden........................
 

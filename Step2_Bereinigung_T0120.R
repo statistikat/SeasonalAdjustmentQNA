@@ -32,7 +32,7 @@ exp120_vol <- perHts(
                    # Transformation -------------------------------------------------------
                    transform.function = "Log",
                    # Outliers -------------------------------------------------------------
-                   outlier.enabled = FALSE, 
+                   outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE, 
                    usrdef.outliersType = c("LS", "LS", 
                                            "AO"),

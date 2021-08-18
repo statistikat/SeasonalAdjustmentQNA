@@ -389,7 +389,7 @@ T102Adj_vol <- lapply(vcl_vol$components, function(x){
   x$output$final$series
 })
 
-T102Adj_vol$vcl_P31_S15 <- vcl_P31_S15
+T102Adj_vol$vcl_P31_S15 <- vcl_P31_S15 
 
 
 # Eurofighter "rückabwickeln"

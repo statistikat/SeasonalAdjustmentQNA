@@ -336,7 +336,7 @@ vcl_AN117a = perTramo(window(T102TS$impPI_L[, "AN117"], end = c(2011, 4)), templ
                         transform.function = "Log",
                         # Outliers -------------------------------------------------------------
                         outlier.enabled = FALSE, 
-                        usrdef.outliersEnabled = TRUE, 
+                        usrdef.outliersEnabled = TRUE,
                         usrdef.outliersType = c("TC", "TC",
                                                 "LS"),
                         usrdef.outliersDate = c("1999-01-01", "2002-01-01",

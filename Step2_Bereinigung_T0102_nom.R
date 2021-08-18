@@ -25,7 +25,7 @@ verw_nom <- perHts(
                         # easter.type = NA, easter.duration = 6,
                         # Arima-Model ----------------------------------------------------------
                         automdl.enabled = TRUE, 
-                        arima.p  = 0, arima.d  = 1, arima.q  = 2, 
+                        arima.p  = 0, arima.d  = 1, arima.q  = 2,
                         arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
   # ====================================================================================
   verw_P52 = perTramo(T102TS$nom[, "P52"], template = "RSA3", 

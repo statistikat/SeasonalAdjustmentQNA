@@ -228,7 +228,7 @@ vert_D12 <- perHts(
                        arima.p  = 3, arima.d  = 1, arima.q  = 1, 
                        arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE)
   # =====================================================================================
-  
+
 )
 
 vert_D12$run()

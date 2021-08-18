@@ -44,7 +44,7 @@ vert_rest <- perHts(
                       # easter.type = NA, easter.duration = 6,
                       # Arima-Model ----------------------------------------------------------
                       automdl.enabled = FALSE,
-                      arima.p  = 0, arima.d  = 1, arima.q  = 1, 
+                      arima.p  = 0, arima.d  = 1, arima.q  = 1,
                       arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE)
 )
 
