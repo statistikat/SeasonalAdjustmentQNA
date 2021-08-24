@@ -41,10 +41,10 @@ ent_vol <- perHts(
                                               "2020-04-01"),
                       # Trading Days ---------------------------------------------------------
                       usrdef.varEnabled = TRUE, 
-                      usrdef.var = td7, usrdef.varType = "Calendar", 
+                      usrdef.var = td7lY, usrdef.varType = "Calendar", 
                       tradingdays.option = "UserDefined",
                       # Easter ---------------------------------------------------------------
-                      #easter.type = "IncludeEaster", easter.duration = 6,
+                      easter.type = "IncludeEaster", easter.duration = 6,
                       # Arima-Model ----------------------------------------------------------
                       automdl.enabled = FALSE, 
                       arima.p  = 0, arima.d  = 1, arima.q  = 0, 
@@ -62,10 +62,10 @@ ent_vol <- perHts(
                                             "2020-04-01"),
                     # Trading Days ---------------------------------------------------------
                     usrdef.varEnabled = TRUE, 
-                    usrdef.var = td7, usrdef.varType = "Calendar", 
+                    usrdef.var = td7lY, usrdef.varType = "Calendar", 
                     tradingdays.option = "UserDefined",
                     # Easter ---------------------------------------------------------------
-                    #easter.type = "IncludeEaster", easter.duration = 6,
+                    easter.type = "IncludeEaster", easter.duration = 6,
                     # Arima-Model ----------------------------------------------------------
                     automdl.enabled = FALSE, 
                     arima.p  = 0, arima.d  = 1, arima.q  = 0, 
@@ -152,14 +152,18 @@ ent_vol <- perHts(
   # ====================================================================================
   ent_I = perTramo(T101TS$vol[, "I"], template = "RSA3",
                     # Transformation -------------------------------------------------------
-                    transform.function = "None",
+                    transform.function = "Log",
                     # Outliers -------------------------------------------------------------
                     outlier.enabled = FALSE, 
                     usrdef.outliersEnabled = TRUE, 
-                    usrdef.outliersType = c( "AO", "LS", "LS", "LS", "AO", "AO"),
-                    usrdef.outliersDate = c("2008-01-01", "2018-01-01",
-                                            "2019-01-01", "2020-04-01", 
-                                            "2020-07-01", "2021-01-01"),
+                    usrdef.outliersType = c( "AO", "TC",
+                                             "TC", "AO",
+                                             "AO", "AO",
+                                             "AO", "AO"),
+                    usrdef.outliersDate = c("2008-01-01", "2003-10-01",
+                                            "2018-10-01", "2020-01-01",
+                                            "2020-04-01", "2020-07-01",
+                                            "2020-10-01", "2021-01-01"),
                     # Trading Days ---------------------------------------------------------
                     # usrdef.varEnabled = FALSE,
                     # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -169,7 +173,7 @@ ent_vol <- perHts(
                     # Arima-Model ----------------------------------------------------------
                     automdl.enabled = FALSE, 
                     arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                    arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+                    arima.bp = 0, arima.bd = 1, arima.bq = 0, arima.mu = FALSE),
   # ====================================================================================
   ent_J = perTramo(T101TS$vol[, "J"], template = "RSA3", 
                     # Transformation -------------------------------------------------------
