@@ -17,10 +17,9 @@ vert_JB_SAL <- perHts(
                      # Outliers -------------------------------------------------------------
                      outlier.enabled = FALSE,
                      usrdef.outliersEnabled = TRUE, 
-                     usrdef.outliersType = c("TC","AO",  "AO", "AO","AO", "AO", "AO", "AO"),
+                     usrdef.outliersType = c("TC","AO", "AO", "AO"),
                      usrdef.outliersDate = c("2007-01-01","2008-01-01", "2009-07-01", 
-                                             "2020-01-01", "2020-04-01","2020-07-01",
-                                             "2020-10-01", "2021-01-01"),
+                                             "2020-04-01"),
                      # Trading Days ---------------------------------------------------------
                      # usrdef.varEnabled = FALSE, 
                      # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -38,9 +37,10 @@ vert_JB_SAL <- perHts(
                        # Outliers -------------------------------------------------------------
                        outlier.enabled = FALSE,
                        usrdef.outliersEnabled = TRUE, 
-                       usrdef.outliersType = c("TC", "AO", "AO", "AO", "AO", "AO"),
+                       usrdef.outliersType = c("TC", "AO", "AO", "AO", "AO", "AO", "AO"),
                        usrdef.outliersDate = c("2013-01-01","2020-01-01", "2020-04-01",
-                                               "2020-07-01", "2020-10-01", "2021-01-01"),
+                                               "2020-07-01", "2020-10-01", "2021-01-01", 
+                                               "2021-04-01"),
                        # Trading Days ---------------------------------------------------------
                        # usrdef.varEnabled = FALSE, 
                        # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -58,10 +58,10 @@ vert_JB_SAL <- perHts(
                      # Outliers -------------------------------------------------------------
                      outlier.enabled = FALSE, 
                      usrdef.outliersEnabled = TRUE, 
-                     usrdef.outliersType = c("LS","LS", "TC", "AO", "AO", "AO", "AO", "AO"),
+                     usrdef.outliersType = c("LS","LS", "TC", "AO", "AO", "AO", "AO", "AO", "AO"),
                      usrdef.outliersDate = c("2002-01-01","2009-07-01", "2013-01-01",
                                              "2020-01-01", "2020-04-01","2020-07-01", 
-                                             "2020-10-01", "2021-01-01"),
+                                             "2020-10-01", "2021-01-01", "2021-04-01"),
                      # Trading Days ---------------------------------------------------------
                      # usrdef.varEnabled = FALSE, 
                      # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -79,10 +79,9 @@ vert_JB_SAL <- perHts(
                      # Outliers -------------------------------------------------------------
                      outlier.enabled = FALSE, 
                      usrdef.outliersEnabled = TRUE, 
-                     usrdef.outliersType = c("AO","TC", "AO", "AO", "AO", "AO", "AO"),
+                     usrdef.outliersType = c("AO","TC", "AO"),
                      usrdef.outliersDate = c("1996-01-01","2013-01-01", 
-                                             "2020-01-01", "2020-04-01",
-                                             "2020-07-01", "2020-10-01", "2021-01-01"),
+                                             "2020-04-01"),
                      # Trading Days ---------------------------------------------------------
                      # usrdef.varEnabled = FALSE, 
                      # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -100,9 +99,9 @@ vert_JB_SAL <- perHts(
                        # Outliers -------------------------------------------------------------
                        outlier.enabled = FALSE, 
                        usrdef.outliersEnabled = TRUE, 
-                       usrdef.outliersType = c("AO", "AO", "AO", "AO", "AO"),
+                       usrdef.outliersType = c("AO", "AO", "AO", "AO", "AO", "AO"),
                        usrdef.outliersDate = c("2020-01-01", "2020-04-01", "2020-07-01", 
-                                               "2020-10-01", "2021-01-01"),
+                                               "2020-10-01", "2021-01-01", "2021-04-01"),
                        # Trading Days ---------------------------------------------------------
                        # usrdef.varEnabled = FALSE, 
                        # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -139,9 +138,9 @@ vert_JB_SAL <- perHts(
                      # Outliers -------------------------------------------------------------
                      outlier.enabled = FALSE, 
                      usrdef.outliersEnabled = TRUE, 
-                     usrdef.outliersType = c("AO", "AO", "AO", "AO", "AO", "AO"),
+                     usrdef.outliersType = c("AO", "AO", "AO", "AO", "AO", "AO", "AO"),
                      usrdef.outliersDate = c("2013-01-01", "2020-01-01", "2020-04-01",
-                                             "2020-07-01", "2020-10-01", "2021-01-01"),
+                                             "2020-07-01", "2020-10-01", "2021-01-01", "2021-04-01"),
                      # Trading Days ---------------------------------------------------------
                      # usrdef.varEnabled = FALSE, 
                      # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -159,10 +158,11 @@ vert_JB_SAL <- perHts(
                       # Outliers -------------------------------------------------------------
                       outlier.enabled = FALSE, 
                       usrdef.outliersEnabled = TRUE, 
-                      usrdef.outliersType = c("LS", "LS", "AO", "AO", "AO", "AO", "AO"),
+                      usrdef.outliersType = c("LS", "LS", "AO", "AO", "AO", "AO", "AO", "AO"),
                       usrdef.outliersDate = c("1998-07-01", "2009-04-01",
                                               "2020-01-01", "2020-04-01",
-                                              "2020-07-01", "2020-10-01", "2021-01-01"),
+                                              "2020-07-01", "2020-10-01", 
+                                              "2021-01-01", "2021-04-01"),
                       # Trading Days ---------------------------------------------------------
                       # usrdef.varEnabled = FALSE, 
                       # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -200,9 +200,9 @@ vert_JB_SAL <- perHts(
                        # Outliers -------------------------------------------------------------
                        outlier.enabled = FALSE, 
                        usrdef.outliersEnabled = TRUE, 
-                       usrdef.outliersType = c("AO", "AO", "AO", "AO", "AO", "AO"),
+                       usrdef.outliersType = c("AO", "AO", "AO", "AO", "AO", "AO", "AO"),
                        usrdef.outliersDate = c("1999-10-01", "2020-01-01", "2020-04-01",
-                                               "2020-07-01", "2020-10-01", "2021-01-01"),
+                                               "2020-07-01", "2020-10-01", "2021-01-01", "2021-04-01"),
                        # Trading Days ---------------------------------------------------------
                        # usrdef.varEnabled = FALSE, 
                        # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -245,8 +245,8 @@ vert_Kb = perTramo(window(T111TS[, "SAL_JB_W2_K"], start = c(2003,1)), template 
                    # Outliers -------------------------------------------------------------
                    outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE,
-                   usrdef.outliersType = c("LS"),
-                   usrdef.outliersDate = c("2015-01-01"),
+                   usrdef.outliersType = c("LS", "LS"),
+                   usrdef.outliersDate = c("2015-01-01", "2020-04-01"),
                    # Trading Days ---------------------------------------------------------
                    # usrdef.varEnabled = FALSE,
                    # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -306,8 +306,9 @@ vert_JB_SELF <- perHts(
                      # Outliers -------------------------------------------------------------
                      outlier.enabled = FALSE,
                      usrdef.outliersEnabled = TRUE, 
-                     usrdef.outliersType = c( "AO", "AO", "AO", "AO", "AO"),
-                     usrdef.outliersDate = c("2020-01-01", "2020-04-01","2020-07-01", "2020-10-01", "2021-01-01"),
+                     usrdef.outliersType = c( "AO", "AO", "AO", "AO", "AO", "AO"),
+                     usrdef.outliersDate = c("2020-01-01", "2020-04-01","2020-07-01", 
+                                             "2020-10-01", "2021-01-01", "2021-04-01"),
                      # Trading Days ---------------------------------------------------------
                      # usrdef.varEnabled = FALSE, 
                      # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -480,10 +481,10 @@ vert_JB_SELF <- perHts(
                        # Outliers -------------------------------------------------------------
                        outlier.enabled = FALSE, 
                        usrdef.outliersEnabled = TRUE, 
-                       usrdef.outliersType = c("LS", "LS","AO", "AO","AO", "AO","AO", "AO"),
+                       usrdef.outliersType = c("LS", "LS","AO", "AO","AO", "AO","AO", "AO", "AO"),
                        usrdef.outliersDate = c("1996-01-01", "2008-10-01", "2009-01-01", 
                                                "2020-01-01", "2020-04-01", "2020-07-01", 
-                                               "2020-10-01", "2021-01-01"),
+                                               "2020-10-01", "2021-01-01", "2021-04-01"),
                        # Trading Days ---------------------------------------------------------
                        # usrdef.varEnabled = FALSE, 
                        # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -501,9 +502,8 @@ vert_JB_SELF <- perHts(
                        # Outliers -------------------------------------------------------------
                        outlier.enabled = FALSE, 
                        usrdef.outliersEnabled = TRUE, 
-                       usrdef.outliersType = c("AO", "AO", "AO", "AO", "AO", "AO"),
-                       usrdef.outliersDate = c("2012-10-01", "2020-01-01", "2020-04-01",
-                                               "2020-07-01", "2020-10-01", "2021-01-01"),
+                       usrdef.outliersType = c("AO", "AO"),
+                       usrdef.outliersDate = c("2012-10-01", "2020-04-01"),
                        # Trading Days ---------------------------------------------------------
                        # usrdef.varEnabled = FALSE, 
                        # usrdef.var = NA, usrdef.varType = "Calendar", 
