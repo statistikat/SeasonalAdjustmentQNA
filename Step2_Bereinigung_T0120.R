@@ -14,8 +14,10 @@ exp120_vol <- perHts(
                    # Outliers -------------------------------------------------------------
                    outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE, 
-                   usrdef.outliersType = c("AO"),
-                   usrdef.outliersDate = c("2020-04-01"),
+                   usrdef.outliersType = c("AO", "TC",
+                                           "TC"),
+                   usrdef.outliersDate = c("2020-04-01", "2009-01-01",
+                                           "2009-04-01"),
                    # Trading Days ---------------------------------------------------------
                    usrdef.varEnabled = TRUE, 
                    usrdef.var = td5lY, usrdef.varType = "Calendar", 
@@ -24,8 +26,8 @@ exp120_vol <- perHts(
                    # easter.type = NA, easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
-                   arima.p  = 1, arima.d  = 0, arima.q  = 2,
-                   arima.bp = 0, arima.bd = 1, arima.bq = 0, arima.mu = FALSE
+                   arima.p  = 3, arima.d  = 1, arima.q  = 1,
+                   arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE
                    ),
   # ====================================================================================
   p6U3 = perTramo(window(T120TS$vol[, "P6_U3"], start = c(2008,1)), template = "RSA3",
@@ -117,7 +119,7 @@ exp120_price <- perHts(
                    #easter.type = "IncludeEaster", easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
-                   arima.p  = 0, arima.d  = 1, arima.q  = 0, 
+                   arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                    arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
   
   # ====================================================================================
@@ -137,7 +139,7 @@ exp120_price <- perHts(
                    # easter.type = NA, easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
-                   arima.p  = 1, arima.d  = 1, arima.q  = 0, 
+                   arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                    arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE)
   # ====================================================================================
 )  

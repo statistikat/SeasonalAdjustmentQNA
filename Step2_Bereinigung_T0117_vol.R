@@ -14,7 +14,7 @@ kons_vol <- perHts(
                    # Outliers -------------------------------------------------------------
                    outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE, 
-                   usrdef.outliersType = c("AO", "AO"),
+                   usrdef.outliersType = c("TC", "AO"),
                    usrdef.outliersDate = c("2020-01-01", "2020-04-01"),
                    # Trading Days ---------------------------------------------------------
                    usrdef.varEnabled = TRUE, 
@@ -25,7 +25,7 @@ kons_vol <- perHts(
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
                    arima.p  = 1, arima.d  = 0, arima.q  = 0, 
-                   arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+                   arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE),
   # ====================================================================================
   p312 = perTramo(T117TS$vol[, "P312"], template = "RSA3", 
                    # Transformation -------------------------------------------------------
@@ -33,8 +33,8 @@ kons_vol <- perHts(
                    # Outliers -------------------------------------------------------------
                    outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE, 
-                   usrdef.outliersType = c("TC"),
-                   usrdef.outliersDate = c("2020-01-01"),
+                   usrdef.outliersType = c("TC", "AO"),
+                   usrdef.outliersDate = c("2020-01-01", "2021-01-01"),
                    # Trading Days ---------------------------------------------------------
                    # usrdef.varEnabled = FALSE,
                    # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -52,9 +52,8 @@ kons_vol <- perHts(
                    # Outliers -------------------------------------------------------------
                    outlier.enabled = FALSE, 
                    usrdef.outliersEnabled = TRUE, 
-                   usrdef.outliersType = c( "AO", "AO", "AO", "AO", "AO"),
-                   usrdef.outliersDate = c( "2020-01-01", "2020-04-01", "2020-07-01",
-                                            "2020-10-01", "2021-01-01"),
+                   usrdef.outliersType = c("AO"),
+                   usrdef.outliersDate = c("2021-01-01"),
                    # Trading Days ---------------------------------------------------------
                    # usrdef.varEnabled = FALSE,
                    # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -63,8 +62,8 @@ kons_vol <- perHts(
                    # easter.type = NA, easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
-                   arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                   arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+                   arima.p  = 1, arima.d  = 0, arima.q  = 0, 
+                   arima.bp = 1, arima.bd = 1, arima.bq = 0, arima.mu = TRUE),
   
   # ====================================================================================
   p314 = perTramo(T117TS$vol[, "P314"], template = "RSA3",
@@ -73,8 +72,9 @@ kons_vol <- perHts(
                    # Outliers -------------------------------------------------------------
                    outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE, 
-                   usrdef.outliersType = c("AO", "AO", "AO", "AO", "AO"),
-                   usrdef.outliersDate = c("2020-01-01", "2020-04-01", "2020-07-01",
+                   usrdef.outliersType = c("LS", "AO",
+                                           "TC", "AO"),
+                   usrdef.outliersDate = c("2020-01-01", "2020-04-01",
                                            "2020-10-01", "2021-01-01"),
                    # Trading Days ---------------------------------------------------------
                    # usrdef.varEnabled = FALSE,
@@ -84,7 +84,7 @@ kons_vol <- perHts(
                    # easter.type = NA, easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
-                   arima.p  = 1, arima.d  = 1, arima.q  = 0, 
+                   arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                    arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE)
   # ====================================================================================
 )

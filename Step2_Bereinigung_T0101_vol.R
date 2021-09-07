@@ -16,8 +16,8 @@ ent_vol <- perHts(
                     # usrdef.outliersType = c("AO", "AO","LS", "AO","AO",  "AO", "AO", "AO", "AO", "AO"),
                     # usrdef.outliersDate = c("2002-04-01","2010-04-01" ,"2011-01-01", "2013-04-01", "2016-10-01",
                     #                         "2020-01-01", "2020-04-01", "2020-07-01", "2020-10-01", "2021-01-01"),
-                   usrdef.outliersType = c("TC"),
-                   usrdef.outliersDate = c("2010-04-01"),
+                    usrdef.outliersType = c("TC"),
+                    usrdef.outliersDate = c("2010-04-01"),
                     # Trading Days ---------------------------------------------------------
                     # usrdef.varEnabled = FALSE,
                     # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -156,14 +156,16 @@ ent_vol <- perHts(
                     # Outliers -------------------------------------------------------------
                     outlier.enabled = FALSE, 
                     usrdef.outliersEnabled = TRUE, 
-                    usrdef.outliersType = c( "AO", "TC",
+                    usrdef.outliersType = c( "TC", "TC",
                                              "TC", "AO",
                                              "AO", "AO",
-                                             "AO", "AO"),
+                                             "AO", "AO",
+                                             "AO"),
                     usrdef.outliersDate = c("2008-01-01", "2003-10-01",
                                             "2018-10-01", "2020-01-01",
                                             "2020-04-01", "2020-07-01",
-                                            "2020-10-01", "2021-01-01"),
+                                            "2020-10-01", "2021-01-01",
+                                            "2021-04-01"),
                     # Trading Days ---------------------------------------------------------
                     # usrdef.varEnabled = FALSE,
                     # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -173,7 +175,7 @@ ent_vol <- perHts(
                     # Arima-Model ----------------------------------------------------------
                     automdl.enabled = FALSE, 
                     arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                    arima.bp = 0, arima.bd = 1, arima.bq = 0, arima.mu = FALSE),
+                    arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
   ent_J = perTramo(T101TS$vol[, "J"], template = "RSA3", 
                     # Transformation -------------------------------------------------------
@@ -191,8 +193,8 @@ ent_vol <- perHts(
                     # easter.type = NA, easter.duration = 6,
                     # Arima-Model ----------------------------------------------------------
                     automdl.enabled = FALSE, 
-                    arima.p  = 3, arima.d  = 1, arima.q  = 0, 
-                    arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+                    arima.p  = 1, arima.d  = 1, arima.q  = 0, 
+                    arima.bp = 1, arima.bd = 1, arima.bq = 0, arima.mu = FALSE),
   # =====================================================================================
   ent_K = perTramo(T101TS$vol[, "K"], template = "RSA3", 
                     # Transformation -------------------------------------------------------
@@ -277,7 +279,7 @@ ent_vol <- perHts(
                       # Outliers -------------------------------------------------------------
                       outlier.enabled = FALSE, 
                       usrdef.outliersEnabled = TRUE, 
-                      usrdef.outliersType = c("LS", "TC",
+                      usrdef.outliersType = c("LS", "LS",
                                               "AO", "LS"),
                       usrdef.outliersDate = c("2004-04-01","2020-01-01",
                                               "2020-04-01","2020-10-01"),
