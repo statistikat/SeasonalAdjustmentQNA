@@ -29,9 +29,8 @@ vcl_vol <- perHts(
                         # Outliers -------------------------------------------------------------
                         outlier.enabled = FALSE,
                         usrdef.outliersEnabled = TRUE, 
-                        usrdef.outliersType = c("TC", "AO", "AO", "AO", "AO"),
-                        usrdef.outliersDate = c("2008-01-01","2020-01-01", "2020-04-01", "2020-07-01", 
-                                                "2020-10-01"),
+                        usrdef.outliersType = c("TC", "TC"),
+                        usrdef.outliersDate = c("2008-01-01","2020-04-01"),
                         # Trading Days ---------------------------------------------------------
                         # usrdef.varEnabled = FALSE, 
                         # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -41,7 +40,7 @@ vcl_vol <- perHts(
                         # Arima-Model ----------------------------------------------------------
                         automdl.enabled = FALSE, 
                         arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                        arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+                        arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE),
   # ====================================================================================
   vcl_AN112 = perTramo(T102TS$vol[, "AN112"], template = "RSA3", 
                         # Transformation -------------------------------------------------------
@@ -49,9 +48,14 @@ vcl_vol <- perHts(
                         # Outliers -------------------------------------------------------------
                         outlier.enabled = FALSE,
                         usrdef.outliersEnabled = TRUE, 
-                        usrdef.outliersType = c("LS", "AO", "AO", "AO", "AO"),
-                        usrdef.outliersDate = c("2003-01-01","2020-01-01", "2020-04-01", 
-                                                "2020-07-01", "2020-10-01"),
+                        usrdef.outliersType = c("LS", #"AO",
+                                                #"AO", 
+                                                "TC", 
+                                                "AO"),
+                        usrdef.outliersDate = c("2003-01-01", #"2005-01-01",
+                                                #"1999-01-01", 
+                                                "2008-01-01",
+                                                "2020-04-01"),
                         # Trading Days ---------------------------------------------------------
                         # usrdef.varEnabled = FALSE, 
                         # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -80,16 +84,16 @@ vcl_vol <- perHts(
                         # Arima-Model ----------------------------------------------------------
                         automdl.enabled = FALSE, 
                         arima.p  = 0, arima.d  = 1, arima.q  = 0, 
-                        arima.bp = 1, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+                        arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
   vcl_AN117 = perTramo(T102TS$vol[, "AN117"], template = "RSA3",
                         # Transformation -------------------------------------------------------
                         transform.function = "Log",
                         # Outliers -------------------------------------------------------------
                         outlier.enabled = FALSE, 
-                        # usrdef.outliersEnabled = FALSE, 
-                        # usrdef.outliersType = NA,
-                        # usrdef.outliersDate = NA,
+                        usrdef.outliersEnabled = TRUE, 
+                        usrdef.outliersType = c("TC"),
+                        usrdef.outliersDate = c("2020-04-01"),
                         # Trading Days ---------------------------------------------------------
                         # usrdef.varEnabled = FALSE, 
                         # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -98,8 +102,8 @@ vcl_vol <- perHts(
                         # easter.type = NA, easter.duration = 6,
                         # Arima-Model ----------------------------------------------------------
                         automdl.enabled = FALSE, 
-                        arima.p  = 1, arima.d  = 0, arima.q  = 0, 
-                        arima.bp = 1, arima.bd = 1, arima.bq = 0, arima.mu = TRUE),
+                        arima.p  = 0, arima.d  = 1, arima.q  = 0, 
+                        arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
   vcl_P61 = perTramo(T102TS$vol[, "P61"], template = "RSA3",
                       # Transformation -------------------------------------------------------
@@ -107,20 +111,17 @@ vcl_vol <- perHts(
                       # Outliers -------------------------------------------------------------
                       outlier.enabled = FALSE, 
                       usrdef.outliersEnabled = TRUE, 
-                      usrdef.outliersType = c("LS", "LS", 
-                                              "AO", "AO", "AO", "AO"),
-                      usrdef.outliersDate = c("2009-01-01", "2008-10-01",
-                                              "2020-01-01", "2020-04-01", 
-                                              "2020-07-01", "2020-10-01"),
+                      usrdef.outliersType = c("AO"),
+                      usrdef.outliersDate = c("2020-04-01"),
                       # Trading Days ---------------------------------------------------------
                       usrdef.varEnabled = TRUE, 
                       usrdef.var = td7lY, usrdef.varType = "Calendar", 
                       tradingdays.option = "UserDefined",
                       # Easter ---------------------------------------------------------------
-                      # easter.type = NA, easter.duration = 6,
+                      easter.type = "IncludeEaster", easter.duration = 6,
                       # Arima-Model ----------------------------------------------------------
                       automdl.enabled = FALSE, 
-                      arima.p  = 0, arima.d  = 1, arima.q  = 2, 
+                      arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                       arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
   vcl_P62 = perTramo(T102TS$vol[, "P62"], template = "RSA3",
@@ -129,20 +130,20 @@ vcl_vol <- perHts(
                       # Outliers -------------------------------------------------------------
                       outlier.enabled = FALSE, 
                       usrdef.outliersEnabled = TRUE, 
-                      usrdef.outliersType = c("LS","AO","AO", "AO", "AO", "AO", "AO"),
-                      usrdef.outliersDate = c("2009-01-01","2020-01-01", "2020-04-01",  
-                                              "2020-07-01", "2020-10-01", "2021-01-01", 
-                                              "2021-04-01"),
+                      usrdef.outliersType = c("LS","TC",
+                                              "AO"),
+                      usrdef.outliersDate = c("2009-01-01", "2020-04-01",
+                                              "2021-01-01"),
                       # Trading Days ---------------------------------------------------------
-# usrdef.varEnabled = FALSE, 
+                      # usrdef.varEnabled = FALSE, 
                       # usrdef.var = NA, usrdef.varType = "Calendar", 
                       # tradingdays.option = "UserDefined",
                       # Easter ---------------------------------------------------------------
                       easter.type = "IncludeEaster", easter.duration = 6,
                       # Arima-Model ----------------------------------------------------------
                       automdl.enabled = FALSE, 
-                      arima.p  = 1, arima.d  = 0, arima.q  = 0, 
-                      arima.bp = 0, arima.bd = 1, arima.bq = 0, arima.mu = TRUE),
+                      arima.p  = 0, arima.d  = 1, arima.q  = 1, 
+                      arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
   vcl_P71 = perTramo(T102TS0$vol[, "P71"], template = "RSA3", 
                       # Transformation -------------------------------------------------------
@@ -150,11 +151,11 @@ vcl_vol <- perHts(
                       # Outliers -------------------------------------------------------------
                       outlier.enabled = FALSE, 
                       usrdef.outliersEnabled = TRUE, 
-                      usrdef.outliersType = c("LS", "AO"),
+                      usrdef.outliersType = c("TC", "AO"),
                       usrdef.outliersDate = c("2009-01-01", "2020-04-01"),
                       # Trading Days ---------------------------------------------------------
                         usrdef.varEnabled = TRUE, 
-                        usrdef.var = td7, usrdef.varType = "Calendar", 
+                        usrdef.var = td7lY, usrdef.varType = "Calendar", 
                       tradingdays.option = "UserDefined",
                       # Easter ---------------------------------------------------------------
                       # easter.type = NA, easter.duration = 6,
@@ -169,10 +170,10 @@ vcl_vol <- perHts(
                       # Outliers -------------------------------------------------------------
                       outlier.enabled = FALSE, 
                       usrdef.outliersEnabled = TRUE, 
-                      usrdef.outliersType = c("AO", "AO", "AO", "AO", "AO", "AO"),
-                      usrdef.outliersDate = c("2020-01-01", "2020-04-01","2020-07-01", "2020-10-01", "2021-01-01", "2021-04-01"),
+                      usrdef.outliersType = c("TC"),
+                      usrdef.outliersDate = c("2020-04-01"),
                       # Trading Days ---------------------------------------------------------
-# usrdef.varEnabled = FALSE, 
+                      # usrdef.varEnabled = FALSE, 
                       # usrdef.var = NA, usrdef.varType = "Calendar", 
                       # tradingdays.option = "UserDefined",
                       # Easter ---------------------------------------------------------------
@@ -180,7 +181,7 @@ vcl_vol <- perHts(
                       # Arima-Model ----------------------------------------------------------
                       automdl.enabled = FALSE, 
                       arima.p  = 1, arima.d  = 0, arima.q  = 0, 
-                      arima.bp = 1, arima.bd = 1, arima.bq = 1, arima.mu = TRUE),
+                      arima.bp = 0, arima.bd = 1, arima.bq = 0, arima.mu = TRUE),
   # =====================================================================================
   vcl_P31_S14 = perTramo(T102TS$vol[, "P31_S14"], template = "RSA3", 
                           # Transformation -------------------------------------------------------  
@@ -188,9 +189,10 @@ vcl_vol <- perHts(
                           # Outliers -------------------------------------------------------------
                           outlier.enabled = FALSE, 
                           usrdef.outliersEnabled = TRUE, 
-                          usrdef.outliersType = c("AO", "AO", "AO", "AO", "AO", "AO"),
-                          usrdef.outliersDate = c("2020-01-01", "2020-04-01", "2020-07-01", 
-                                                  "2020-10-01", "2021-01-01", "2021-04-01"),
+                          usrdef.outliersType = c("LS", "AO",
+                                                  "TC"),
+                          usrdef.outliersDate = c("2020-01-01", "2020-04-01",
+                                                  "2020-10-01"),
                           # Trading Days ---------------------------------------------------------
                           # usrdef.varEnabled = FALSE, 
                           # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -199,8 +201,8 @@ vcl_vol <- perHts(
                           # easter.type = NA, easter.duration = 6,
                           # Arima-Model ----------------------------------------------------------
                           automdl.enabled = FALSE,
-                          arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                          arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+                          arima.p  = 2, arima.d  = 0, arima.q  = 0, 
+                          arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE),
   # =====================================================================================
   # vcl_P31_S15 wird gestückelt !!
   
@@ -211,8 +213,8 @@ vcl_vol <- perHts(
                           # Outliers -------------------------------------------------------------
                           outlier.enabled = FALSE, 
                           usrdef.outliersEnabled = TRUE, 
-                          usrdef.outliersType = c("AO"),
-                          usrdef.outliersDate = c("2001-10-01"),
+                          usrdef.outliersType = c("TC"),
+                          usrdef.outliersDate = c("2020-10-01"),
                           # Trading Days ---------------------------------------------------------
                           # usrdef.varEnabled = FALSE, 
                           # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -222,7 +224,7 @@ vcl_vol <- perHts(
                           # Arima-Model ----------------------------------------------------------
                           automdl.enabled = FALSE, 
                           arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                          arima.bp = 0, arima.bd = 1, arima.bq = 0, arima.mu = FALSE),
+                          arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # =======================================================================================
   vcl_P32_S13 = perTramo(T102TS$vol[, "P32_S13"], template = "RSA3",
                           # Transformation -------------------------------------------------------
@@ -240,8 +242,8 @@ vcl_vol <- perHts(
                           # easter.type = NA, easter.duration = 6,
                           # Arima-Model ----------------------------------------------------------
                           automdl.enabled = FALSE, 
-                          arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                          arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+                          arima.p  = 3, arima.d  = 0, arima.q  = 0, 
+                          arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE),
   # =======================================================================================
   vcl_N1131G = perTramo(T102TS$vol[, "N1131G"], template = "RSA3",
                          # Transformation -------------------------------------------------------
@@ -249,7 +251,7 @@ vcl_vol <- perHts(
                          # Outliers -------------------------------------------------------------
                          outlier.enabled = FALSE, 
                          usrdef.outliersEnabled = TRUE, 
-                         usrdef.outliersType = c("AO","AO"),
+                         usrdef.outliersType = c("AO", "AO"),
                          usrdef.outliersDate = c("2008-04-01", "2020-04-01"),
                          # Trading Days ---------------------------------------------------------
                          # usrdef.varEnabled = FALSE, 
@@ -297,8 +299,8 @@ vcl_vol <- perHts(
                         # easter.type = NA, easter.duration = 6,
                         # Arima-Model ----------------------------------------------------------
                         automdl.enabled = FALSE, 
-                        arima.p  = 1, arima.d  = 1, arima.q  = 0, 
-                        arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE)
+                        arima.p  = 1, arima.d  = 0, arima.q  = 0, 
+                        arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE)
   
 )
 
@@ -337,9 +339,8 @@ vcl_P31_S15b = perTramo(window(T102TS$vol[, "P31_S15"], start = c(2007, 1)), tem
                          # Outliers -------------------------------------------------------------
                          outlier.enabled = FALSE, 
                          usrdef.outliersEnabled = TRUE, 
-                         usrdef.outliersType = c("AO", "AO", "AO", "AO", "AO", "AO"),
-                         usrdef.outliersDate = c("2020-01-01", "2020-04-01", "2020-07-01", 
-                                                 "2020-10-01", "2021-01-01", "2021-04-01"),
+                         usrdef.outliersType = c("TC", "AO"),
+                         usrdef.outliersDate = c("2020-01-01", "2020-04-01"),
                          # Trading Days ---------------------------------------------------------
                          # usrdef.varEnabled = FALSE, 
                          # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -348,7 +349,7 @@ vcl_P31_S15b = perTramo(window(T102TS$vol[, "P31_S15"], start = c(2007, 1)), tem
                          # easter.type = NA, easter.duration = 6,
                          # Arima-Model ----------------------------------------------------------
                          automdl.enabled = FALSE, 
-                         arima.p  = 1, arima.d  = 1, arima.q  = 0, 
+                         arima.p  = 3, arima.d  = 1, arima.q  = 0, 
                          arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE)
 
 
@@ -390,7 +391,7 @@ T102Adj_vol <- lapply(vcl_vol$components, function(x){
   x$output$final$series
 })
 
-T102Adj_vol$vcl_P31_S15 <- vcl_P31_S15
+T102Adj_vol$vcl_P31_S15 <- vcl_P31_S15 
 
 
 # Eurofighter "rückabwickeln"

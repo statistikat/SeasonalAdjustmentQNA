@@ -25,8 +25,8 @@ verw_nom <- perHts(
                         # easter.type = NA, easter.duration = 6,
                         # Arima-Model ----------------------------------------------------------
                         automdl.enabled = TRUE, 
-                        arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                        arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+                        arima.p  = 0, arima.d  = 1, arima.q  = 2,
+                        arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
   # ====================================================================================
   verw_P52 = perTramo(T102TS$nom[, "P52"], template = "RSA3", 
                         # Transformation -------------------------------------------------------
@@ -34,9 +34,8 @@ verw_nom <- perHts(
                         # Outliers -------------------------------------------------------------
                         outlier.enabled = FALSE,
                         usrdef.outliersEnabled = TRUE, 
-                        usrdef.outliersType = c("LS", "AO", "AO", "AO", "AO", "AO", "AO"),
-                        usrdef.outliersDate = c("2019-10-01","2020-01-01", "2020-04-01",
-                                                "2020-07-01", "2020-10-01", "2021-01-01", "2021-04-01"),
+                        usrdef.outliersType = c("AO"),
+                        usrdef.outliersDate = c("2021-01-01"),
                         # Trading Days ---------------------------------------------------------
                         # usrdef.varEnabled = FALSE, 
                         # usrdef.var = NA, usrdef.varType = "Calendar", 
