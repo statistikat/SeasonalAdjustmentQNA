@@ -311,7 +311,7 @@ T101Adj_vol <- lapply(ent_vol$components, function(x){
 
 ##        P31_S15:
 
-ent_D21a = perTramo(window(T101TS$vol[, "D21"], end = c(2012,4)), template = "RSA3",
+ent_vD21a = perTramo(window(T101TS$vol[, "D21"], end = c(2012,4)), template = "RSA3",
                      # Transformation -----------------------------------------
                      transform.function = "Log",
                      # Outliers -----------------------------------------------
@@ -330,7 +330,7 @@ ent_D21a = perTramo(window(T101TS$vol[, "D21"], end = c(2012,4)), template = "RS
                      arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                      arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE)
 # ============================================================================
-ent_D21b = perTramo(window(T101TS$vol[, "D21"], start = c(2012,1)), template = "RSA3",
+ent_vD21b = perTramo(window(T101TS$vol[, "D21"], start = c(2012,1)), template = "RSA3",
                      # Transformation -----------------------------------------
                      transform.function = "Log",
                      # Outliers -----------------------------------------------
@@ -349,15 +349,15 @@ ent_D21b = perTramo(window(T101TS$vol[, "D21"], start = c(2012,1)), template = "
                      arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                      arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE)
 # ============================================================================
-ent_D21a$run()
-ent_D21b$run()
+ent_vD21a$run()
+ent_vD21b$run()
 
-ent_D21a_sa <- ent_D21a$output$final$series[, "sa"]
-ent_D21b_sa <- ent_D21b$output$final$series[, "sa"] %>% window(start = c(2013, 1))
+ent_D21a_sa <- ent_vD21a$output$final$series[, "sa"]
+ent_D21b_sa <- ent_vD21b$output$final$series[, "sa"] %>% window(start = c(2013, 1))
 
 
-ent_D21a_t <- ent_D21a$output$final$series[, "t"]
-ent_D21b_t <- ent_D21b$output$final$series[, "t"] %>% window(start = c(2013, 1))
+ent_D21a_t <- ent_vD21a$output$final$series[, "t"]
+ent_D21b_t <- ent_vD21b$output$final$series[, "t"] %>% window(start = c(2013, 1))
 
 ent_D21_sa <- ts_bind(ent_D21a_sa, ent_D21b_sa)
 ent_D21_t <- ts_bind(ent_D21a_t, ent_D21b_t)
