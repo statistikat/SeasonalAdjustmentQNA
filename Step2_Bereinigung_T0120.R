@@ -14,10 +14,10 @@ exp120_vol <- perHts(
                    # Outliers -------------------------------------------------------------
                    outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE, 
-                   usrdef.outliersType = c("AO", "TC",
-                                           "TC"),
-                   usrdef.outliersDate = c("2020-04-01", "2009-01-01",
-                                           "2009-04-01"),
+                   usrdef.outliersType = c("TC",
+                                           "TC", "AO"),
+                   usrdef.outliersDate = c("2009-01-01",
+                                           "2009-04-01", "2020-04-01"),
                    # Trading Days ---------------------------------------------------------
                    usrdef.varEnabled = TRUE, 
                    usrdef.var = td5lY, usrdef.varType = "Calendar", 

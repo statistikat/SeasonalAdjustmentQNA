@@ -52,14 +52,12 @@ source("Step2_Bereinigung_T0103_D12.R")
 source("Step2_Bereinigung_T0103_rest.R")
 source("Step3_Berechnungen_T0103.R")
 
-# _ T0110 Bevölkerung ----------------
-source("Step2_Bereinigung_T0110.R")
-
-# _ T0111 Arbeitsvolumen --------------
+# _ T0110 Bevölkerung und T0111 Arbeitsvolumen --------------
 source("Step2_Bereinigung_T0111_HW.R")
 source("Step2_Bereinigung_T0111_JB.R")
 source("Step2_Bereinigung_T0111_PS.R")
 source("Step3_Berechnungen_T0111.R")
+source("Step2_Bereinigung_T0110.R")
 
 # _ T0117 Konsum ----------------------
 source("Step2_Bereinigung_T0117_vol.R")

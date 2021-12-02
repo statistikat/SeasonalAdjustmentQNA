@@ -103,10 +103,14 @@ vert_PS_SAL <- perHts(
                        # Outliers -------------------------------------------------------------
                        outlier.enabled = FALSE, 
                        usrdef.outliersEnabled = TRUE, 
-                       usrdef.outliersType = c("AO", "TC",
+                       usrdef.outliersType = c("AO", "AO",
+                                               "AO", "AO", 
+                                               "AO", "AO", 
                                                "AO"),
-                       usrdef.outliersDate = c("2020-04-01", "2020-10-01", 
-                                               "2021-01-01"),
+                       usrdef.outliersDate = c("2020-01-01", "2020-04-01",
+                                               "2020-07-01", "2020-10-01", 
+                                               "2021-01-01", "2021-04-01", 
+                                               "2021-07-01"),
                        # Trading Days ---------------------------------------------------------
                        # usrdef.varEnabled = FALSE, 
                        # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -124,8 +128,8 @@ vert_PS_SAL <- perHts(
                      # Outliers -------------------------------------------------------------
                      outlier.enabled = FALSE, 
                      usrdef.outliersEnabled = TRUE, 
-                     usrdef.outliersType = c("AO", "LS"),
-                     usrdef.outliersDate = c("2006-10-01", "2000-01-01"),
+                     usrdef.outliersType = c("AO", "LS", "TC"),
+                     usrdef.outliersDate = c("2006-10-01", "2000-01-01", "2021-01-01"),
                      # Trading Days ---------------------------------------------------------
                      # usrdef.varEnabled = FALSE, 
                      # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -227,8 +231,11 @@ vert_PS_SAL <- perHts(
                        # Outliers -------------------------------------------------------------
                        outlier.enabled = FALSE, 
                        usrdef.outliersEnabled = TRUE, 
-                      usrdef.outliersType = c("AO", "AO"),
-                       usrdef.outliersDate = c("2020-04-01", "2021-01-01"),
+                      usrdef.outliersType = c("AO", "AO", "AO", 
+                                              "AO", "AO", "AO"),
+                       usrdef.outliersDate = c("2020-04-01", "2020-07-01",
+                                               "2020-10-01", "2021-01-01", 
+                                               "2021-04-01", "2021-07-01"),
                        # Trading Days ---------------------------------------------------------
                        # usrdef.varEnabled = FALSE, 
                        # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -260,11 +267,11 @@ vert_PS_SELF <- perHts(
                      transform.function = "None",
                      # Outliers -------------------------------------------------------------
                      outlier.enabled = FALSE,
-                     usrdef.outliersEnabled = TRUE,
-                     usrdef.outliersType = c("AO", "AO", "AO", "AO", "AO", "AO"),
-                     usrdef.outliersDate = c("2020-01-01", "2020-04-01",
-                                             "2020-07-01", "2020-10-01", "2021-01-01",
-                                             "2021-04-01"),
+                     usrdef.outliersEnabled = FALSE,
+                     # usrdef.outliersType = c("AO", "AO", "AO", "AO", "AO", "AO"),
+                     # usrdef.outliersDate = c("2020-01-01", "2020-04-01",
+                     #                         "2020-07-01", "2020-10-01", "2021-01-01",
+                     #                         "2021-04-01"),
                      # Trading Days ---------------------------------------------------------
                      # usrdef.varEnabled = FALSE, 
                      # usrdef.var = NA, usrdef.varType = "Calendar", 

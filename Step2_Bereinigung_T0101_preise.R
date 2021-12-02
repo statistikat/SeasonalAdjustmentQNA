@@ -198,10 +198,10 @@ ent_price <- perHts(
                     usrdef.outliersEnabled = TRUE, 
                     usrdef.outliersType = c("LS", "AO",
                                             "AO", "AO", 
-                                            "AO", "AO"),
+                                            "LS"),
                     usrdef.outliersDate = c("1996-01-01", "2012-07-01",
                                             "2013-07-01", "2015-07-01", 
-                                            "2021-01-01", "2021-04-01"),
+                                            "2021-01-01"),
                     # Trading Days ---------------------------------------------------------
                     # usrdef.varEnabled = FALSE, 
                     # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -386,3 +386,4 @@ ent_D21 <- cbind(y = T101TS$impPI_L[, "D21"],
 #-------------------------------------------------------------------------------
 
 T101Adj_impPI_L$D21 <- ent_D21
+

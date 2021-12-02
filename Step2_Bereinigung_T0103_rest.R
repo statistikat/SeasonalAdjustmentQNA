@@ -30,7 +30,7 @@ vert_rest <- perHts(
                       # Transformation -------------------------------------------------------  
                       transform.function = "Log",
                       # Outliers -------------------------------------------------------------
-                      outlier.enabled = FALSE, 
+                      outlier.enabled = TRUE, 
                       usrdef.outliersEnabled = TRUE, 
                       usrdef.outliersType = c("LS", "AO",
                                               "AO", "TC",

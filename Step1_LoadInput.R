@@ -1,4 +1,4 @@
-release <- T
+release <- F
 # if release = T take released data from github repo, for development take unpublished data from upstream project
 
 if(release){
