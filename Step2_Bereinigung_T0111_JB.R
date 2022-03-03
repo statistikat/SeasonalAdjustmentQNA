@@ -203,12 +203,8 @@ vert_JB_SAL <- perHts(
                        # Outliers -------------------------------------------------------------
                        outlier.enabled = FALSE, 
                        usrdef.outliersEnabled = TRUE, 
-                       usrdef.outliersType = c("AO", "AO",
-                                               "AO","AO", "AO",
-                                               "AO", "AO", "AO"),
-                       usrdef.outliersDate = c("1999-10-01", "2020-04-01", "2020-07-01",
-                                               "2020-10-01","2021-01-01", "2021-04-01",
-                                               "2021-07-01", "2021-10-01"),
+                       usrdef.outliersType = c("AO", "LS"),
+                       usrdef.outliersDate = c("1999-10-01", "2020-04-01"),
                        # Trading Days ---------------------------------------------------------
                        # usrdef.varEnabled = FALSE, 
                        # usrdef.var = NA, usrdef.varType = "Calendar", 

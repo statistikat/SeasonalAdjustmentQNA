@@ -97,9 +97,9 @@ ent_vol <- perHts(
                     # Outliers -------------------------------------------------------------
                     outlier.enabled = FALSE, 
                     usrdef.outliersEnabled = TRUE, 
-                    usrdef.outliersType = c("LS", "TC", "TC", "AO"),
+                    usrdef.outliersType = c("LS", "TC", "AO"),
                     usrdef.outliersDate = c("2003-01-01", "2008-01-01",
-                                            "2020-04-01", "2021-04-01"),
+                                            "2020-04-01"),
                     # Trading Days ---------------------------------------------------------
                     # usrdef.varEnabled = FALSE,
                     # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -136,7 +136,7 @@ ent_vol <- perHts(
                     # Outliers -------------------------------------------------------------
                     outlier.enabled = FALSE, 
                     usrdef.outliersEnabled = TRUE, 
-                    usrdef.outliersType = c("LS", "TC", "AO", "AO"),
+                    usrdef.outliersType = c("LS", "TC", "TC", "AO"),
                     usrdef.outliersDate = c("2009-01-01", "2004-01-01",
                                             "2020-04-01", "2021-01-01"),
                     # Trading Days ---------------------------------------------------------
@@ -160,12 +160,14 @@ ent_vol <- perHts(
                                              "TC", "AO",
                                              "AO", "AO",
                                              "AO", "AO",
-                                             "AO", "AO"),
+                                             "AO", "AO",
+                                             "AO"),
                     usrdef.outliersDate = c("2008-01-01", "2003-10-01",
                                             "2018-10-01", "2020-01-01",
                                             "2020-04-01", "2020-07-01",
                                             "2020-10-01", "2021-01-01",
-                                            "2021-04-01", "2021-07-01"),
+                                            "2021-04-01", "2021-07-01",
+                                            "2021-10-01"),
                     # Trading Days ---------------------------------------------------------
                     # usrdef.varEnabled = FALSE,
                     # usrdef.var = NA, usrdef.varType = "Calendar",

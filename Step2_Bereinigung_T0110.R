@@ -41,5 +41,6 @@ T110Adj_sa$SAL_PS_W0__T <- pb_SAL$output$final$series
 T110Y <- ts_c(SAL_PS_W0__T = pb_SAL$output$final$series[, "sa"],
               SELF_PS_W0__T = round(T111Y_sums$PS$SELF[,"_T"] * 1e3))
 T110Y <- ts_c(T110Y, 
-              EMP_PS_W0__T = T110Y[, "SAL_PS_W0__T"]  + T110Y[, "SELF_PS_W0__T"],
+              EMP_PS_W0__T = T110Y[, "SAL_PS_W0__T"] + T110Y[, "SELF_PS_W0__T"],
               POP = T110TS[, "POP"])
+

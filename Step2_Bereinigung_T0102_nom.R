@@ -33,9 +33,9 @@ verw_nom <- perHts(
                         transform.function = "None",
                         # Outliers -------------------------------------------------------------
                         outlier.enabled = FALSE,
-                        usrdef.outliersEnabled = TRUE, 
-                        usrdef.outliersType = c("AO"),
-                        usrdef.outliersDate = c("2021-01-01"),
+                        usrdef.outliersEnabled = FALSE, 
+                        # usrdef.outliersType = c("AO"),
+                        # usrdef.outliersDate = c("2021-01-01"),
                         # Trading Days ---------------------------------------------------------
                         # usrdef.varEnabled = FALSE, 
                         # usrdef.var = NA, usrdef.varType = "Calendar", 
