@@ -14,12 +14,8 @@ ent_price <- perHts(
                     # Outliers -------------------------------------------------------------
                     outlier.enabled = FALSE,
                     usrdef.outliersEnabled = TRUE, 
-                    usrdef.outliersType = c("TC" #, "TC",
-                                            #"AO", "TC"
-                                            ),
-                    usrdef.outliersDate = c("2020-10-01"#, "2017-01-01",
-                                            #"2020-04-01", "2019-07-01"
-                                            ),
+                    usrdef.outliersType = c("TC"),
+                    usrdef.outliersDate = c("2020-10-01"),
                     # Trading Days ---------------------------------------------------------
                     # usrdef.varEnabled = FALSE,
                     # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -176,9 +172,11 @@ ent_price <- perHts(
                     outlier.enabled = FALSE, 
                     usrdef.outliersEnabled = TRUE, 
                     usrdef.outliersType = c("TC", "LS",
-                                            "AO", "AO"),
+                                            "AO", "AO",
+                                            "LS"),
                     usrdef.outliersDate = c("2008-10-01", "2020-07-01",
-                                            "2021-01-01", "2021-04-01"),
+                                            "2021-01-01", "2021-04-01",
+                                            "2022-01-01"),
                     # Trading Days ---------------------------------------------------------
                     # usrdef.varEnabled = FALSE,
                     # usrdef.var = NA, usrdef.varType = "Calendar",

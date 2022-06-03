@@ -17,11 +17,12 @@ kons_price <- perHts(
                    usrdef.outliersType = c("TC", "LS",
                                            "AO", "AO", 
                                            "AO", "AO",
-                                           "AO", "AO"),
+                                           "AO", "AO", "AO"),
                    usrdef.outliersDate = c("2008-10-01", "1999-01-01",
                                            "2006-10-01", "2005-07-01",
                                            "2021-01-01", "2021-04-01", 
-                                           "2021-07-01", "2021-10-01"),
+                                           "2021-07-01", "2021-10-01",
+                                           "2022-01-01"),
                    # Trading Days ---------------------------------------------------------
                    # usrdef.varEnabled = FALSE,
                    # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -57,9 +58,9 @@ kons_price <- perHts(
                    transform.function = "Log",
                    # Outliers -------------------------------------------------------------
                    outlier.enabled = FALSE, 
-                   #usrdef.outliersEnabled = TRUE, 
-                   #usrdef.outliersType = c("AO"),
-                   #usrdef.outliersDate = c("2018-04-01"),
+                   usrdef.outliersEnabled = TRUE,
+                   usrdef.outliersType = c("AO"),
+                   usrdef.outliersDate = c("2022-01-01"),
                    # Trading Days ---------------------------------------------------------
                    # usrdef.varEnabled = FALSE, 
                    # usrdef.var = NA, usrdef.varType = "Calendar", 

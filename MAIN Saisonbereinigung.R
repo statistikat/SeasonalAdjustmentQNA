@@ -2,8 +2,8 @@
 #
 # QVGR SAISONBEREINIGUNG MASTERFILE
 #
-# Stand April 2021
-# Autoren: Julia Knöbl, Markus Fröhlich
+# Stand Mai 2022
+# Autoren: Julia Schieber-Knöbl, Markus Fröhlich
 # qvgr@statistik.gv.at
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
