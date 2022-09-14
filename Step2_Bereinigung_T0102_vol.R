@@ -29,7 +29,7 @@ vcl_vol <- perHts(
                         # Outliers -------------------------------------------------------------
                         outlier.enabled = FALSE,
                         usrdef.outliersEnabled = TRUE, 
-                        usrdef.outliersType = c("TC", "TC"),
+                        usrdef.outliersType = c("TC", "AO"),
                         usrdef.outliersDate = c("2008-01-01","2020-04-01"),
                         # Trading Days ---------------------------------------------------------
                         # usrdef.varEnabled = FALSE, 
@@ -111,8 +111,8 @@ vcl_vol <- perHts(
                       # Outliers -------------------------------------------------------------
                       outlier.enabled = FALSE, 
                       usrdef.outliersEnabled = TRUE, 
-                      usrdef.outliersType = c("AO"),
-                      usrdef.outliersDate = c("2020-04-01"),
+                      usrdef.outliersType = c("AO", "LS"),
+                      usrdef.outliersDate = c("2020-04-01", "2022-01-01"),
                       # Trading Days ---------------------------------------------------------
                       usrdef.varEnabled = TRUE, 
                       usrdef.var = td7lY, usrdef.varType = "Calendar", 
@@ -130,10 +130,11 @@ vcl_vol <- perHts(
                       # Outliers -------------------------------------------------------------
                       outlier.enabled = FALSE, 
                       usrdef.outliersEnabled = TRUE, 
-                      usrdef.outliersType = c("LS","TC",
-                                              "AO", "AO"),
-                      usrdef.outliersDate = c("2009-01-01", "2020-04-01",
-                                              "2021-01-01", "2020-10-01"),
+                     usrdef.outliersType = c("LS","LS",
+                                             "AO", "AO", "LS"),
+                     usrdef.outliersDate = c("2009-01-01", "2020-04-01",
+                                             "2021-01-01", "2020-10-01",
+                                             "2021-07-01"),
                       # Trading Days ---------------------------------------------------------
                       # usrdef.varEnabled = FALSE, 
                       # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -149,8 +150,8 @@ vcl_vol <- perHts(
                       # Transformation -------------------------------------------------------
                       transform.function = "Log",
                       # Outliers -------------------------------------------------------------
-                      outlier.enabled = TRUE, 
-                      usrdef.outliersEnabled = FALSE, 
+                      outlier.enabled = FALSE, 
+                      usrdef.outliersEnabled = TRUE, 
                       usrdef.outliersType = c("TC", "AO"),
                       usrdef.outliersDate = c("2009-01-01", "2020-04-01"),
                       # Trading Days ---------------------------------------------------------
@@ -191,10 +192,12 @@ vcl_vol <- perHts(
                           usrdef.outliersEnabled = TRUE, 
                           usrdef.outliersType = c("AO", "AO", "AO", 
                                                   "AO", "AO", "AO", 
-                                                  "AO", "AO", "AO"),
+                                                  "AO", "AO", "AO",
+                                                  "AO"),
                           usrdef.outliersDate = c("2020-01-01", "2020-04-01","2020-07-01", 
                                                   "2020-10-01", "2021-01-01", "2021-04-01", 
-                                                  "2021-07-01", "2021-10-01", "2022-01-01"),
+                                                  "2021-07-01", "2021-10-01", "2022-01-01",
+                                                  "2022-04-01"),
                           # Trading Days ---------------------------------------------------------
                           # usrdef.varEnabled = FALSE, 
                           # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -218,12 +221,13 @@ vcl_vol <- perHts(
                           # usrdef.outliersType = c("TC"),
                           # usrdef.outliersDate = c("2020-10-01"),
                           usrdef.outliersType = c("AO",  "AO", "AO", "AO",
-                                                  "AO", "AO", "AO", "AO"),
+                                                  "AO", "AO", "AO", "AO",
+                                                  "AO"),
                           usrdef.outliersDate = c("2020-04-01","2020-07-01", 
                                                   "2020-10-01",
                                                   "2021-01-01", "2021-04-01", 
                                                   "2021-07-01", "2021-10-01",
-                                                  "2022-01-01"),
+                                                  "2022-01-01", "2022-04-01"),
                           # Trading Days ---------------------------------------------------------
                           # usrdef.varEnabled = FALSE, 
                           # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -260,8 +264,8 @@ vcl_vol <- perHts(
                          # Outliers -------------------------------------------------------------
                          outlier.enabled = FALSE, 
                          usrdef.outliersEnabled = TRUE, 
-                         usrdef.outliersType = c("AO", "AO"),
-                         usrdef.outliersDate = c("2008-04-01", "2020-04-01"),
+                         usrdef.outliersType = c("AO", "AO", "LS"),
+                         usrdef.outliersDate = c("2008-04-01", "2020-04-01", "2021-07-01"),
                          # Trading Days ---------------------------------------------------------
                          # usrdef.varEnabled = FALSE, 
                          # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -297,9 +301,9 @@ vcl_vol <- perHts(
                         transform.function = "Log",
                         # Outliers -------------------------------------------------------------
                         outlier.enabled = FALSE, 
-                        # usrdef.outliersEnabled = FALSE, 
-                        # usrdef.outliersType = NA,
-                        # usrdef.outliersDate = NA,
+                        usrdef.outliersEnabled = TRUE,
+                        usrdef.outliersType = c("LS"),
+                        usrdef.outliersDate = c("2021-01-01"),
                         # Trading Days ---------------------------------------------------------
                            # usrdef.varEnabled = FALSE, 
                         # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -352,12 +356,12 @@ vcl_P31_S15b = perTramo(window(T102TS$vol[, "P31_S15"], start = c(2007, 1)), tem
                                                  "AO", "AO", 
                                                  "AO", "AO", 
                                                  "AO", "AO",
-                                                 "AO"),
+                                                 "AO", "AO"),
                          usrdef.outliersDate = c("2020-01-01", "2020-04-01",
                                                  "2020-07-01", "2020-10-01", 
                                                  "2021-01-01", "2021-04-01", 
                                                  "2021-07-01", "2021-10-01",
-                                                 "2022-01-01"),
+                                                 "2022-01-01", "2022-04-01"),
                          # Trading Days ---------------------------------------------------------
                          # usrdef.varEnabled = FALSE, 
                          # usrdef.var = NA, usrdef.varType = "Calendar", 
