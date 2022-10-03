@@ -44,7 +44,7 @@ verw_nom <- perHts(
                         # easter.type = NA, easter.duration = 6,
                         # Arima-Model ----------------------------------------------------------
                         automdl.enabled = FALSE, 
-                        arima.p  = 1, arima.d  = 0, arima.q  = 0, 
+                        arima.p  = 0, arima.d  = 0, arima.q  = 1, 
                         arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE)
 )
 

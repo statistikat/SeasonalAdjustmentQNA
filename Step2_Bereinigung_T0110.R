@@ -14,10 +14,12 @@ pb_SAL = perTramo(T110TS[, "SAL_PS_W0__T"], template = "RSA3",
                    # Outliers -------------------------------------------------------------
                    outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE, 
-                   usrdef.outliersType = c("TC", "AO",
-                                           "TC", "TC"),
-                   usrdef.outliersDate = c("2020-04-01", "2020-07-01",
-                                           "2021-01-01", "2008-01-01"),
+                   usrdef.outliersType = c("AO", "LS",
+                                           "AO", "AO", "AO",
+                                           "AO", "AO", "AO"),
+                   usrdef.outliersDate = c("2008-01-01", "2009-04-01", 
+                                           "2020-01-01", "2020-04-01", "2020-07-01",
+                                           "2020-10-01", "2021-01-01", "2021-04-01"),
                    # Trading Days ---------------------------------------------------------
                    # usrdef.varEnabled = FALSE,
                    # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -27,7 +29,7 @@ pb_SAL = perTramo(T110TS[, "SAL_PS_W0__T"], template = "RSA3",
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
                    arima.p  = 1, arima.d  = 1, arima.q  = 0, 
-                   arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE)
+                   arima.bp = 0, arima.bd = 1, arima.bq = 0, arima.mu = FALSE)
 
 pb_SAL$run()
 T110Adj_sa <- list()

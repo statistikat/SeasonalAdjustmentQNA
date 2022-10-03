@@ -25,18 +25,20 @@ imp121_vol <- perHts(
                    # Outliers -------------------------------------------------------------
                    outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE, 
-                   usrdef.outliersType = c("LS", "AO"),
-                   usrdef.outliersDate = c("2009-01-01", "2020-04-01"),
+                   usrdef.outliersType = c("LS", "LS",
+                                           "AO"),
+                   usrdef.outliersDate = c("2009-01-01", "2020-01-01",
+                                           "2020-04-01"),
                    # Trading Days ---------------------------------------------------------
                    usrdef.varEnabled = TRUE, 
-                   usrdef.var = td5lY, usrdef.varType = "Calendar", 
+                   usrdef.var = td7lY, usrdef.varType = "Calendar", 
                    tradingdays.option = "UserDefined",
                    # Easter ---------------------------------------------------------------
                    # easter.type = NA, easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
-                   arima.p  = 1, arima.d  = 0, arima.q  = 0, 
-                   arima.bp = 1, arima.bd = 0, arima.bq = 0, arima.mu = TRUE),
+                   arima.p  = 0, arima.d  = 1, arima.q  = 1, 
+                   arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
   P7U3 = perTramo(window(T121TS0$vol[, "P7_U3"], start = c(2008,1)), template = "RSA3",
                    # Transformation -------------------------------------------------------
@@ -45,9 +47,9 @@ imp121_vol <- perHts(
                    outlier.enabled = FALSE, 
                    usrdef.outliersEnabled = TRUE,
                    usrdef.outliersType = c("LS", "LS",
-                                           "AO", "AO"),
+                                           "LS", "AO"),
                    usrdef.outliersDate = c("2009-01-01", "2020-01-01", 
-                                           "2020-04-01", "2020-07-01"),
+                                           "2020-04-01", "2020-04-01"),
                    # Trading Days ---------------------------------------------------------
                    usrdef.varEnabled = TRUE, 
                    usrdef.var = td5, usrdef.varType = "Calendar", 
@@ -65,18 +67,18 @@ imp121_vol <- perHts(
                    # Outliers -------------------------------------------------------------
                    outlier.enabled = FALSE, 
                    usrdef.outliersEnabled = TRUE,
-                   usrdef.outliersType = c("LS", "AO", "AO", "AO"),
-                   usrdef.outliersDate = c("2020-01-01","2020-04-01", "2020-07-01", "2020-10-01"),
+                   usrdef.outliersType = c("LS", "LS"),
+                   usrdef.outliersDate = c("2009-01-01", "2020-01-01"),
                    # Trading Days ---------------------------------------------------------
                    # usrdef.varEnabled = FALSE, 
                    # usrdef.var = NA, usrdef.varType = "Calendar", 
                    # tradingdays.option = "UserDefined",
                    # Easter ---------------------------------------------------------------
-                   # easter.type = NA, easter.duration = 6,
+                   easter.type = "IncludeEaster", easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = TRUE, 
-                   arima.p  = 0, arima.d  = 1, arima.q  = 1,
-                   arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE
+                   arima.p  = 0, arima.d  = 1, arima.q  = 0,
+                   arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE
                    )
   # ====================================================================================
 )  
@@ -147,8 +149,12 @@ imp121_price <- perHts(
                    # Outliers -------------------------------------------------------------
                    outlier.enabled = FALSE, 
                    usrdef.outliersEnabled = TRUE, 
-                   usrdef.outliersType = c("LS", "TC"),
-                   usrdef.outliersDate = c("2009-01-01", "2020-04-01"),
+                   usrdef.outliersType = c("LS", "TC",
+                                           "TC", "TC",
+                                           "AO"),
+                   usrdef.outliersDate = c("2009-01-01", "2013-01-01",
+                                           "2014-01-01", "2015-01-01",
+                                           "2020-04-01"),
                    # Trading Days ---------------------------------------------------------
                    # usrdef.varEnabled = FALSE, 
                    # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -157,8 +163,8 @@ imp121_price <- perHts(
                    # easter.type = NA, easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
-                   arima.p  = 0, arima.d  = 1, arima.q  = 0, 
-                   arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE)
+                   arima.p  = 1, arima.d  = 1, arima.q  = 0, 
+                   arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE)
   # ====================================================================================
 )  
 

@@ -13,7 +13,7 @@ ent_price <- perHts(
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
                     outlier.enabled = FALSE,
-                    usrdef.outliersEnabled = TRUE, 
+                    usrdef.outliersEnabled = FALSE, 
                     usrdef.outliersType = c("LS", "AO"),
                     usrdef.outliersDate = c("2021-01-01", "2022-04-01"),
                     # Trading Days ---------------------------------------------------------
@@ -25,7 +25,7 @@ ent_price <- perHts(
                     # Arima-Model ----------------------------------------------------------
                     automdl.enabled = FALSE, 
                     arima.p  = 2, arima.d  = 0, arima.q  = 0, 
-                    arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = TRUE),
+                    arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = TRUE), # no seasonality
   # ====================================================================================
   ent_BTE = perTramo(T101TS$impPI_L[, "BTE"], template = "RSA3", 
                       # Transformation -------------------------------------------------------
@@ -44,7 +44,7 @@ ent_price <- perHts(
                       # Arima-Model ----------------------------------------------------------
                       automdl.enabled = FALSE, 
                       arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                      arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
+                      arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE), # no seasonality
   # ====================================================================================
   ent_C = perTramo(T101TS$impPI_L[, "C"], template = "RSA3",
                     # Transformation -------------------------------------------------------
@@ -63,7 +63,7 @@ ent_price <- perHts(
                     # Arima-Model ----------------------------------------------------------
                     automdl.enabled = FALSE, 
                     arima.p  = 1, arima.d  = 1, arima.q  = 0, 
-                    arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
+                    arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE), # no seasonality
   
   # ====================================================================================
   #ent_D21 = perTramo(T101TS$impPI_L[, "D21"] , template = "RSA3",
@@ -92,9 +92,9 @@ ent_price <- perHts(
                       outlier.enabled = FALSE, 
                       usrdef.outliersEnabled = TRUE, 
                       usrdef.outliersType = c("LS", "TC", 
-                                              "LS"),
+                                              "LS", "LS"),
                       usrdef.outliersDate = c("2005-01-01", "2005-04-01",
-                                              "2004-01-01"),
+                                              "2004-01-01", "2021-01-01"),
                       # Trading Days ---------------------------------------------------------
                       # usrdef.varEnabled = FASLE, 
                       # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -104,39 +104,18 @@ ent_price <- perHts(
                       # Arima-Model ----------------------------------------------------------
                       automdl.enabled = FALSE, 
                       arima.p  = 3, arima.d  = 0, arima.q  = 1, 
-                      arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
+                      arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE), 
   # ====================================================================================
   ent_F = perTramo(T101TS$impPI_L[, "F"], template = "RSA3",
                     # Transformation -------------------------------------------------------
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
                     outlier.enabled = FALSE, 
-                    usrdef.outliersEnabled = FALSE, 
-                    # usrdef.outliersType = c("AO"),
-                    # usrdef.outliersDate = c("2021-01-01"),
-                    # Trading Days ---------------------------------------------------------
-                    # usrdef.varEnabled = FALSE,
-                    # usrdef.var = NA, usrdef.varType = "Calendar",
-                    # tradingdays.option = "UserDefined",
-                    # Easter ---------------------------------------------------------------
-                    # easter.type = NA, easter.duration = 6,
-                    # Arima-Model ----------------------------------------------------------
-                    automdl.enabled = FALSE, 
-                    arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                    arima.bp = 1, arima.bd = 1, arima.bq = 0, arima.mu = FALSE),
-  # ====================================================================================
-  ent_G = perTramo(T101TS$impPI_L[, "G"], template = "RSA3",
-                    # Transformation -------------------------------------------------------
-                    transform.function = "Log",
-                    # Outliers -------------------------------------------------------------
-                    outlier.enabled = FALSE, 
                     usrdef.outliersEnabled = TRUE, 
-                    usrdef.outliersType = c("LS", "LS", "LS",
-                                            "LS", "LS", "LS",
-                                            "LS"),
-                    usrdef.outliersDate = c("2008-10-01",
-                                            "2021-01-01", "2021-04-01", "2021-07-01", "2021-10-01",
-                                            "2022-01-01", "2022-04-01"),
+                    usrdef.outliersType = c("LS", "LS", 
+                                            "LS", "LS"),
+                    usrdef.outliersDate = c("2021-01-01", "2021-04-01",
+                                            "2021-10-01", "2022-04-01"),
                     # Trading Days ---------------------------------------------------------
                     # usrdef.varEnabled = FALSE,
                     # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -146,6 +125,25 @@ ent_price <- perHts(
                     # Arima-Model ----------------------------------------------------------
                     automdl.enabled = FALSE, 
                     arima.p  = 1, arima.d  = 1, arima.q  = 0, 
+                    arima.bp = 1, arima.bd = 1, arima.bq = 0, arima.mu = FALSE),
+  # ====================================================================================
+  ent_G = perTramo(T101TS$impPI_L[, "G"], template = "RSA3",
+                    # Transformation -------------------------------------------------------
+                    transform.function = "Log",
+                    # Outliers -------------------------------------------------------------
+                    outlier.enabled = FALSE, 
+                    usrdef.outliersEnabled = TRUE, 
+                    usrdef.outliersType = c("LS"),
+                    usrdef.outliersDate = c("2008-10-01"),
+                    # Trading Days ---------------------------------------------------------
+                    # usrdef.varEnabled = FALSE,
+                    # usrdef.var = NA, usrdef.varType = "Calendar",
+                    # tradingdays.option = "UserDefined",
+                    # Easter ---------------------------------------------------------------
+                    # easter.type = NA, easter.duration = 6,
+                    # Arima-Model ----------------------------------------------------------
+                    automdl.enabled = FALSE, 
+                    arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                     arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
   ent_H = perTramo(T101TS$impPI_L[, "H"], template = "RSA3",
@@ -166,7 +164,7 @@ ent_price <- perHts(
                     # easter.type = NA, easter.duration = 6,
                     # Arima-Model ----------------------------------------------------------
                     automdl.enabled = FALSE, 
-                    arima.p  = 0, arima.d  = 1, arima.q  = 1, 
+                    arima.p  = 0, arima.d  = 1, arima.q  = 2, 
                     arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
   ent_I = perTramo(T101TS$impPI_L[, "I"], template = "RSA3",
@@ -176,10 +174,8 @@ ent_price <- perHts(
                     outlier.enabled = FALSE, 
                     usrdef.outliersEnabled = TRUE, 
                     usrdef.outliersType = c("TC", "LS",
-                                            "AO", "AO",
                                             "LS"),
                     usrdef.outliersDate = c("2008-10-01", "2020-07-01",
-                                            "2021-01-01", "2021-04-01",
                                             "2022-01-01"),
                     # Trading Days ---------------------------------------------------------
                     # usrdef.varEnabled = FALSE,
@@ -213,7 +209,7 @@ ent_price <- perHts(
                     # Arima-Model ----------------------------------------------------------
                     automdl.enabled = FALSE, 
                     arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                    arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
+                    arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE), # no seasonality
   # =====================================================================================
   ent_K = perTramo(T101TS$impPI_L[, "K"], template = "RSA3", 
                     # Transformation -------------------------------------------------------
@@ -232,7 +228,7 @@ ent_price <- perHts(
                     # Arima-Model ----------------------------------------------------------
                     automdl.enabled = FALSE, ######
                     arima.p  = 0, arima.d  = 1, arima.q  = 0, 
-                    arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
+                    arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE), # no seasonality
   # =====================================================================================
   ent_L = perTramo(T101TS$impPI_L[, "L"], template = "RSA3", 
                     # Transformation -------------------------------------------------------
@@ -251,7 +247,7 @@ ent_price <- perHts(
                     # Arima-Model ----------------------------------------------------------
                     automdl.enabled = FALSE, ######
                     arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                    arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = TRUE),
+                    arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = TRUE), # no seasonality
   # =====================================================================================
   ent_M_N = perTramo(T101TS$impPI_L[, "M_N"], template = "RSA3", 
                      # Transformation -------------------------------------------------------
@@ -270,7 +266,7 @@ ent_price <- perHts(
                      # Arima-Model ----------------------------------------------------------
                      automdl.enabled = FALSE,
                      arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                     arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = TRUE),
+                     arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = TRUE), # no seasonality
   # =====================================================================================
   ent_OTQ = perTramo(T101TS$impPI_L[, "OTQ"], template = "RSA3", 
                       # Transformation -------------------------------------------------------        
@@ -278,12 +274,10 @@ ent_price <- perHts(
                       # Outliers -------------------------------------------------------------
                       outlier.enabled = FALSE, 
                       usrdef.outliersEnabled = TRUE, 
-                      usrdef.outliersType = c("AO", "LS",
-                                              "AO", "AO",
-                                              "LS", "LS"),
-                      usrdef.outliersDate = c("2001-10-01", "2002-07-01",
-                                              "2000-01-01", "1999-01-01",
-                                              "2020-01-01", "2021-01-01"),
+                      usrdef.outliersType = c("AO", "AO",
+                                              "AO", "LS"),
+                      usrdef.outliersDate = c("2000-01-01", "1999-01-01",
+                                              "2001-10-01", "2020-01-01"),
                       # Trading Days ---------------------------------------------------------
                       # usrdef.varEnabled = FALSE, 
                       # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -292,8 +286,8 @@ ent_price <- perHts(
                       # easter.type = NA, easter.duration = 6,
                       # Arima-Model ----------------------------------------------------------
                       automdl.enabled = FALSE, 
-                      arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                      arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+                      arima.p  = 1, arima.d  = 0, arima.q  = 0, 
+                      arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE),
   # =====================================================================================
   ent_RTU = perTramo(T101TS$impPI_L[, "RTU"], template = "RSA3", 
                       # Transformation -------------------------------------------------------  
@@ -312,7 +306,7 @@ ent_price <- perHts(
                       # Arima-Model ----------------------------------------------------------
                       automdl.enabled = FALSE,
                       arima.p  = 0, arima.d  = 0, arima.q  = 0, 
-                      arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE)
+                      arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE)
   # =====================================================================================
 
 )
@@ -356,8 +350,8 @@ ent_D21b = perTramo(window(T101TS$impPI_L[, "D21"], start = c(2012,1)), template
                     # Outliers -----------------------------------------------
                     outlier.enabled = FALSE, 
                     usrdef.outliersEnabled = TRUE, 
-                    usrdef.outliersType = c("TC"),
-                    usrdef.outliersDate = c("2020-04-01"),
+                    usrdef.outliersType = c("LS", "AO"),
+                    usrdef.outliersDate = c("2015-04-01", "2020-04-01"),
                     # Trading Days -------------------------------------------
                     # usrdef.varEnabled = FALSE, 
                     # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -366,8 +360,8 @@ ent_D21b = perTramo(window(T101TS$impPI_L[, "D21"], start = c(2012,1)), template
                     # easter.type = NA, easter.duration = 6,
                     # Arima-Model --------------------------------------------
                     automdl.enabled = FALSE, 
-                    arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                    arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE)
+                    arima.p  = 3, arima.d  = 1, arima.q  = 1, 
+                    arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE)
 # ============================================================================
 ent_D21a$run()
 ent_D21b$run()
