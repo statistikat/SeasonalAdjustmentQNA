@@ -392,10 +392,8 @@ ent_BIP = perTramo(T101TS$vol[, "BIP"], template = "RSA3",
                     # Outliers -------------------------------------------------------------
                     outlier.enabled = FALSE,
                     usrdef.outliersEnabled = TRUE,
-                    usrdef.outliersType = c("LS", "LS",
-                                            "AO", "AO"),
-                    usrdef.outliersDate = c("2008-10-01", "2020-01-01",
-                                            "2020-04-01", "2021-01-01"),
+                    usrdef.outliersType = c("AO", "AO"),
+                    usrdef.outliersDate = c("2020-04-01", "2021-01-01"),
                     # Trading Days ---------------------------------------------------------
                     usrdef.varEnabled = TRUE,
                     usrdef.var = td7, usrdef.varType = "Calendar",

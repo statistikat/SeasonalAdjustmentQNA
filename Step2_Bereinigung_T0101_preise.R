@@ -92,9 +92,11 @@ ent_price <- perHts(
                       outlier.enabled = FALSE, 
                       usrdef.outliersEnabled = TRUE, 
                       usrdef.outliersType = c("LS", "TC", 
-                                              "LS", "LS"),
+                                              "LS", "LS",
+                                              "AO"),
                       usrdef.outliersDate = c("2005-01-01", "2005-04-01",
-                                              "2004-01-01", "2021-01-01"),
+                                              "2004-01-01", "2021-01-01",
+                                              "2022-07-01"),
                       # Trading Days ---------------------------------------------------------
                       # usrdef.varEnabled = FASLE, 
                       # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -174,9 +176,9 @@ ent_price <- perHts(
                     outlier.enabled = FALSE, 
                     usrdef.outliersEnabled = TRUE, 
                     usrdef.outliersType = c("TC", "LS",
-                                            "LS"),
+                                            "LS", "AO"),
                     usrdef.outliersDate = c("2008-10-01", "2020-07-01",
-                                            "2022-01-01"),
+                                            "2022-01-01", "2022-07-01"),
                     # Trading Days ---------------------------------------------------------
                     # usrdef.varEnabled = FALSE,
                     # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -323,7 +325,7 @@ T101Adj_impPI_L <- lapply(ent_price$components, function(x){
 
 ################################################################################
 
-##        P31_S15:
+##        D21:
 
 ent_D21a = perTramo(window(T101TS$impPI_L[, "D21"], end = c(2012,4)), template = "RSA3",
                     # Transformation -----------------------------------------

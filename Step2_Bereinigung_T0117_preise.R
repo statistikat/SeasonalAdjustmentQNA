@@ -42,7 +42,7 @@ kons_price <- perHts(
                    usrdef.outliersType = c("TC", "AO",
                                            "LS", "LS"),
                    usrdef.outliersDate = c("2006-07-01", "2007-10-01",
-                                           "2020-04-01", "2022-04-01"),
+                                           "2020-04-01", "2022-01-01"),
                    # Trading Days ---------------------------------------------------------
                    # usrdef.varEnabled = FALSE, 
                    # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -60,8 +60,10 @@ kons_price <- perHts(
                    # Outliers -------------------------------------------------------------
                    outlier.enabled = FALSE, 
                    usrdef.outliersEnabled = TRUE,
-                   usrdef.outliersType = c("LS", "LS"),
-                   usrdef.outliersDate = c("2022-01-01", "2022-04-01"),
+                   usrdef.outliersType = c("LS", "LS",
+                                           "LS"),
+                   usrdef.outliersDate = c("2022-01-01", "2022-04-01",
+                                           "2022-07-01"),
                    # Trading Days ---------------------------------------------------------
                    # usrdef.varEnabled = FALSE, 
                    # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -97,16 +99,6 @@ kons_price <- perHts(
 )
 
 kons_price$run()
-
-
-#-------------------------------------------------------------------------------
-
-T102Adj_impPI_L <- lapply(vcl_price$components, function(x){
-  x$output$final$series
-})
-
-T102Adj_impPI_L$vcl_AN117 <- vcl_AN117
-
 
 
 #################################################

@@ -53,8 +53,7 @@ vcl_vol <- perHts(
                         usrdef.outliersType = c("LS", 
                                                 "TC", 
                                                 "AO"),
-                        usrdef.outliersDate = c("2003-01-01",  
-                                                "2008-01-01",
+                        usrdef.outliersDate = c("2003-01-01", "2008-01-01",
                                                 "2020-04-01"),
                         # Trading Days ---------------------------------------------------------
                         # usrdef.varEnabled = FALSE, 
@@ -273,9 +272,9 @@ vcl_vol <- perHts(
                          transform.function = "Log",
                          # Outliers -------------------------------------------------------------
                          outlier.enabled = FALSE, 
-                         # usrdef.outliersEnabled = FALSE,
-                         # usrdef.outliersType = NA,
-                         # usrdef.outliersDate = NA,
+                         usrdef.outliersEnabled = TRUE,
+                         usrdef.outliersType = c("AO"),
+                         usrdef.outliersDate = c("2022-07-01"),
                          # Trading Days ---------------------------------------------------------
                          # usrdef.varEnabled = FALSE, 
                          # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -293,8 +292,8 @@ vcl_vol <- perHts(
                         # Outliers -------------------------------------------------------------
                         outlier.enabled = FALSE, 
                         usrdef.outliersEnabled = TRUE,
-                        usrdef.outliersType = c("LS"),
-                        usrdef.outliersDate = c("2021-01-01"),
+                        usrdef.outliersType = c("LS", "LS"),
+                        usrdef.outliersDate = c("2021-01-01", "2022-04-01"),
                         # Trading Days ---------------------------------------------------------
                            # usrdef.varEnabled = FALSE, 
                         # usrdef.var = NA, usrdef.varType = "Calendar", 
