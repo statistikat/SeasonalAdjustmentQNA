@@ -137,9 +137,9 @@ vert_HW_SAL <- perHts(
                      transform.function = "Log",
                      # Outliers -------------------------------------------------------------
                      outlier.enabled = FALSE, 
-                     # usrdef.outliersEnabled = FALSE,
-                     usrdef.outliersType = c("LS"),
-                     usrdef.outliersDate = c("2017-04-01"),
+                     usrdef.outliersEnabled = FALSE,
+                     usrdef.outliersType = c("AO"),
+                     usrdef.outliersDate = c("2022-07-01"),
                      # Trading Days ---------------------------------------------------------
                      usrdef.varEnabled = TRUE, 
                      usrdef.var = td7, usrdef.varType = "Calendar", 
@@ -156,9 +156,9 @@ vert_HW_SAL <- perHts(
                      transform.function = "Log",
                      # Outliers -------------------------------------------------------------
                      outlier.enabled = FALSE, 
-                     # usrdef.outliersEnabled = TRUE, 
-                     # usrdef.outliersType = c("LS"),
-                     # usrdef.outliersDate = c("2004-10-01"),
+                     # usrdef.outliersEnabled = TRUE,
+                     # usrdef.outliersType = c("AO", "AO", "AO"),
+                     # usrdef.outliersDate = c("2022-01-01", "2022-04-01", "2022-07-01"),
                      # Trading Days ---------------------------------------------------------
                      # usrdef.varEnabled = FALSE, 
                      # usrdef.var = NA, usrdef.varType = "Calendar", 

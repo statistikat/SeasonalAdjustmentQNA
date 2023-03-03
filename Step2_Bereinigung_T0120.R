@@ -17,11 +17,12 @@ exp120_vol <- perHts(
                    usrdef.outliersType = c("LS",  "AO",
                                            "AO", "LS",
                                            "AO", "AO",
-                                           "AO", "AO"),
+                                           "AO"),
                    usrdef.outliersDate = c("2008-10-01", "2009-01-01",
                                            "2009-04-01", "2020-01-01",
                                            "2020-04-01", "2021-01-01",
-                                           "2022-01-01", "2022-04-01"),
+                                           "2022-01-01"
+                                           ),
                    # Trading Days ---------------------------------------------------------
                    usrdef.varEnabled = TRUE, 
                    usrdef.var = td5lY, usrdef.varType = "Calendar", 
@@ -63,10 +64,10 @@ exp120_vol <- perHts(
                    usrdef.outliersEnabled = TRUE, 
                    usrdef.outliersType = c("LS", "LS",
                                            "LS", "AO",
-                                           "AO", "AO"),
+                                           "AO"),
                    usrdef.outliersDate = c("2010-01-01", "2020-01-01",
                                            "2020-04-01", "2020-04-01",
-                                           "2021-01-01", "2022-04-01"),
+                                           "2021-01-01"),
                    # Trading Days ---------------------------------------------------------
                    # usrdef.varEnabled = FALSE, 
                    # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -95,10 +96,10 @@ exp120_price <- perHts(
                    transform.function = "Log",
                    # Outliers -------------------------------------------------------------
                     outlier.enabled = FALSE,
-                    usrdef.outliersEnabled = FALSE,
-                    #usrdef.outliersType = c("AO", "AO", "AO",  "AO", "AO"),
-                    #usrdef.outliersDate = c("2020-01-01", "2020-04-01",
-                    #                        "2020-07-01", "2020-10-01", "2021-01-01"),
+                    usrdef.outliersEnabled = TRUE,
+                    usrdef.outliersType = c("AO", "AO", "AO",  "AO", "AO"),
+                    usrdef.outliersDate = c("2020-01-01", "2020-04-01",
+                                           "2020-07-01", "2020-10-01", "2021-01-01"),
                    # Trading Days ---------------------------------------------------------
                    # usrdef.varEnabled = FALSE, 
                    # usrdef.var = NA, usrdef.varType = "Calendar", 

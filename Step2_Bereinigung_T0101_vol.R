@@ -114,7 +114,7 @@ ent_vol <- perHts(
                     # Outliers -------------------------------------------------------------
                     outlier.enabled = FALSE, 
                     usrdef.outliersEnabled = TRUE, 
-                    usrdef.outliersType = c("AO", "LS", "AO"),
+                    usrdef.outliersType = c("AO", "LS","AO"),
                     usrdef.outliersDate = c("1999-07-01", "2020-01-01", "2020-04-01"),
                     # Trading Days ---------------------------------------------------------
                     usrdef.varEnabled = FALSE, 
@@ -137,7 +137,7 @@ ent_vol <- perHts(
                                             "AO", "AO",
                                             "AO", "AO",
                                             "AO", "AO",
-                                            "AO"),
+                                            "LS"),
                     usrdef.outliersDate = c("2009-01-01", "2004-01-01", 
                                             "2020-01-01", "2020-04-01",
                                             "2020-07-01", "2020-10-01",
@@ -349,7 +349,8 @@ ent_vD21b = perTramo(window(T101TS$vol[, "D21"], start = c(2012,1)), template = 
                      usrdef.outliersType = c("AO", "LS",
                                              "AO", "AO"),
                      usrdef.outliersDate = c("2012-10-01", "2020-01-01",
-                                             "2020-04-01", "2021-07-01"),
+                                             "2020-04-01", "2021-07-01" 
+                                             ),
                      # Trading Days -------------------------------------------
                      # usrdef.varEnabled = FALSE, 
                      # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -382,7 +383,7 @@ ent_D21 <- cbind(y = T101TS$vol[, "D21"],
 #-------------------------------------------------------------------------------
 
 T101Adj_vol$D21 <- ent_D21
-
+T101Adj_vol$D21
 
 # BIP Gesamt ###################################################################
 # nur zum Vergleich

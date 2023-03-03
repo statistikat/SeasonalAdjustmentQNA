@@ -32,10 +32,10 @@ vcl_price <- perHts(
                         transform.function = "Log",
                         # Outliers -------------------------------------------------------------
                         outlier.enabled = FALSE,
-                        usrdef.outliersEnabled = TRUE, 
-                       usrdef.outliersType = c("LS", "LS", "LS", "LS"),
-                       usrdef.outliersDate = c("2009-01-01", "2021-04-01",
-                                               "2022-01-01", "2022-04-01"),
+                        usrdef.outliersEnabled = TRUE,
+                        usrdef.outliersType = c("LS", "LS", "LS", "LS", "LS"),
+                        usrdef.outliersDate = c("2009-01-01", "2021-04-01",
+                                               "2022-01-01", "2022-04-01", "2022-07-01"),
                         # Trading Days ---------------------------------------------------------
                         # usrdef.varEnabled = FALSE, 
                         # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -156,10 +156,10 @@ vcl_price <- perHts(
                       transform.function = "Log",
                       # Outliers -------------------------------------------------------------
                       outlier.enabled = FALSE, 
-                      usrdef.outliersEnabled = TRUE,
-                      usrdef.outliersType = c("LS"),
-                      usrdef.outliersDate = c("2022-01-01"),
-                      # Trading Days ---------------------------------------------------------
+                      usrdef.outliersEnabled = FALSE,
+                      # usrdef.outliersType = c("LS"),
+                      # usrdef.outliersDate = c("2022-01-01"),
+                      # # Trading Days ---------------------------------------------------------
                       # usrdef.varEnabled = FALSE, 
                       # usrdef.var = NA, usrdef.varType = "Calendar", 
                       # tradingdays.option = "UserDefined",
@@ -238,7 +238,7 @@ vcl_price <- perHts(
                           # Transformation -------------------------------------------------------
                           transform.function = "None",
                           # Outliers -------------------------------------------------------------
-                          outlier.enabled = FALSE, 
+                          outlier.enabled = TRUE, 
                           usrdef.outliersEnabled = TRUE, 
                           usrdef.outliersType = c("LS", "AO", 
                                                   "LS"),
@@ -318,9 +318,9 @@ vcl_price <- perHts(
                         outlier.enabled = FALSE, 
                         usrdef.outliersEnabled = TRUE, 
                         usrdef.outliersType = c("AO", "LS",
-                                                "LS", "LS"),
+                                                "LS"),
                         usrdef.outliersDate = c("2013-01-01", "2021-07-01",
-                                                "2022-01-01", "2022-07-01"),
+                                                "2022-01-01"),
                         # Trading Days ---------------------------------------------------------
                         # usrdef.varEnabled = FALSE, 
                         # usrdef.var = NA, usrdef.varType = "Calendar", 
