@@ -133,12 +133,9 @@ vcl_price <- perHts(
                       # Outliers -------------------------------------------------------------
                       outlier.enabled = FALSE, 
                        usrdef.outliersEnabled = TRUE, 
-                       usrdef.outliersType = c("TC", "LS", "LS",
-                                               "LS", "LS",
-                                               "LS", "LS"),
-                       usrdef.outliersDate = c("2020-04-01","2021-01-01",
-                                               "2021-04-01", "2021-07-01",
-                                               "2021-10-01", "2022-01-01",
+                       usrdef.outliersType = c("TC", "LS", 
+                                               "LS"),
+                       usrdef.outliersDate = c("2020-04-01","2022-01-01",
                                                "2022-04-01"),
                       # Trading Days ---------------------------------------------------------
                       # usrdef.varEnabled = FALSE, 
@@ -259,7 +256,7 @@ vcl_price <- perHts(
                          # Transformation -------------------------------------------------------
                          transform.function = "Log",
                          # Outliers -------------------------------------------------------------
-                         outlier.enabled = TRUE, 
+                         outlier.enabled = FALSE, 
                          usrdef.outliersEnabled = TRUE, 
                          usrdef.outliersType = c("TC", "AO"),
                          usrdef.outliersDate = c("2019-07-01","2018-10-01"),
@@ -317,9 +314,9 @@ vcl_price <- perHts(
                         # Outliers -------------------------------------------------------------
                         outlier.enabled = FALSE, 
                         usrdef.outliersEnabled = TRUE, 
-                        usrdef.outliersType = c("AO", "LS",
+                        usrdef.outliersType = c("AO",
                                                 "LS"),
-                        usrdef.outliersDate = c("2013-01-01", "2021-07-01",
+                        usrdef.outliersDate = c("2013-01-01", 
                                                 "2022-01-01"),
                         # Trading Days ---------------------------------------------------------
                         # usrdef.varEnabled = FALSE, 

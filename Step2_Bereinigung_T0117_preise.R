@@ -40,9 +40,9 @@ kons_price <- perHts(
                    outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE, 
                    usrdef.outliersType = c("TC", "AO",
-                                           "LS", "LS"),
+                                           "LS"),
                    usrdef.outliersDate = c("2006-07-01", "2007-10-01",
-                                           "2020-04-01", "2022-01-01"),
+                                           "2020-04-01"),
                    # Trading Days ---------------------------------------------------------
                    # usrdef.varEnabled = FALSE, 
                    # usrdef.var = NA, usrdef.varType = "Calendar", 

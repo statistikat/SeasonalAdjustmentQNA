@@ -12,16 +12,15 @@ exp120_vol <- perHts(
                    # Transformation -------------------------------------------------------
                    transform.function = "Log",
                    # Outliers -------------------------------------------------------------
-                   outlier.enabled = TRUE,
+                   outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE, 
                    usrdef.outliersType = c("LS",  "AO",
                                            "AO", "LS",
-                                           "AO", "AO",
-                                           "AO"),
+                                           "AO", "AO"
+                                           ),
                    usrdef.outliersDate = c("2008-10-01", "2009-01-01",
                                            "2009-04-01", "2020-01-01",
-                                           "2020-04-01", "2021-01-01",
-                                           "2022-01-01"
+                                           "2020-04-01", "2021-01-01"
                                            ),
                    # Trading Days ---------------------------------------------------------
                    usrdef.varEnabled = TRUE, 
@@ -63,11 +62,9 @@ exp120_vol <- perHts(
                    outlier.enabled = FALSE, 
                    usrdef.outliersEnabled = TRUE, 
                    usrdef.outliersType = c("LS", "LS",
-                                           "LS", "AO",
-                                           "AO"),
+                                           "LS", "AO"),
                    usrdef.outliersDate = c("2010-01-01", "2020-01-01",
-                                           "2020-04-01", "2020-04-01",
-                                           "2021-01-01"),
+                                           "2020-04-01", "2020-04-01"),
                    # Trading Days ---------------------------------------------------------
                    # usrdef.varEnabled = FALSE, 
                    # usrdef.var = NA, usrdef.varType = "Calendar", 
