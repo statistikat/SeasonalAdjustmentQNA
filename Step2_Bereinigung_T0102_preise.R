@@ -13,9 +13,9 @@ vcl_price <- perHts(
                         # Outliers -------------------------------------------------------------
                         outlier.enabled = FALSE,
                         usrdef.outliersEnabled = TRUE, 
-                        usrdef.outliersType = c("LS", "LS", "LS", "LS"),
+                        usrdef.outliersType = c("LS", "LS", "LS"),
                         usrdef.outliersDate = c("2009-01-01", "2021-04-01",
-                                                "2022-01-01", "2022-04-01"),
+                                                "2022-04-01"),
                         # Trading Days ---------------------------------------------------------
                         # usrdef.varEnabled = FALSE, 
                         # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -43,7 +43,7 @@ vcl_price <- perHts(
                         # easter.type = NA, easter.duration = 6,
                         # Arima-Model ----------------------------------------------------------
                         automdl.enabled = FALSE, 
-                        arima.p  = 1, arima.d  = 1, arima.q  = 0, 
+                        arima.p  = 0, arima.d  = 1, arima.q  = 3, 
                         arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
   vcl_AN115 = perTramo(T102TS$impPI_L[, "AN115"], template = "RSA3",
@@ -163,7 +163,7 @@ vcl_price <- perHts(
                       # easter.type = NA, easter.duration = 6,
                       # Arima-Model ----------------------------------------------------------
                       automdl.enabled = FALSE, 
-                      arima.p  = 0, arima.d  = 1, arima.q  = 1, 
+                      arima.p  = 0, arima.d  = 1, arima.q  = 0, 
                       arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # =====================================================================================
   vcl_P31_S14 = perTramo(T102TS$impPI_L[, "P31_S14"], template = "RSA3", 
@@ -194,9 +194,9 @@ vcl_price <- perHts(
                           outlier.enabled = FALSE, 
                           usrdef.outliersEnabled = TRUE, 
                           usrdef.outliersType = c("AO", "AO",
-                                                  "TC"),
+                                                  "LS", "AO"),
                           usrdef.outliersDate = c("1998-07-01", "1999-04-01",
-                                                  "2020-01-01"),
+                                                  "2016-10-01", "2020-04-01"),
                           # Trading Days ---------------------------------------------------------
                           # usrdef.varEnabled = FALSE, 
                           # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -236,9 +236,11 @@ vcl_price <- perHts(
                           # Outliers -------------------------------------------------------------
                           outlier.enabled = TRUE, 
                           usrdef.outliersEnabled = TRUE, 
-                          usrdef.outliersType = c("LS", "AO", 
+                          usrdef.outliersType = c("AO", "AO",
+                                                  "LS", "AO", 
                                                   "LS"),
-                          usrdef.outliersDate = c("2004-10-01", "2001-10-01", 
+                          usrdef.outliersDate = c("1999-01-01", "2000-01-01",
+                                                  "2004-10-01", "2001-10-01", 
                                                   "2005-04-01"),
                           # Trading Days ---------------------------------------------------------
                           # usrdef.varEnabled = FALSE, 
@@ -248,7 +250,7 @@ vcl_price <- perHts(
                           # easter.type = NA, easter.duration = 6,
                           # Arima-Model ----------------------------------------------------------
                           automdl.enabled = FALSE, 
-                          arima.p  = 3, arima.d  = 1, arima.q  = 1, 
+                          arima.p  = 1, arima.d  = 1, arima.q  = 0, 
                           arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # =======================================================================================
   vcl_N1131G = perTramo(T102TS$impPI_L[, "N1131G"], template = "RSA3",
@@ -257,8 +259,10 @@ vcl_price <- perHts(
                          # Outliers -------------------------------------------------------------
                          outlier.enabled = FALSE, 
                          usrdef.outliersEnabled = TRUE, 
-                         usrdef.outliersType = c("TC", "AO"),
-                         usrdef.outliersDate = c("2019-07-01","2018-10-01"),
+                         usrdef.outliersType = c("TC", "AO",
+                                                 "AO"),
+                         usrdef.outliersDate = c("2019-07-01","2018-10-01",
+                                                 "2022-10-01"),
                          # Trading Days ---------------------------------------------------------
                          # usrdef.varEnabled = FALSE, 
                          # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -295,8 +299,12 @@ vcl_price <- perHts(
                         # Outliers -------------------------------------------------------------
                         outlier.enabled = FALSE, 
                         usrdef.outliersEnabled = TRUE, 
-                        usrdef.outliersType = c("AO", "LS"),
-                        usrdef.outliersDate = c("2007-10-01", "2012-01-01"),
+                        usrdef.outliersType = c("AO", "LS",
+                                                "LS", "LS",
+                                                "LS", "LS"),
+                        usrdef.outliersDate = c("2007-10-01", "2012-01-01",
+                                                "2022-01-01", "2022-04-01",
+                                                "2022-07-01", "2023-01-01"),
                         # Trading Days ---------------------------------------------------------
                         # usrdef.varEnabled = FALSE, 
                         # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -313,8 +321,8 @@ vcl_price <- perHts(
                         # Outliers -------------------------------------------------------------
                         outlier.enabled = FALSE, 
                         usrdef.outliersEnabled = TRUE, 
-                        usrdef.outliersType = c("AO"),
-                        usrdef.outliersDate = c("2013-01-01"),
+                        usrdef.outliersType = c("AO", "LS"),
+                        usrdef.outliersDate = c("2013-01-01", "2022-01-01"),
                         # Trading Days ---------------------------------------------------------
                         # usrdef.varEnabled = FALSE, 
                         # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -324,7 +332,7 @@ vcl_price <- perHts(
                         # Arima-Model ----------------------------------------------------------
                         automdl.enabled = FALSE, 
                         arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                        arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE)
+                        arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE)
   
 )
 
@@ -375,7 +383,7 @@ vcl_AN117b = perTramo(window(T102TS$impPI_L[, "AN117"], start = c(2011, 1)), tem
                         # easter.type = NA, easter.duration = 6,
                         # Arima-Model ----------------------------------------------------------
                         automdl.enabled = FALSE, 
-                        arima.p  = 2, arima.d  = 1, arima.q  = 0, 
+                        arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                         arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE)
 
 

@@ -30,14 +30,14 @@ vert_rest <- perHts(
                       # Transformation -------------------------------------------------------  
                       transform.function = "None",
                       # Outliers -------------------------------------------------------------
-                      outlier.enabled = TRUE, 
+                      outlier.enabled = FALSE, 
                       usrdef.outliersEnabled = TRUE, 
-                      usrdef.outliersType = c("LS", "AO", "AO",
-                                              "LS", "AO", "AO",
+                      usrdef.outliersType = c("LS", "AO", 
+                                              "LS", "AO", 
                                               "AO", "AO",
                                               "AO", "AO"),
-                      usrdef.outliersDate = c("2002-10-01", "2015-10-01","2016-04-01",
-                                              "2020-01-01", "2020-01-01", "2020-04-01",
+                      usrdef.outliersDate = c("2002-10-01", "2016-04-01",
+                                              "2020-04-01", "2020-04-01",
                                               "2020-07-01", "2020-10-01",
                                               "2021-01-01", "2021-04-01"),
                       # Trading Days ---------------------------------------------------------
@@ -48,8 +48,8 @@ vert_rest <- perHts(
                       # easter.type = NA, easter.duration = 6,
                       # Arima-Model ----------------------------------------------------------
                       automdl.enabled = FALSE,
-                      arima.p  = 0, arima.d  = 0, arima.q  = 1,
-                      arima.bp = 0, arima.bd = 1, arima.bq = 0, arima.mu = FALSE)
+                      arima.p  = 0, arima.d  = 1, arima.q  = 1,
+                      arima.bp = 0, arima.bd = 1, arima.bq = 0, arima.mu = TRUE)
 )
 
 vert_rest$run()
@@ -90,8 +90,10 @@ vert_D2b = perTramo(window(T103TS[, "D2"], start = c(2013, 1)), template = "RSA3
                         # Outliers -------------------------------------------------------------
                         outlier.enabled = FALSE, 
                         usrdef.outliersEnabled = TRUE, 
-                        usrdef.outliersType = c("TC"),
-                        usrdef.outliersDate = c("2020-04-01"),
+                        usrdef.outliersType = c("LS", "AO",
+                                                "AO", "AO"),
+                        usrdef.outliersDate = c("2020-04-01", "2020-04-01",
+                                                "2022-04-01", "2023-01-01"),
                         # Trading Days ---------------------------------------------------------
                         # usrdef.varEnabled = FALSE, 
                         # usrdef.var = NA, usrdef.varType = "Calendar", 

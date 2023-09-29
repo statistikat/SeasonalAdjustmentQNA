@@ -14,17 +14,17 @@ kons_vol <- perHts(
                    # Outliers -------------------------------------------------------------
                    outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE, 
-                   usrdef.outliersType = c( "AO"),
-                   usrdef.outliersDate = c("2020-04-01"),
+                   usrdef.outliersType = c("AO", "AO"),
+                   usrdef.outliersDate = c("2020-01-01", "2020-04-01"),
                    # Trading Days ---------------------------------------------------------
-                   # usrdef.varEnabled = FALSE, 
-                   # usrdef.var = NA, usrdef.varType = "Calendar", 
-                   # tradingdays.option = "UserDefined",
+                   usrdef.varEnabled = TRUE,
+                   usrdef.var = td7, usrdef.varType = "Calendar",
+                   tradingdays.option = "UserDefined",
                    # Easter ---------------------------------------------------------------
                    # easter.type = NA, easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
-                   arima.p  = 0, arima.d  = 0, arima.q  = 1, 
+                   arima.p  = 1, arima.d  = 0, arima.q  = 0, 
                    arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE),
   # ====================================================================================
   p312 = perTramo(T117TS$vol[, "P312"], template = "RSA3", 
@@ -33,10 +33,8 @@ kons_vol <- perHts(
                    # Outliers -------------------------------------------------------------
                    outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE, 
-                   usrdef.outliersType = c("LS", "AO",
-                                           "AO"),
-                   usrdef.outliersDate = c("2020-01-01", "2020-01-01",
-                                           "2020-04-01"),
+                   usrdef.outliersType = c("LS", "LS"),
+                   usrdef.outliersDate = c("2020-01-01", "2022-01-01"),
                    # Trading Days ---------------------------------------------------------
                    # usrdef.varEnabled = FALSE,
                    # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -45,7 +43,7 @@ kons_vol <- perHts(
                    # easter.type = NA, easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
-                   arima.p  = 0, arima.d  = 0, arima.q  = 0, 
+                   arima.p  = 1, arima.d  = 0, arima.q  = 0, 
                    arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE),
   # ====================================================================================
   p313 = perTramo(T117TS$vol[, "P313"], template = "RSA3",
@@ -54,8 +52,10 @@ kons_vol <- perHts(
                    # Outliers -------------------------------------------------------------
                    outlier.enabled = FALSE, 
                    usrdef.outliersEnabled = TRUE, 
-                   usrdef.outliersType = c("AO", "AO"),
-                   usrdef.outliersDate = c("2022-07-01", "2022-10-01"),
+                   usrdef.outliersType = c("AO", "AO",
+                                           "AO"),
+                   usrdef.outliersDate = c("2021-04-01", "2021-07-01",
+                                           "2022-10-01"),
                    # Trading Days ---------------------------------------------------------
                    # usrdef.varEnabled = FALSE,
                    # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -64,7 +64,7 @@ kons_vol <- perHts(
                    # easter.type = NA, easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
-                   arima.p  = 0, arima.d  = 0, arima.q  = 1, 
+                   arima.p  = 1, arima.d  = 0, arima.q  = 0, 
                    arima.bp = 1, arima.bd = 1, arima.bq = 0, arima.mu = TRUE),
   
   # ====================================================================================
@@ -74,14 +74,16 @@ kons_vol <- perHts(
                    # Outliers -------------------------------------------------------------
                    outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE, 
-                   usrdef.outliersType = c("LS", "AO",
+                   usrdef.outliersType = c("AO",
+                                           "LS", "AO",
                                            "AO", "AO",
                                            "AO", "AO",
-                                           "AO"),
-                   usrdef.outliersDate = c("2020-01-01", "2020-04-01",
-                                           "2020-10-01", "2021-01-01",
-                                           "2021-04-01", "2021-07-01",
-                                           "2021-10-01"),
+                                           "AO", "AO"),
+                   usrdef.outliersDate = c("2008-01-01",
+                                           "2020-01-01", "2020-01-01",
+                                           "2020-04-01", "2020-10-01",
+                                           "2021-01-01", "2021-04-01",
+                                           "2021-07-01", "2022-01-01"),
                    # Trading Days ---------------------------------------------------------
                    # usrdef.varEnabled = FALSE,
                    # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -90,8 +92,8 @@ kons_vol <- perHts(
                    easter.type = "IncludeEaster", easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
-                   arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                   arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE)
+                   arima.p  = 0, arima.d  = 1, arima.q  = 0, 
+                   arima.bp = 0, arima.bd = 1, arima.bq = 0, arima.mu = FALSE)
   # ====================================================================================
 )
 

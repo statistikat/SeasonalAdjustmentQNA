@@ -14,14 +14,12 @@ kons_price <- perHts(
                    # Outliers -------------------------------------------------------------
                    outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE,
-                   usrdef.outliersType = c("LS", "AO",
-                                           "AO", "TC", 
-                                           "LS", "LS",
-                                           "LS"),
-                   usrdef.outliersDate = c("1999-01-01", "2005-07-01",
-                                           "2006-10-01", "2008-10-01", 
-                                           "2021-04-01", "2022-01-01",
-                                           "2022-04-01"),
+                   usrdef.outliersType = c("LS", "LS",
+                                           "TC", 
+                                           "LS", "LS"),
+                   usrdef.outliersDate = c("1999-01-01", 
+                                           "2007-01-01", "2008-10-01", 
+                                           "2021-04-01", "2022-01-01"),
                    # Trading Days ---------------------------------------------------------
                    # usrdef.varEnabled = FALSE,
                    # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -31,7 +29,7 @@ kons_price <- perHts(
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE,
                    arima.p  = 0, arima.d  = 1, arima.q  = 0,
-                   arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+                   arima.bp = 1, arima.bd = 0, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
   p312 = perTramo(T117TS$impPI_L[, "P312"], template = "RSA3", 
                    # Transformation -------------------------------------------------------
@@ -40,9 +38,9 @@ kons_price <- perHts(
                    outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE, 
                    usrdef.outliersType = c("TC", "AO",
-                                           "LS"),
+                                           "LS", "LS"),
                    usrdef.outliersDate = c("2006-07-01", "2007-10-01",
-                                           "2020-04-01"),
+                                           "2020-04-01", "2022-01-01"),
                    # Trading Days ---------------------------------------------------------
                    # usrdef.varEnabled = FALSE, 
                    # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -81,9 +79,9 @@ kons_price <- perHts(
                    transform.function = "Log",
                    # Outliers -------------------------------------------------------------
                    outlier.enabled = FALSE, 
-                   # usrdef.outliersEnabled = FALSE,
-                   # usrdef.outliersType = NA,
-                   # usrdef.outliersDate = NA,
+                   usrdef.outliersEnabled = TRUE,
+                   usrdef.outliersType = c("LS"),
+                   usrdef.outliersDate = c("2023-01-01"),
                    # Trading Days ---------------------------------------------------------
                    # usrdef.varEnabled = FALSE, 
                    # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -92,7 +90,7 @@ kons_price <- perHts(
                    # easter.type = NA, easter.duration = 6,
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, 
-                   arima.p  = 0, arima.d  = 1, arima.q  = 1, 
+                   arima.p  = 0, arima.d  = 1, arima.q  = 0, 
                    arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE)
   # ====================================================================================
   
