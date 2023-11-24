@@ -17,9 +17,11 @@ vert_HW_SAL <- perHts(
                      outlier.enabled = FALSE,
                      usrdef.outliersEnabled = TRUE, 
                      usrdef.outliersType = c("AO", "AO",
-                                             "AO", "LS"),
+                                             "AO", "LS",
+                                             "AO"),
                      usrdef.outliersDate = c("2007-04-01", "2009-01-01",
-                                             "2010-01-01", "2020-04-01"),
+                                             "2010-01-01", "2020-04-01",
+                                             "2023-07-01"),
                      # Trading Days ---------------------------------------------------------
                      usrdef.varEnabled = FALSE,
                      usrdef.var = td7, usrdef.varType = "Calendar",

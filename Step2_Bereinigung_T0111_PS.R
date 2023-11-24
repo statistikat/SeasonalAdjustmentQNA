@@ -150,7 +150,7 @@ vert_PS_SAL <- perHts(
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
                     outlier.enabled = FALSE,
-                    usrdef.outliersEnabled = FALSE,
+                    usrdef.outliersEnabled = TRUE,
                     usrdef.outliersType = c("AO", "LS",
                                             "LS", "LS"),
                     usrdef.outliersDate = c("1996-01-01", "2002-01-01",
