@@ -31,10 +31,10 @@ vcl_vol <- perHts(
                         usrdef.outliersEnabled = TRUE, 
                         usrdef.outliersType = c("TC", "AO",
                                                 "AO", "AO",
-                                                "AO", "AO"),
+                                                "AO"),
                         usrdef.outliersDate = c("2008-01-01","2017-01-01",
                                                 "2020-01-01", "2020-04-01",
-                                                "2022-01-01", "2023-04-01"),
+                                                "2022-01-01"),
                         # Trading Days ---------------------------------------------------------
                         # usrdef.varEnabled = FALSE, 
                         # usrdef.var = NA, usrdef.varType = "Calendar", 
