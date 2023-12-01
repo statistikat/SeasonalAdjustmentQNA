@@ -116,9 +116,11 @@ vcl_vol <- perHts(
                       outlier.enabled = FALSE, 
                       usrdef.outliersEnabled = TRUE, 
                       usrdef.outliersType = c("LS", "AO",
-                                              "AO", "AO"),
+                                              "AO", "AO",
+                                              "AO"),
                       usrdef.outliersDate = c("2008-10-01", "2009-01-01",
-                                              "2009-04-01", "2020-04-01"),
+                                              "2009-04-01", "2020-04-01",
+                                              "2023-01-01"),
                       # Trading Days ---------------------------------------------------------
                       usrdef.varEnabled = TRUE, 
                       usrdef.var = td7lY, usrdef.varType = "Calendar", 

@@ -33,8 +33,9 @@ kons_vol <- perHts(
                    # Outliers -------------------------------------------------------------
                    outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE, 
-                   usrdef.outliersType = c("LS", "LS"),
-                   usrdef.outliersDate = c("2020-01-01", "2022-01-01"),
+                   usrdef.outliersType = c("LS", "LS", "AO"),
+                   usrdef.outliersDate = c("2020-01-01", "2022-01-01",
+                                           "2023-01-01"),
                    # Trading Days ---------------------------------------------------------
                    # usrdef.varEnabled = FALSE,
                    # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -53,9 +54,11 @@ kons_vol <- perHts(
                    outlier.enabled = FALSE, 
                    usrdef.outliersEnabled = TRUE, 
                    usrdef.outliersType = c("AO", "AO",
+                                           "AO", "AO",
                                            "AO"),
                    usrdef.outliersDate = c("2021-04-01", "2021-07-01",
-                                           "2022-10-01"),
+                                           "2022-10-01", "2023-04-01",
+                                           "2023-07-01"),
                    # Trading Days ---------------------------------------------------------
                    # usrdef.varEnabled = FALSE,
                    # usrdef.var = NA, usrdef.varType = "Calendar",

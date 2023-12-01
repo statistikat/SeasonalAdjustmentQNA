@@ -47,9 +47,11 @@ imp121_vol <- perHts(
                    outlier.enabled = FALSE, 
                    usrdef.outliersEnabled = TRUE,
                    usrdef.outliersType = c("LS", "LS",
-                                           "AO", "AO"),
+                                           "AO", "AO",
+                                           "AO"),
                    usrdef.outliersDate = c("2009-01-01", "2020-01-01", 
-                                           "2020-04-01", "2020-07-01"),
+                                           "2020-04-01", "2020-07-01",
+                                           "2023-04-01"),
                    # Trading Days ---------------------------------------------------------
                    usrdef.varEnabled = TRUE, 
                    usrdef.var = td5, usrdef.varType = "Calendar", 
