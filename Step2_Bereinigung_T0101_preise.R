@@ -303,8 +303,8 @@ ent_price <- perHts(
                       # Outliers -------------------------------------------------------------
                       outlier.enabled = FALSE, 
                       usrdef.outliersEnabled = TRUE, 
-                      usrdef.outliersType = c("AO"),
-                      usrdef.outliersDate = c("2020-04-01"),
+                      usrdef.outliersType = c("AO", "AO"),
+                      usrdef.outliersDate = c("2020-04-01", "2023-10-01"),
                       # Trading Days ---------------------------------------------------------
                       # usrdef.varEnabled = FALSE, 
                       # usrdef.var = NA, usrdef.varType = "Calendar", 

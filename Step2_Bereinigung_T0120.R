@@ -17,11 +17,13 @@ exp120_vol <- perHts(
                    usrdef.outliersType = c("LS",  "AO",
                                            "AO", "LS",
                                            "AO", "AO",
-                                           "AO"),
+                                           # "LS",
+                                           "AO", "AO"),
                    usrdef.outliersDate = c("2008-10-01", "2009-01-01",
                                            "2009-04-01", "2020-01-01",
                                            "2020-04-01", "2021-01-01",
-                                           "2023-04-01"),
+                                           # "2023-01-01", # LS Croatia negative, not sig
+                                           "2023-04-01", "2023-07-01"),
                    # Trading Days ---------------------------------------------------------
                    usrdef.varEnabled = TRUE, 
                    usrdef.var = td5lY, usrdef.varType = "Calendar", 
@@ -41,9 +43,11 @@ exp120_vol <- perHts(
                    outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE, 
                    usrdef.outliersType = c("LS", "LS", 
-                                           "AO", "AO"),
-                   usrdef.outliersDate = c("2009-01-01", "2020-01-01",
-                                           "2020-04-01", "2021-01-01"),
+                                           "AO", "AO",
+                                           "LS"), 
+                   usrdef.outliersDate = c("2009-01-01", "2020-01-01",# Brexit
+                                           "2020-04-01", "2021-01-01",
+                                           "2023-01-01"), # Croatia in eurozone
                    # Trading Days ---------------------------------------------------------
                    # usrdef.varEnabled = FALSE, 
                    # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -74,7 +78,7 @@ exp120_vol <- perHts(
                    arima.p  = 1, arima.d  = 1, arima.q  = 0, 
                    arima.bp = 0, arima.bd =0, arima.bq = 0, arima.mu = FALSE) # not seasonal
   # ====================================================================================
-)  
+) 
   
 exp120_vol$run()
 
