@@ -75,8 +75,9 @@ ent_vol <- perHts(
                       # Outliers -------------------------------------------------------------
                       outlier.enabled = FALSE, 
                       usrdef.outliersEnabled = TRUE, 
-                      usrdef.outliersType = c("TC", "AO"),
-                      usrdef.outliersDate = c("2002-04-01", "2007-10-01"),
+                      usrdef.outliersType = c("TC", "AO", "LS"),
+                      usrdef.outliersDate = c("2002-04-01", "2007-10-01",
+                                              "2023-01-01"),
                       # Trading Days ---------------------------------------------------------
                       # usrdef.varEnabled = FALSE, 
                       # usrdef.var = NA, usrdef.varType = "Calendar", 
