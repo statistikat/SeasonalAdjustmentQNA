@@ -1,0 +1,164 @@
+---
+title: "QNA_Saisonbereinigung"
+author: "Angelika Meraner"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+require(data.table)
+
+told <- as.data.frame(oldres$output$regarima$residuals.stat[2])[,1:2]
+setDT(told)
+names(told) <- c("Statistic","P.value")
+test.Type <- c("Normality","","","Independence","","Linearity")
+told <- cbind(test.Type,told)
+told[, Sig := ""]
+told[P.value >= 0.1, Sig := "***"]
+told[P.value < 0.1 & P.value >=0.05, Sig := "**"]
+
+tdef <- as.data.frame(newres$output$regarima$residuals.stat[2])[,1:2]
+setDT(tdef)
+names(tdef) <- c("Statistic","P.value")
+test.Type <- c("Normality","","","Independence","","Linearity")
+tdef <- cbind(test.Type,tdef)
+tdef[, Sig := ""]
+tdef[P.value >= 0.1, Sig := "***"]
+tdef[P.value < 0.1 & P.value >=0.05, Sig := "**"]
+
+ddef <- newres$output$diagnostics
+dold <- oldres$output$diagnostics
+# Stable seasonality
+ddef$combined_test
+dold$combined_test
+
+# Residual seasonality
+dnewres <- ddef$residuals_test[!names(ddef$residuals_test)%in%"Description"]
+test.Type <- rownames(dnewres)
+setDT(dnewres)
+dnewres <- cbind(test.Type,dnewres)
+dnewres[, Sig := ""]
+dnewres[P.value >= 0.1, Sig := "***"]
+dnewres[P.value < 0.1 & P.value >=0.05, Sig := "**"]
+
+doldres <- dold$residuals_test[!names(dold$residuals_test)%in%"Description"]
+test.Type <- rownames(doldres)
+setDT(doldres)
+doldres <- cbind(test.Type,doldres)
+doldres[, Sig := ""]
+doldres[P.value >= 0.1, Sig := "***"]
+doldres[P.value < 0.1 & P.value >=0.05, Sig := "**"]
+
+dboth <- merge(doldres,dnewres,by="test.Type",suffixes = c("_old","_new"), sort = FALSE)
+
+
+```
+
+# Nr. `r paste0({{i}},".")`
+
+:::: {style="display: flex;"}
+
+::: {}
+
+# Old result (`oldres`)
+
+### Arima Model
+
+```{r warning=FALSE, message=FALSE, echo=FALSE}
+cat(ifelse(oldres$output$decomposition$mode == "Multiplicative","log",oldres$output$decomposition$mode))
+cat(paste0("(",paste0(oldres$output$regarima$arma,collapse= ", "),")"))
+oldres$output$regarima$regression.coefficients
+```
+
+:::
+
+::: {}
+
+# New result (`newres`)
+
+### Arima Model
+
+```{r warning=FALSE,message=FALSE, echo=FALSE}
+cat(ifelse(newres$output$decomposition$mode == "Multiplicative","log",newres$output$decomposition$mode))
+cat(paste0("(",paste0(newres$output$regarima$arma,collapse= ", "),")"))
+newres$output$regarima$regression.coefficients
+```
+
+:::
+:::: 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+
+```{r warning=FALSE,message=FALSE, echo=FALSE, out.width = '90%'}
+try(oldres$plot(forecasts=FALSE))
+```
+
+:::
+
+::: {.column width="50%"}
+
+
+```{r warning=FALSE,message=FALSE, echo=FALSE, out.width = '90%'}
+try(newres$plot(forecasts=FALSE))
+```
+
+:::
+::::
+
+:::: {style="display: flex;"}
+
+::: {}
+
+### Residuals (old)
+
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+told
+```
+
+:::
+
+::: {}
+
+### Residuals (new)
+
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+tdef
+```
+
+:::
+::::
+
+:::: {style="display: flex;"}
+
+::: {}
+
+### Stable seasonality (old)
+
+```{r warning=FALSE,message=FALSE, echo=FALSE}
+dold$combined_test
+```
+
+:::
+
+::: {}
+
+### Stable seasonality (new)
+
+```{r warning=FALSE,message=FALSE, echo=FALSE}
+ddef$combined_test
+```
+
+:::
+::::
+
+### Residual seasonality 
+
+```{r warning=FALSE,message=FALSE, echo=FALSE}
+options(width = 150)
+dboth
+```
+

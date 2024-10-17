@@ -1,0 +1,67 @@
+---
+title: "QNA_Saisonbereinigung"
+author: "Angelika Meraner"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+require(data.table)
+
+told <- as.data.frame(res$output$regarima$residuals.stat[2])[,1:2]
+setDT(told)
+names(told) <- c("Statistic","P.value")
+test.Type <- c("Normality","","","Independence","","Linearity")
+told <- cbind(test.Type,told)
+told[, Sig := ""]
+told[P.value >= 0.1, Sig := "***"]
+told[P.value < 0.1 & P.value >=0.05, Sig := "**"]
+
+dold <- res$output$diagnostics
+# Stable seasonality
+ddef$combined_test
+
+# Residual seasonality
+
+dres <- dold$residuals_test[!names(dold$residuals_test)%in%"Description"]
+test.Type <- rownames(dres)
+setDT(dres)
+dres <- cbind(test.Type,dres)
+dres[, Sig := ""]
+dres[P.value >= 0.1, Sig := "***"]
+dres[P.value < 0.1 & P.value >=0.05, Sig := "**"]
+```
+
+# Nr. `r paste0({{i}},".")`
+
+
+### Arima Model
+
+```{r warning=FALSE, message=FALSE, echo=FALSE}
+cat(ifelse(res$output$decomposition$mode == "Multiplicative","log",res$output$decomposition$mode))
+cat(paste0("(",paste0(res$output$regarima$arma,collapse= ", "),")"))
+res$output$regarima$regression.coefficients
+```
+
+
+### Residuals (old)
+
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+told
+```
+
+
+### Stable seasonality (old)
+
+```{r warning=FALSE,message=FALSE, echo=FALSE}
+dold$combined_test
+```
+
+
+## Residual seasonality 
+
+```{r warning=FALSE,message=FALSE, echo=FALSE}
+dres
+```
+
