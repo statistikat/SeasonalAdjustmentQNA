@@ -4,64 +4,8 @@
 #
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Identifier |	Log/level detection |	Outliers detection |	Calendar effects |	ARIMA
-#       RSA0 |	NA |	NA |	NA |	Airline(+mean)
-#       RSA1 |	automatic |	AO/LS/TC |	NA |	Airline(+mean)
-#       RSA2 |	automatic |	AO/LS/TC |	2 td vars + Easter |	Airline(+mean)
-#       RSA3 |	automatic |	AO/LS/TC |	NA |	automatic
-#       RSA4 |	automatic |	AO/LS/TC |	2 td vars + Easter |	automatic
-#       RSA5 |	automatic |	AO/LS/TC |	7 td vars + Easter |	automatic
-#    RSAfull |	automatic |	AO/LS/TC |	automatic |	automatic
-
-spec <- singleSpec(par=paraM_EH, ind=serNum, tsM = kjh_eh, td0 = tdAT7)
-
-# Arima-Modell
-vert_A$output$regarima
-# Koeffizienten: 
-# signifikant wenn T-Stat ca >= 4 bzw. <= -4
-vert_A$output$regarima$regression.coefficients
-# Residuen:
-# normalverteilt, unabhängig, homoskedastisch (linear
-vert_A$output$regarima$residuals.stat
-# Diagnostics:
-# Stable seasonality: will p.value = 0
-# Residual seasonality: will großen p.value 
-vert_A$output$diagnostics
-# Nur bei x12
-vert_A$output$decomposition$mstats
-
-tsnames <- c("D11_XDC_W2_A", "D11_XDC_W2_BTE", "D11_XDC_W2_C", "D11_XDC_W2_F", "D11_XDC_W2_GTI", 
-             "D11_XDC_W2_J", "D11_XDC_W2_K", "D11_XDC_W2_L", "D11_XDC_W2_M_N", "D11_XDC_W2_OTQ", "D11_XDC_W2_RTU")
-
-
-
-i <- 1
-defres <- perTramo(T103TS[,  tsnames[i]], template = "RSA3", 
-                   # Transformation -------------------------------------------------------
-                   transform.function = NULL, #log
-                   # Outliers -------------------------------------------------------------
-                   outlier.enabled = TRUE,
-                   # Arima-Model ----------------------------------------------------------
-                   automdl.enabled = TRUE) 
-defres$run()
-
-# Arima-Modell
-defres$output$regarima
-# Koeffizienten: 
-# signifikant wenn T-Stat ca >= 4 bzw. <= -4
-defres$output$regarima$regression.coefficients
-# Residuen:
-# normalverteilt, unabhängig, homoskedastisch (linear
-defres$output$regarima$residuals.stat
-# Diagnostics:
-# Stable seasonality: will p.value = 0
-# Residual seasonality: will großen p.value 
-defres$output$diagnostics
-# Nur bei x12
-defres$output$decomposition$mstats
-
-
 # T103TS muss geladen sein
+
 # test
 vert_D11 <- perHts(
   # Hier wurden AT6 plus Easter identifiziert (Grenzwert)

@@ -124,7 +124,7 @@ vert_HW_SAL <- perHts(
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
                     outlier.enabled = FALSE, 
-                    usrdef.outliersEnabled = FALSE, 
+                    usrdef.outliersEnabled = TRUE, 
                     # usrdef.outliersType = NA,
                     # usrdef.outliersDate = NA,
                     # Trading Days ---------------------------------------------------------
@@ -144,7 +144,7 @@ vert_HW_SAL <- perHts(
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
                     outlier.enabled = FALSE, 
-                    usrdef.outliersEnabled = FALSE,
+                    usrdef.outliersEnabled = TRUE,
                     usrdef.outliersType = c("AO"),
                     usrdef.outliersDate = c("2022-07-01"),
                     # Trading Days ---------------------------------------------------------
@@ -321,7 +321,7 @@ vert_HW_SELF <- perHts(
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
                     outlier.enabled = FALSE, 
-                    usrdef.outliersEnabled = FALSE,
+                    usrdef.outliersEnabled = TRUE,
                     #usrdef.outliersType = NA,
                     #usrdef.outliersDate = NA,
                     # Trading Days ---------------------------------------------------------
@@ -363,7 +363,7 @@ vert_HW_SELF <- perHts(
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
                     outlier.enabled = FALSE, 
-                    usrdef.outliersEnabled = FALSE, 
+                    usrdef.outliersEnabled = TRUE, 
                     # usrdef.outliersType = NA,
                     # usrdef.outliersDate = NA,
                     # Trading Days ---------------------------------------------------------
@@ -383,7 +383,7 @@ vert_HW_SELF <- perHts(
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
                     outlier.enabled = FALSE, 
-                    usrdef.outliersEnabled = FALSE, 
+                    # usrdef.outliersEnabled = FALSE, 
                     # usrdef.outliersType = NA,
                     # usrdef.outliersDate = NA,
                     # Trading Days ---------------------------------------------------------
@@ -402,7 +402,7 @@ vert_HW_SELF <- perHts(
                     # Transformation -------------------------------------------------------
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
-                    outlier.enabled = TRUE, 
+                    outlier.enabled = FALSE, 
                     usrdef.outliersEnabled = TRUE, 
                     usrdef.outliersType = c("AO","AO"),
                     usrdef.outliersDate = c("1999-07-01","2023-10-01"),
@@ -423,7 +423,7 @@ vert_HW_SELF <- perHts(
                       transform.function = "Log",
                       # Outliers -------------------------------------------------------------
                       outlier.enabled = FALSE, 
-                      usrdef.outliersEnabled = FALSE,
+                      # usrdef.outliersEnabled = FALSE,
                       # usrdef.outliersType = NA,
                       # usrdef.outliersDate = NA,
                       # Trading Days ---------------------------------------------------------
@@ -464,8 +464,8 @@ vert_HW_SELF <- perHts(
                       # Transformation -------------------------------------------------------  
                       transform.function = "Log",
                       # Outliers -------------------------------------------------------------
-                      outlier.enabled = TRUE, 
-                      usrdef.outliersEnabled = FALSE, 
+                      outlier.enabled = FALSE, 
+                      usrdef.outliersEnabled = TRUE, 
                       # usrdef.outliersType = NA,
                       # usrdef.outliersDate = NA,
                       # Trading Days ---------------------------------------------------------
