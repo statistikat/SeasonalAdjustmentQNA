@@ -39,7 +39,7 @@ konsumY_sums <- lapply(c("V", "Y"), function(b){
 }) %>%
   `names<-`(c("V", "Y"))
 
-konsumY_sums$L <- chainlinkDF(konsumY_sums, ts_output = TRUE)
+konsumY_sums$L <- chainlinkDF(konsumY_sums)
 
 
 

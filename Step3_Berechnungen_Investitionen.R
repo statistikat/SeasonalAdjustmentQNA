@@ -37,6 +37,6 @@ investY_sums <- lapply(c("V", "Y"), function(b){
 }) %>%
   `names<-`(c("V", "Y"))
 
-investY_sums$L <- chainlinkDF(investY_sums, ts_output = T)
+investY_sums$L <- chainlinkDF(investY_sums)
 
 

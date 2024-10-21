@@ -37,6 +37,6 @@ ahY_sums <- lapply(c("V", "Y"), function(b){
 }) %>%
   `names<-`(c("V", "Y"))
 
-ahY_sums$L <- chainlinkDF(ahY_sums, ts_output = T)
+ahY_sums$L <- chainlinkDF(ahY_sums)
 
 

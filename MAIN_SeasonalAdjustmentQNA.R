@@ -59,19 +59,19 @@ source("Step2_Bereinigung_Investitionen_PI.R")
 source("Step3_Berechnungen_Investitionen.R")
 
 ### Außenhandel ---------------------
-source("Step2_Bereinigung_Außenhandel_vol.R")
-source("Step2_Bereinigung_Außenhandel_PI.R")
+source("Step2_Bereinigung_AH_vol.R")
+source("Step2_Bereinigung_AH_PI.R")
 
-source("Step3_Berechnungen_Außenhandel.R")
+source("Step3_Berechnungen_AH.R")
 
 ## Verteilung -----------------
 source("Step2_Bereinigung_VT_D11.R")
 source("Step2_Bereinigung_VT_D12.R")
 
 ## Bevölkerung und Arbeitsvolumen --------------
-source("Step2_Bereinigung_VT_HW.R")
-source("Step2_Bereinigung_VT_JB.R")
-source("Step2_Bereinigung_VT_PS.R")
+source("Step2_Bereinigung_AV_HW.R")
+source("Step2_Bereinigung_AV_JB.R")
+source("Step2_Bereinigung_AV_PS.R")
 
 
 source("Step3_Berechnungen_Verteilung.R")

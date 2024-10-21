@@ -53,11 +53,11 @@ b1gY_sum <- lapply(c("V", "Y"), function(p){
 }) %>%
   `names<-`(c("V", "Y"))
 
-b1gY_sum$L <- chainlinkDF(b1gY_sum, ts_output = TRUE)
+b1gY_sum$L <- chainlinkDF(b1gY_sum)
 
 bipY_sum <- lapply(c("V", "Y"), function(p){
   cbind(data.frame(bipY[[p]]),
-        b1g_sum[[p]]) %>%
+        b1gY_sum[[p]]) %>%
     transmute(B1GQ = `_T` + D21 - D31,
               D21X31 = D21 - D31) %>%
     ts(start = start(bipY[[p]]),
@@ -65,7 +65,7 @@ bipY_sum <- lapply(c("V", "Y"), function(p){
 }) %>%
   `names<-`(c("V", "Y"))
 
-bipY_sum$L <- chainlinkDF(bipY_sum, ts_output = TRUE)
+bipY_sum$L <- chainlinkDF(bipY_sum)
 
 
 
