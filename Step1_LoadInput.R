@@ -7,7 +7,7 @@ if(release){
   dataPath <- file.path("../data_unpublished")
 }
 
-sapply(c("T101", "T102", "T103", "T110", "T111", "T117", "T120", "T121"), function(t){
-  load(file.path(dataPath, paste0(t, "TS.Rds")), envir = .GlobalEnv)
+sapply(c("b1g", "bip", "konsum", "invest", "ah", "vtD1", "av"), function(t){
+  load(file.path(dataPath, paste0(t, ".Rds")), envir = .GlobalEnv)
 })
 
