@@ -146,7 +146,7 @@ vert_D11 <- perHts(
                     # Outliers -------------------------------------------------------------
                     outlier.enabled = FALSE, 
                     usrdef.outliersEnabled = TRUE, 
-                    usrdef.outliersType = c("AO", "AO",
+                    usrdef.outliersType = c("LS", "AO",
                                             "AO", "AO"),
                     usrdef.outliersDate = c("2024-01-01", "2014-10-01",
                                             "2008-01-01", "2014-01-01"),

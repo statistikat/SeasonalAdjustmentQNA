@@ -383,7 +383,6 @@ b1gVol2012zr <- perHts(
 b1gVol2010$run()
 b1gVol2010zr$run()
 
-# Achtung hier noch schauen!!
 output_b1gVol <- c(output_b1gVol, lapply(names(b1gVol2010$components), function(x){
   ts_bind(b1gVol2010$components[[x]]$output$final$series[,c("y", "sa", "t")],
           b1gVol2010zr$components[[x]]$output$final$series[,c("y", "sa", "t")])%>%

@@ -6,6 +6,7 @@
 
 # Vorraussetzung: 
 # - Step2_Bereinigung_ah_vol.R
+# - Step2_Bereinigung_ah_nom.R # nur für Revison relevant
 # - Step2_Bereinigung_ah_PI.R
 
 
@@ -15,6 +16,8 @@ ahY <- list(L = do.call(cbind,lapply(output_ahVol, `[`, i = ,j = "sa")),
             PI = do.call(cbind,lapply(output_ahPi, `[`, i = ,j = "sa")))
 ahY$V <- `colnames<-`(ahY$L * ahY$PI[, colnames(ahY$L)], colnames(ahY$L))
 
+# nom 2008 bis 2012 regional nur nominell verfügbar, nur im Falle einer Revision relevant
+# ahY$V[time(ahY$V) >= 2008 & time(ahY$V) < 2012,names(output_ahNom)] <- window(do.call(cbind,lapply(output_ahNom, `[`, i = ,j = "sa")), end = c(2011,4))
 
 ahY$Y <- lapply(names(output_ahVol), function(x){
   ah$Y[,x] / output_ahVol[[x]][, "s"]

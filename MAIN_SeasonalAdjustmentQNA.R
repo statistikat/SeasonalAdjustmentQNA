@@ -34,7 +34,6 @@ td5 <- td5lY[,"wd5"]
 # Bereinigung-------------------------------------------
 # Modelle werden einmal jährlich upgedated, Außreißer nach Bedarf gesetzt.
 
-
 ## Entstehung ----------------
 source("Step2_Bereinigung_B1G_vol.R")
 source("Step2_Bereinigung_B1G_PI.R")
