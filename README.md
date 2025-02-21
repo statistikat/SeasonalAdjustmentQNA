@@ -5,6 +5,7 @@ With the R code in this repository users can reproduce the seasonal adjustment o
 The following packages have to be installed from github:
 
 [persephone](https://github.com/statistikat/persephone)
+
 ```
 devtools::install_github("statistikat/persephone")
 ```
