@@ -38,6 +38,8 @@ av_HW_SAL <- perHts(
                       usrdef.outliersEnabled = TRUE, 
                       usrdef.outliersType = c("LS", "AO"),
                       usrdef.outliersDate = c("2009-01-01", "2020-04-01"),
+                      # outlier.usedefcv = FALSE,
+                      # outlier.cv = 3.97,
                       # Trading Days ---------------------------------------------------------
                       usrdef.varEnabled = TRUE, 
                       usrdef.var = td7, usrdef.varType = "Calendar", 
@@ -226,6 +228,8 @@ av_HW_SAL <- perHts(
                       usrdef.outliersEnabled = TRUE, 
                       usrdef.outliersType = c("AO", "TC"),
                       usrdef.outliersDate = c("2020-04-01","2020-10-01"),
+                      # outlier.usedefcv = FALSE,
+                      # outlier.cv = 3.1,
                       # Trading Days ---------------------------------------------------------
                       # usrdef.varEnabled = FALSE, 
                       # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -299,7 +303,9 @@ av_HW_SELF <- perHts(
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
                     outlier.enabled = FALSE, 
-                    # usrdef.outliersEnabled = FALSE,
+                    # outlier.usedefcv = FALSE,
+                    # outlier.cv = 3.54,
+                    # # usrdef.outliersEnabled = FALSE,
                     # usrdef.outliersType = NA,
                     # usrdef.outliersDate = NA,
                     # Trading Days ---------------------------------------------------------
