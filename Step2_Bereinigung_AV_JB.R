@@ -351,9 +351,10 @@ av_JB_SELF <- perHts(
                       outlier.enabled = FALSE,
                       usrdef.outliersEnabled = TRUE, 
                       usrdef.outliersType = c("LS", "LS",
-                                              "LS", "LS"),
+                                              "LS", "LS","LS"),
                       usrdef.outliersDate = c("1996-01-01", "1998-10-01",
-                                              "2008-01-01", "2009-01-01"),
+                                              "2008-01-01", "2009-01-01",
+                                              "2021-04-01"),
                       # Trading Days ---------------------------------------------------------
                       # usrdef.varEnabled = FALSE, 
                       # usrdef.var = NA, usrdef.varType = "Calendar", 

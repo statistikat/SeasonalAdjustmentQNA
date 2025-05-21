@@ -36,8 +36,8 @@ av_HW_SAL <- perHts(
                       # Outliers -------------------------------------------------------------
                       outlier.enabled = FALSE,
                       usrdef.outliersEnabled = TRUE, 
-                      usrdef.outliersType = c("LS", "AO"),
-                      usrdef.outliersDate = c("2009-01-01", "2020-04-01"),
+                      usrdef.outliersType = c("LS", "AO","TC"),
+                      usrdef.outliersDate = c("2009-01-01", "2020-04-01","2020-07-01"),
                       # outlier.usedefcv = FALSE,
                       # outlier.cv = 3.97,
                       # Trading Days ---------------------------------------------------------
