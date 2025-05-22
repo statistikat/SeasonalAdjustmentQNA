@@ -179,11 +179,9 @@ vert_D12 <- perHts(
                     outlier.enabled = FALSE, 
                     usrdef.outliersEnabled = TRUE, 
                     usrdef.outliersType = c("LS","LS",
-                                            "AO","TC","LS",
-                                            "AO","AO"),
+                                            "AO","TC","LS"),
                     usrdef.outliersDate = c("2007-10-01","2009-04-01",
-                                            "2013-01-01","2016-01-01","2022-01-01",
-                                            "2023-01-01","2024-01-01"),
+                                            "2013-01-01","2016-01-01","2022-01-01"),
                     # Trading Days ---------------------------------------------------------
                     # usrdef.varEnabled = FALSE, 
                     # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -222,8 +220,8 @@ vert_D12 <- perHts(
                       # Outliers -------------------------------------------------------------
                       outlier.enabled = FALSE, 
                       usrdef.outliersEnabled = TRUE, 
-                      usrdef.outliersType = c("AO"),
-                      usrdef.outliersDate = c("2001-04-01"),
+                      usrdef.outliersType = c("AO","LS","LS"),
+                      usrdef.outliersDate = c("2001-04-01","2023-01-01","2024-01-01"),
                       # Trading Days ---------------------------------------------------------
                       # usrdef.varEnabled = FALSE, 
                       # usrdef.var = NA, usrdef.varType = "Calendar", 

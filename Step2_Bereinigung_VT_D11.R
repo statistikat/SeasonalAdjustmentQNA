@@ -218,8 +218,10 @@ vert_D11 <- perHts(
                       # Outliers -------------------------------------------------------------
                       outlier.enabled = FALSE, 
                       usrdef.outliersEnabled = TRUE,
-                      usrdef.outliersType = c("AO", "AO"),
-                      usrdef.outliersDate = c("2001-01-01", "2001-07-01"),
+                      usrdef.outliersType = c("AO", "AO","TC",
+                                              "LS","LS"),
+                      usrdef.outliersDate = c("2001-01-01", "2001-07-01","2002-04-01",
+                                              "2023-01-01","2024-01-01"),
                       # Trading Days ---------------------------------------------------------
                       # usrdef.varEnabled = FALSE, 
                       # usrdef.var = NA, usrdef.varType = "Calendar", 
