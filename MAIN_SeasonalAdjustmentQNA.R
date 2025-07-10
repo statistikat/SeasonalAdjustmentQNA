@@ -60,6 +60,7 @@ source("Step3_Berechnungen_Investitionen.R")
 ### Außenhandel ---------------------
 source("Step2_Bereinigung_AH_vol.R")
 source("Step2_Bereinigung_AH_PI.R")
+source("Step2_Bereinigung_AH_nom.R")
 
 source("Step3_Berechnungen_AH.R")
 

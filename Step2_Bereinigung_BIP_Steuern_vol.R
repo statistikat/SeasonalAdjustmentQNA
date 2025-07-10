@@ -61,9 +61,9 @@ bipVol <- perHts(
                outlier.enabled = FALSE,
                usrdef.outliersEnabled = TRUE, 
                usrdef.outliersType = c("AO", "AO",
-                                       "LS"),
+                                       "LS", "LS"),
                usrdef.outliersDate = c("2002-04-01", "2005-01-01",
-                                       "2022-01-01"),
+                                       "2022-01-01", "2024-01-01"),
                # Trading Days 
                usrdef.varEnabled = FALSE,
                # usrdef.var = NA, usrdef.varType = "Calendar",

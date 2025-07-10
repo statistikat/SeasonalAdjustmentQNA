@@ -246,3 +246,4 @@ output_ahVol <- lapply(ahVol$components, function(x){
 # Eurofighter "rückabwickeln"
 output_ahVol$P71_W1[time(output_ahVol$P71_W1)>=2007 & time(output_ahVol$P71_W1) < 2010 , c("y", "sa")] <- output_ahVol$P71_W1[, c("y", "sa")] + euroFight
 output_ahVol$P71_W1[, "i"] <- output_ahVol$P71_W1[, "sa"] / output_ahVol$P71_W1[, "t"]
+

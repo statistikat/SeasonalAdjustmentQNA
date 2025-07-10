@@ -98,10 +98,10 @@ konsumPi <- perHts(
                       # Outliers
                       outlier.enabled = TRUE,
                       usrdef.outliersEnabled = FALSE,
-                      # usrdef.outliersType = c("AO", "AO",
-                      #                         "AO", "LS"),
-                      # usrdef.outliersDate = c("1999-10-01", "2000-10-01",
-                      #                         "2020-04-01", "2021-01-01"),
+                      # usrdef.outliersType = c("LS", "LS",
+                      #                         "LS"),
+                      # usrdef.outliersDate = c("2020-04-01", "2022-01-01",
+                      #                         "2023-04-01"),
                       # Trading Days
                       usrdef.varEnabled = FALSE,
                       # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -117,12 +117,12 @@ konsumPi <- perHts(
                       # Transformation
                       transform.function = "Log",
                       # Outliers
-                      outlier.enabled = TRUE,
-                      usrdef.outliersEnabled = FALSE,
-                      # usrdef.outliersType = c("AO", "AO",
-                      #                         "AO", "LS"),
-                      # usrdef.outliersDate = c("1999-10-01", "2000-10-01",
-                      #                         "2020-04-01", "2021-01-01"),
+                      outlier.enabled = FALSE,
+                      usrdef.outliersEnabled = TRUE,
+                      usrdef.outliersType = c("LS", "LS",
+                                              "LS"),
+                      usrdef.outliersDate = c("2020-04-01", "2022-01-01",
+                                              "2023-04-01"),
                       # Trading Days
                       usrdef.varEnabled = FALSE,
                       # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -159,12 +159,14 @@ konsumPi <- perHts(
                      # Transformation
                      transform.function = "Log",
                      # Outliers
-                     outlier.enabled = TRUE,
-                     usrdef.outliersEnabled = FALSE,
-                     # usrdef.outliersType = c("AO", "AO",
-                     #                         "AO", "LS"),
-                     # usrdef.outliersDate = c("1999-10-01", "2000-10-01",
-                     #                         "2020-04-01", "2021-01-01"),
+                     outlier.enabled = FALSE,
+                     usrdef.outliersEnabled = TRUE,
+                     usrdef.outliersType = c("TC", "LS",
+                                             "LS", "LS", 
+                                             "TC"),
+                     usrdef.outliersDate = c("2015-01-01", "2016-07-01", 
+                                             "2020-01-01", "2021-01-01", 
+                                             "2023-01-01"),
                      # Trading Days
                      usrdef.varEnabled = FALSE,
                      # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -184,3 +186,4 @@ konsumPi$run()
 output_konsumPi <- lapply(konsumPi$components, function(x){
   x$output$final$series
 })
+
