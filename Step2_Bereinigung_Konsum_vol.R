@@ -15,9 +15,11 @@ konsumVol <- perHts(
                    outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE,
                    usrdef.outliersType = c("AO", "AO",
-                                           "AO", "LS"),
+                                           "AO", "LS", 
+                                           "LS"),
                    usrdef.outliersDate = c("1999-10-01", "2000-10-01",
-                                           "2020-04-01", "2021-01-01"),
+                                           "2020-04-01", "2021-01-01", 
+                                           "2025-01-01"),
                    # Trading Days
                    usrdef.varEnabled = FALSE,
                    # usrdef.var = NA, usrdef.varType = "Calendar",

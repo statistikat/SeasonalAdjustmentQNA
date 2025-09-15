@@ -15,6 +15,7 @@
 
 b1gY <- list(L = do.call(cbind,lapply(output_b1gVol, `[`, i = ,j = "sa")),
                 PI = do.call(cbind,lapply(output_b1gPi, `[`, i = ,j = "sa")))
+
 b1gY$V <- `colnames<-`(b1gY$L * b1gY$PI[, colnames(b1gY$L)] , colnames(b1gY$L))
 
 
@@ -39,6 +40,8 @@ bipY$Y <- lapply(names(output_bipVol), function(x){
 }) %>%
   `names<-`(names(output_bipVol)) %>%
   do.call(cbind, .)
+
+
 
 
 # Summen --------------------------------------
@@ -66,6 +69,4 @@ bipY_sum <- lapply(c("V", "Y"), function(p){
   `names<-`(c("V", "Y"))
 
 bipY_sum$L <- chainlinkDF(bipY_sum)
-
-
 

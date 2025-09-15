@@ -4,10 +4,14 @@ release <- F
 if(release){
   dataPath <- file.path("data")
 } else{
-  dataPath <- file.path("../data_unpublished")
+  dataPath <- file.path("..", "data_unpublished")
 }
 
-sapply(c("b1g", "bip", "konsum", "invest", "ah", "vtD1", "av"), function(t){
-  load(file.path(dataPath, paste0(t, ".Rds")), envir = .GlobalEnv)
+sapply(c("b1g", "bip", "konsum", "invest", "ah", "vtD1", "av"), function(t) {
+  assign(t, readRDS(file.path(dataPath, paste0(t, ".Rds"))), envir = .GlobalEnv)
 })
 
+
+# sapply(c("vtD1", "av"), function(t) {
+#   assign(t, readRDS(file.path(dataPath, paste0(t, ".Rds"))), envir = .GlobalEnv)
+# })
