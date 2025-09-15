@@ -108,11 +108,11 @@ vert_D12 <- perHts(
                       usrdef.outliersType = c("TC", "AO",
                                               "AO", "AO",
                                               "AO", "AO",
-                                              "AO"),
+                                              "AO", "AO"),
                       usrdef.outliersDate = c("2008-01-01", "2020-01-01",
                                               "2020-04-01", "2020-07-01",
                                               "2020-10-01", "2021-01-01",
-                                              "2021-04-01"),
+                                              "2021-04-01", "2025-01-01"),
                       # Trading Days ---------------------------------------------------------
                       # usrdef.varEnabled = FALSE,
                       # usrdef.var = NA, usrdef.varType = "Calendar",
