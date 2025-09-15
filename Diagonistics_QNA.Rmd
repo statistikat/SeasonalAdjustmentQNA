@@ -55,7 +55,7 @@ dboth <- merge(doldres,dnewres,by="test.Type",suffixes = c("_old","_new"), sort 
 
 ```
 
-# Nr. `r paste0({{i}},".")`
+# `r paste({{i}},".",tsname)`
 
 :::: {style="display: flex;"}
 
