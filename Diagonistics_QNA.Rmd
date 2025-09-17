@@ -18,6 +18,9 @@ told[, Sig := ""]
 told[P.value >= 0.1, Sig := "***"]
 told[P.value < 0.1 & P.value >=0.05, Sig := "**"]
 
+test.Type_more_info <- c("mean","skewness","kurtosis","ljung box (LBQ)","LBQ (res at seas lags)","LBQ (sq res)")
+told <- cbind(told,test.Type_more_info)
+
 tdef <- as.data.frame(newres$output$regarima$residuals.stat[2])[,1:2]
 setDT(tdef)
 names(tdef) <- c("Statistic","P.value")

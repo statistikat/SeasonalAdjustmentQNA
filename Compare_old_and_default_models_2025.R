@@ -56,11 +56,11 @@ newres$run()
 
 # oldres$plot(forecasts=FALSE)
 # newres$plot(forecasts=FALSE)
-
+tsname <- tsnames[i]
 rmarkdown::render("Diagonistics_QNA.Rmd",
                   params = list(
                     i = i,
-                    tsname = tsnames[i],
+                    tsname = tsname,
                     newres=newres,
                     oldres = oldres),
                   output_file=paste0("Diagnostics_QNA.html"))
