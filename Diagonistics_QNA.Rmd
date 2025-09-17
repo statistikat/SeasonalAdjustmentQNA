@@ -140,7 +140,7 @@ tdef
 ::: {}
 
 ### Stable seasonality (old)
-
+Combined test in the entire series
 ```{r warning=FALSE,message=FALSE, echo=FALSE}
 dold$combined_test
 ```
@@ -150,7 +150,7 @@ dold$combined_test
 ::: {}
 
 ### Stable seasonality (new)
-
+Combined test in the entire series
 ```{r warning=FALSE,message=FALSE, echo=FALSE}
 ddef$combined_test
 ```
@@ -164,4 +164,37 @@ ddef$combined_test
 options(width = 150)
 dboth
 ```
+
+# Commentary:
+### Residuals:
+#### Normality
+H0 (normality of residuals) is not rejected at significance levels >= 0.05\
+Signif. codes: 0.1 \`\*\*\*\´ 0.05 \`\*\*\´
+
+#### Independence
+Ljung-Box: \
+$H_{0}$: The data is not correlated (i.e. the correlations in the population from which the sample is taken are 0, so that any observed correlations in the data result from randomness of the sampling process).\
+$H_{a}$: The data exhibit serial correlation.
+
+H0 (independence of residuals) is not rejected at significance levels >= 0.05\
+Signif. codes: 0.1 \`\*\*\*\´ 0.05 \`\*\*\´
+
+#### Linearity
+H0 (no conditional heteroscedasticity of residuals) is not rejected at significance levels >= 0.05\
+Signif. codes: 0.1 \`\*\*\*\´ 0.05 \`\*\*\´
+
+### Stable Seasonality:
+$H_{0}$: no stable seasonality.\
+If the null hypothesis of no stable seasonality is rejected significance level < 0.001 then the series is considered to be seasonal. \
+https://sylwiagrudkowska.github.io/JDemetra-documentation/pages/theory/Tests_combined.html
+
+
+### Residual Seasonality:
+$H_{0}$: no seasonality.\
+The null hypothesis that there is no seasonality in the series is not rejected at significance levels >= 0.1(?? can't find documentation)\
+The QS diagnostic (Maravall 2012) for example looks for positive seasonal autocorrelation in a series, in
+order to test the null hypothesis that there is no seasonality in the series. \
+https://sylwiagrudkowska.github.io/JDemetra-documentation/pages/sa/diagnostics/residualseasonality.html
+https://github.com/rjdverse/rjdemetra/blob/90f8ff6e46e642e4c8fe064913118e19e6c96f7d/R/diagnostics.R#L9
+
 
