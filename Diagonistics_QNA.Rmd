@@ -185,7 +185,7 @@ Signif. codes: 0.1 \`\*\*\*\´ 0.05 \`\*\*\´
 
 ### Stable Seasonality:
 $H_{0}$: no stable seasonality.\
-If the null hypothesis of no stable seasonality is rejected significance level < 0.001 then the series is considered to be seasonal. \
+If the null hypothesis of no stable seasonality is rejected significance level < 0.01 then the series is considered to be seasonal. \
 https://sylwiagrudkowska.github.io/JDemetra-documentation/pages/theory/Tests_combined.html
 
 
