@@ -19,7 +19,7 @@ told[P.value >= 0.1, Sig := "***"]
 told[P.value < 0.1 & P.value >=0.05, Sig := "**"]
 
 test.Type_more_info <- c("mean","skewness","kurtosis","ljung box (LBQ)","LBQ (res at seas lags)","LBQ (sq res)")
-told <- cbind(told,test.Type_more_info)
+told <- cbind(test.Type_more_info,told)
 
 tdef <- as.data.frame(newres$output$regarima$residuals.stat[2])[,1:2]
 setDT(tdef)
@@ -71,7 +71,9 @@ dboth <- merge(doldres,dnewres,by="test.Type",suffixes = c("_old","_new"), sort 
 ```{r warning=FALSE, message=FALSE, echo=FALSE}
 cat(ifelse(oldres$output$decomposition$mode == "Multiplicative","log",oldres$output$decomposition$mode))
 cat(paste0("(",paste0(oldres$output$regarima$arma,collapse= ", "),")"))
-oldres$output$regarima$regression.coefficients
+# oldres$output$regarima$regression.coefficients
+blaold <- as.data.frame(oldres$output$regarima$regression.coefficients)
+blaold[order(substr(rownames(blaold),nchar(rownames(blaold))-5, nchar(rownames(blaold))-1 )),]
 ```
 
 :::
@@ -85,11 +87,23 @@ oldres$output$regarima$regression.coefficients
 ```{r warning=FALSE,message=FALSE, echo=FALSE}
 cat(ifelse(newres$output$decomposition$mode == "Multiplicative","log",newres$output$decomposition$mode))
 cat(paste0("(",paste0(newres$output$regarima$arma,collapse= ", "),")"))
-newres$output$regarima$regression.coefficients
+# newres$output$regarima$regression.coefficients
+blanew <- as.data.frame(newres$output$regarima$regression.coefficients)
+blanew[order(substr(rownames(blanew),nchar(rownames(blanew))-5, nchar(rownames(blanew))-1 )),]
 ```
 
 :::
 :::: 
+
+Outliers from `oldres` not in `newres`:
+```{r warning=FALSE,message=FALSE, echo=FALSE}
+rownames(blaold)[which(!rownames(blaold) %in% rownames(blanew))]
+```
+Outliers from `newres` not in `oldres`:
+```{r warning=FALSE,message=FALSE, echo=FALSE}
+rownames(blanew)[which(!rownames(blanew) %in% rownames(blaold))]
+```
+
 
 :::: {.columns}
 
@@ -185,7 +199,7 @@ Signif. codes: 0.1 \`\*\*\*\´ 0.05 \`\*\*\´
 
 ### Stable Seasonality:
 $H_{0}$: no stable seasonality.\
-If the null hypothesis of no stable seasonality is rejected significance level < 0.01 then the series is considered to be seasonal. \
+If the null hypothesis of no stable seasonality is rejected significance level < 0.01 (?? ambiguous in the literature) then the series is considered to be seasonal. \
 https://sylwiagrudkowska.github.io/JDemetra-documentation/pages/theory/Tests_combined.html
 
 

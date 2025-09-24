@@ -58,9 +58,9 @@ av_HW_SAL <- perHts(
                     # Outliers -------------------------------------------------------------
                     outlier.enabled = FALSE,
                     usrdef.outliersEnabled = TRUE, 
-                    usrdef.outliersType = c("LS", "LS",
+                    usrdef.outliersType = c("LS", 
                                             "AO", "AO"),
-                    usrdef.outliersDate = c("2009-01-01", "2020-01-01",
+                    usrdef.outliersDate = c("2009-01-01", 
                                             "2020-04-01", "2020-07-01"),
                     # Trading Days ---------------------------------------------------------
                     usrdef.varEnabled = TRUE, 
@@ -80,10 +80,8 @@ av_HW_SAL <- perHts(
                     # Outliers -------------------------------------------------------------
                     outlier.enabled = FALSE, 
                     usrdef.outliersEnabled = TRUE, 
-                    usrdef.outliersType = c("AO", "AO",
-                                            "TC"),
-                    usrdef.outliersDate = c("2020-01-01", "2020-04-01",
-                                            "2008-01-01"),
+                    usrdef.outliersType = c("AO", "AO"),
+                    usrdef.outliersDate = c("2020-01-01", "2020-04-01"),
                     # Trading Days ---------------------------------------------------------
                     usrdef.varEnabled = FALSE, 
                     # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -226,8 +224,8 @@ av_HW_SAL <- perHts(
                       # Outliers -------------------------------------------------------------
                       outlier.enabled = FALSE, 
                       usrdef.outliersEnabled = TRUE, 
-                      usrdef.outliersType = c("AO", "TC"),
-                      usrdef.outliersDate = c("2020-04-01","2020-10-01"),
+                      usrdef.outliersType = c("AO", "LS","LS"),
+                      usrdef.outliersDate = c("2020-04-01","2020-10-01","2021-04-01"),
                       # outlier.usedefcv = FALSE,
                       # outlier.cv = 3.1,
                       # Trading Days ---------------------------------------------------------
@@ -388,9 +386,9 @@ av_HW_SELF <- perHts(
                     transform.function = "Log",
                     # Outliers -------------------------------------------------------------
                     outlier.enabled = FALSE, 
-                    # usrdef.outliersEnabled = FALSE, 
-                    # usrdef.outliersType = NA,
-                    # usrdef.outliersDate = NA,
+                    usrdef.outliersEnabled = TRUE, 
+                    usrdef.outliersType = c("LS"),
+                    usrdef.outliersDate = c("1995-10-01"),
                     # Trading Days ---------------------------------------------------------
                     # usrdef.varEnabled = FALSE, 
                     # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -440,7 +438,7 @@ av_HW_SELF <- perHts(
                       # Arima-Model ----------------------------------------------------------
                       automdl.enabled = FALSE,
                       arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                      arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+                      arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE),
   # =====================================================================================
   # 10
   SELFxHWxW2xOTQ = perTramo(av[, "SELFxHWxW2xOTQ"], template = "RSA3", 
@@ -449,10 +447,8 @@ av_HW_SELF <- perHts(
                       # Outliers -------------------------------------------------------------
                       outlier.enabled = FALSE, 
                       usrdef.outliersEnabled = TRUE, 
-                      usrdef.outliersType = c("AO", "AO",
-                                              "TC", "AO"),
-                      usrdef.outliersDate = c("2004-01-01", "2009-01-01",
-                                              "2009-10-01", "2020-04-01"),
+                      usrdef.outliersType = c("AO", "TC"),
+                      usrdef.outliersDate = c("2004-01-01", "2009-10-01"),
                       # Trading Days ---------------------------------------------------------
                       # usrdef.varEnabled = FALSE, 
                       # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -462,7 +458,7 @@ av_HW_SELF <- perHts(
                       # Arima-Model ----------------------------------------------------------
                       automdl.enabled = FALSE, 
                       arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                      arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+                      arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE),
   # =====================================================================================
   # 11
   SELFxHWxW2xRTU = perTramo(av[, "SELFxHWxW2xRTU"], template = "RSA3", 
