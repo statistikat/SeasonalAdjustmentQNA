@@ -25,7 +25,7 @@ b1gVol <- perHts(
                usrdef.var = td5, usrdef.varType = "Calendar",
                tradingdays.option = "UserDefined",
                # Easter
-               easter.type = "IncludeEaster", easter.duration = 6,
+               easter.type = NULL, easter.duration = 6,
                # Arima-Model
                automdl.enabled = FALSE,
                arima.p  = 0, arima.d  = 1, arima.q  = 0,
@@ -46,7 +46,7 @@ b1gVol <- perHts(
                usrdef.var = td5, usrdef.varType = "Calendar",
                tradingdays.option = "UserDefined",
                # Easter
-               easter.type = "IncludeEaster", easter.duration = 6,
+               easter.type = NULL, easter.duration = 6,
                # Arima-Model
                automdl.enabled = FALSE,
                arima.p  = 0, arima.d  = 1, arima.q  = 0,
@@ -65,19 +65,17 @@ b1gVol <- perHts(
                usrdef.outliersType = c("AO", "LS",
                                        "AO", "AO",
                                        "AO", "AO",
-                                       "AO", "AO",
                                        "AO", "AO"),
                usrdef.outliersDate = c("2003-01-01", "2009-01-01", 
                                        "2020-04-01", "2020-07-01",
                                        "2020-10-01", "2021-01-01",
-                                       "2021-04-01", "2022-02-01",
-                                       "2022-07-01", "2024-10-01" ),
+                                       "2021-04-01", "2022-07-01"),
                # Trading Days 
                usrdef.varEnabled = FALSE,
                # usrdef.var = NA, usrdef.varType = "Calendar",
                # tradingdays.option = "UserDefined",
                # Easter 
-               easter.type = NULL, easter.duration = 6,
+               easter.type = "IncludeEaster", easter.duration = 6,
                # Arima-Model 
                automdl.enabled = FALSE, 
                arima.p  = 0, arima.d  = 1, arima.q  = 0, 
@@ -116,18 +114,18 @@ b1gVol <- perHts(
                # Outliers 
                outlier.enabled = FALSE,
                usrdef.outliersEnabled = TRUE, 
-               usrdef.outliersType = c("AO", "AO"),
-               usrdef.outliersDate = c("2020-01-01", "2020-04-01"),
+               usrdef.outliersType = c("TC"),
+               usrdef.outliersDate = c("2020-04-01"),
                # Trading Days 
                usrdef.varEnabled = FALSE,
                # usrdef.var = NA, usrdef.varType = "Calendar",
                # tradingdays.option = "UserDefined",
                # Easter 
-               easter.type = "IncludeEaster", easter.duration = 6,
+               easter.type = NULL, easter.duration = 6,
                # Arima-Model 
                automdl.enabled = FALSE, 
-               arima.p  = 0, arima.d  = 1, arima.q  = 0, 
-               arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+               arima.p  = 3, arima.d  = 0, arima.q  = 0, 
+               arima.bp = 0, arima.bd = 1, arima.bq = 0, arima.mu = FALSE),
   ## K - Finanz- und Versicherungswesen --------------------
   K = perTramo(b1g$L[, "K"], template = "RSA3", 
                # Transformation 
@@ -142,7 +140,7 @@ b1gVol <- perHts(
                # usrdef.var = NA, usrdef.varType = "Calendar",
                # tradingdays.option = "UserDefined",
                # Easter 
-               easter.type = "Unused",
+               easter.type = NULL, easter.duration = 6,
                # Arima-Model 
                automdl.enabled = FALSE, 
                arima.p  = 0, arima.d  = 1, arima.q  = 1, 
@@ -162,7 +160,7 @@ b1gVol <- perHts(
                # usrdef.var = NA, usrdef.varType = "Calendar",
                # tradingdays.option = "UserDefined",
                # Easter 
-               easter.type = "Unused", 
+               easter.type = NULL, easter.duration = 6,
                # Arima-Model 
                automdl.enabled = FALSE, 
                arima.p  = 0, arima.d  = 1, arima.q  = 1, 
@@ -175,19 +173,19 @@ b1gVol <- perHts(
                outlier.enabled = FALSE,
                usrdef.outliersEnabled = TRUE, 
                usrdef.outliersType = c("LS", "AO",
-                                       "LS", "LS"),
-               usrdef.outliersDate = c("2009-01-01", "2020-04-01",
-                                       "2020-04-01", "2023-01-01"),
+                                       "TC"),
+               usrdef.outliersDate = c("2009-01-01", "2020-01-01",
+                                       "2020-04-01"),
                # Trading Days 
                usrdef.varEnabled = TRUE,
-               usrdef.var = td5lY, usrdef.varType = "Calendar",
+               usrdef.var = td5, usrdef.varType = "Calendar",
                tradingdays.option = "UserDefined",
                # Easter 
-               easter.type = "Unused", 
+               easter.type = NULL, easter.duration = 6,
                # Arima-Model 
                automdl.enabled = FALSE, 
-               arima.p  = 1, arima.d  = 0, arima.q  = 3, 
-               arima.bp = 0, arima.bd = 1, arima.bq = 0, arima.mu = TRUE),
+               arima.p  = 0, arima.d  = 1, arima.q  = 1, 
+               arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE),
   ## OTQ ------------------------------------------
   OTQ = perTramo(b1g$L[, "OTQ"], template = "RSA3", 
                # Transformation 
@@ -195,19 +193,21 @@ b1gVol <- perHts(
                # Outliers 
                outlier.enabled = FALSE,
                usrdef.outliersEnabled = TRUE, 
-               usrdef.outliersType = c("AO", "AO",
-                                       "LS", "AO"),
-               usrdef.outliersDate = c("2003-07-01", "2003-10-01",
-                                       "2020-01-01", "2020-04-01"),
+               usrdef.outliersType = c("AO", "AO", 
+                                       "AO", "AO", 
+                                       "LS"),
+               usrdef.outliersDate = c("2003-07-01", "2003-10-01", 
+                                       "2020-01-01", "2020-04-01", 
+                                       "2020-07-01"),
                # Trading Days 
-               usrdef.varEnabled = FALSE,
-               # usrdef.var = NA, usrdef.varType = "Calendar",
-               # tradingdays.option = "UserDefined",
+               usrdef.varEnabled = TRUE,
+               usrdef.var = td5, usrdef.varType = "Calendar",
+               tradingdays.option = "UserDefined",
                # Easter 
                easter.type = "IncludeEaster", easter.duration = 6,
                # Arima-Model 
                automdl.enabled = FALSE, 
-               arima.p  = 3, arima.d  = 0, arima.q  = 0, 
+               arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE),
   ## RTU Unterhaltung, Kunst, Sport ------------------------------------------
   RTU = perTramo(b1g$L[, "RTU"], template = "RSA3", 
@@ -250,6 +250,7 @@ output_b1gVol <- lapply(b1gVol$components, function(x){
 
 b1gVol2010 <- perHts(
   ## F - Bau --------------------
+  # Warning kommt vom perHts, als einzelne Reihe ausgefürht keine Warning
   `F` = perTramo(b1g$L[, "F"] %>% window(start = 2010), template = "RSA3",
                # Transformation
                transform.function = "Log",
@@ -263,10 +264,10 @@ b1gVol2010 <- perHts(
                # usrdef.var = NA, usrdef.varType = "Calendar",
                # tradingdays.option = "UserDefined",
                # Easter
-               easter.type = NULL, easter.duration = 6,
+               easter.type = "IncludeEaster", easter.duration = 6,
                # Arima-Model
                automdl.enabled = FALSE,
-               arima.p  = 0, arima.d  = 0, arima.q  = 2,
+               arima.p  = 1, arima.d  = 0, arima.q  = 0,
                arima.bp = 0, arima.bd = 1, arima.bq = 0, arima.mu = FALSE),
   ## G - Handel -----------------------------------
   G = perTramo(b1g$L[, "G"] %>% window(start = 2010), template = "RSA3",
@@ -275,8 +276,10 @@ b1gVol2010 <- perHts(
                # Outliers
                outlier.enabled = FALSE,
                usrdef.outliersEnabled = TRUE,
-               usrdef.outliersType = c("LS", "AO"),
-               usrdef.outliersDate = c("2020-01-01", "2020-04-01"),
+               usrdef.outliersType = c("AO", "AO", 
+                                       "LS"),
+               usrdef.outliersDate = c("2020-04-01", "2020-10-01", 
+                                       "2023-01-01"),
                # Trading Days
                usrdef.varEnabled = TRUE,
                usrdef.var = td5, usrdef.varType = "Calendar",
@@ -286,7 +289,7 @@ b1gVol2010 <- perHts(
                # Arima-Model
                automdl.enabled = FALSE,
                arima.p  = 0, arima.d  = 1, arima.q  = 0,
-               arima.bp = 0, arima.bd = 1, arima.bq = 0, arima.mu = FALSE)
+               arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE)
 )
 
 b1gVol2010zr <- perHts(
@@ -350,7 +353,7 @@ b1gVol2012 <- perHts(
                easter.type = NULL, easter.duration = 6,
                # Arima-Model
                automdl.enabled = FALSE,
-               arima.p  = 2, arima.d  = 0, arima.q  = 0,
+               arima.p  = 0, arima.d  = 1, arima.q  = 1,
                arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE)
 )
 

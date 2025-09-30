@@ -12,12 +12,14 @@ konsumPi <- perHts(
                      # Transformation
                      transform.function = "Log",
                      # Outliers
-                     outlier.enabled = TRUE,
-                     usrdef.outliersEnabled = FALSE,
-                     # usrdef.outliersType = c("AO", "AO",
-                     #                         "AO", "LS"),
-                     # usrdef.outliersDate = c("1999-10-01", "2000-10-01",
-                     #                         "2020-04-01", "2021-01-01"),
+                     outlier.enabled = FALSE,
+                     usrdef.outliersEnabled = TRUE,
+                     usrdef.outliersType = c("TC", "AO", 
+                                             "TC", "AO", 
+                                             "AO"),
+                     usrdef.outliersDate = c("1999-01-01", "1999-10-01", 
+                                             "2000-01-01", "2000-10-01", 
+                                             "2001-04-01"),
                      # Trading Days
                      usrdef.varEnabled = FALSE,
                      # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -33,12 +35,14 @@ konsumPi <- perHts(
                      # Transformation
                      transform.function = "Log",
                      # Outliers
-                     outlier.enabled = TRUE,
-                     usrdef.outliersEnabled = FALSE,
-                     # usrdef.outliersType = c("AO", "AO",
-                     #                         "AO", "LS"),
-                     # usrdef.outliersDate = c("1999-10-01", "2000-10-01",
-                     #                         "2020-04-01", "2021-01-01"),
+                     outlier.enabled = FALSE,
+                     usrdef.outliersEnabled = TRUE,
+                     usrdef.outliersType = c("LS", "AO", 
+                                             "AO", "AO", 
+                                             "AO", "LS"),
+                     usrdef.outliersDate = c("1999-01-01","1999-10-01", 
+                                             "2000-10-01", "2001-01-01", 
+                                             "2002-01-01", "2004-10-01"),
                      # Trading Days
                      usrdef.varEnabled = FALSE,
                      # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -46,7 +50,7 @@ konsumPi <- perHts(
                      # Easter
                      easter.type = NULL, easter.duration = 6,
                      # Arima-Model
-                     automdl.enabled = TRUE,
+                     automdl.enabled = FALSE,
                      arima.p  = 0, arima.d  = 1, arima.q  = 1,
                      arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   ## S14_P31_W0 Privater Konsum HH (Inländer:innen) -------------------------------------
@@ -54,12 +58,14 @@ konsumPi <- perHts(
                      # Transformation
                      transform.function = "Log",
                      # Outliers
-                     outlier.enabled = TRUE,
-                     usrdef.outliersEnabled = FALSE,
-                     # usrdef.outliersType = c("AO", "AO",
-                     #                         "AO", "LS"),
-                     # usrdef.outliersDate = c("1999-10-01", "2000-10-01",
-                     #                         "2020-04-01", "2021-01-01"),
+                     outlier.enabled = FALSE,
+                     usrdef.outliersEnabled = TRUE,
+                     usrdef.outliersType = c("LS", "AO", 
+                                             "AO", "AO", 
+                                             "LS", "AO"),
+                     usrdef.outliersDate = c("2022-01-01", "2022-04-01", 
+                                             "2022-07-01", "2022-10-01", 
+                                             "2023-01-01", "2024-10-01"),
                      # Trading Days
                      usrdef.varEnabled = FALSE,
                      # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -67,20 +73,24 @@ konsumPi <- perHts(
                      # Easter
                      easter.type = NULL, easter.duration = 6,
                      # Arima-Model
-                     automdl.enabled = TRUE,
-                     arima.p  = 0, arima.d  = 1, arima.q  = 1,
+                     automdl.enabled = FALSE,
+                     arima.p  = 0, arima.d  = 1, arima.q  = 0,
                      arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   ## S14_P311_W2 Privater Konsum HH (Inland) Dauerhafte Waren -------------------------------------
   S14_P311_W2 = perTramo(konsum$PI[, "S14_P311_W2"], template = "RSA3", 
                       # Transformation
                       transform.function = "Log",
                       # Outliers
-                      outlier.enabled = TRUE,
-                      usrdef.outliersEnabled = FALSE,
-                      # usrdef.outliersType = c("AO", "AO",
-                      #                         "AO", "LS"),
-                      # usrdef.outliersDate = c("1999-10-01", "2000-10-01",
-                      #                         "2020-04-01", "2021-01-01"),
+                      outlier.enabled = FALSE,
+                      usrdef.outliersEnabled = TRUE,
+                      usrdef.outliersType = c("LS", "TC", 
+                                              "AO","LS", 
+                                              "AO", "AO", 
+                                              "AO", "LS"),
+                      usrdef.outliersDate = c("1999-01-01", "2007-01-01", 
+                                              "2007-10-01", "2022-01-01", 
+                                              "2022-04-01", "2022-07-01", 
+                                              "2022-10-01", "2023-01-01"),
                       # Trading Days
                       usrdef.varEnabled = FALSE,
                       # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -88,41 +98,39 @@ konsumPi <- perHts(
                       # Easter
                       easter.type = NULL, easter.duration = 6,
                       # Arima-Model
-                      automdl.enabled = TRUE,
-                      arima.p  = 0, arima.d  = 1, arima.q  = 1,
+                      automdl.enabled = FALSE,
+                      arima.p  = 0, arima.d  = 1, arima.q  = 0,
                       arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   ## S14_P312_W2 Privater Konsum HH (Inland) Semidauerhafte Waren -------------------------------------
   S14_P312_W2 = perTramo(konsum$PI[, "S14_P312_W2"], template = "RSA3", 
                       # Transformation
                       transform.function = "Log",
                       # Outliers
-                      outlier.enabled = TRUE,
-                      usrdef.outliersEnabled = FALSE,
-                      # usrdef.outliersType = c("LS", "LS",
-                      #                         "LS"),
-                      # usrdef.outliersDate = c("2020-04-01", "2022-01-01",
-                      #                         "2023-04-01"),
-                      # Trading Days
+                      outlier.enabled = FALSE,
+                      usrdef.outliersEnabled = TRUE,
+                      usrdef.outliersType = c("TC", "AO", 
+                                              "LS"),
+                      usrdef.outliersDate = c("2006-07-01", "2020-04-01", 
+                                              "2022-10-01"),
                       usrdef.varEnabled = FALSE,
                       # usrdef.var = NA, usrdef.varType = "Calendar",
                       # tradingdays.option = "UserDefined",
                       # Easter
-                      easter.type = NULL, easter.duration = 6,
+                      easter.type = "IncludeEaster", easter.duration = 6,
                       # Arima-Model
-                      automdl.enabled = TRUE,
-                      arima.p  = 0, arima.d  = 1, arima.q  = 1,
-                      arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+                      automdl.enabled = FALSE,
+                      arima.p  = 2, arima.d  = 0, arima.q  = 0,
+                      arima.bp = 0, arima.bd = 1, arima.bq = 0, arima.mu = FALSE),
   ## S14_P313_W2 Privater Konsum HH (Inland) Nicht-Dauerhafte Waren -------------------------------------
+  # Warning ok da Residuen white noise
   S14_P313_W2 = perTramo(konsum$PI[, "S14_P313_W2"], template = "RSA3", 
                       # Transformation
                       transform.function = "Log",
                       # Outliers
-                      outlier.enabled = FALSE,
-                      usrdef.outliersEnabled = TRUE,
-                      usrdef.outliersType = c("LS", "LS",
-                                              "LS", "LS"),
-                      usrdef.outliersDate = c("2020-04-01", "2022-01-01",
-                                              "2023-04-01", "2025-01-01"),
+                      outlier.enabled = TRUE,
+                      usrdef.outliersEnabled = FALSE,
+                      usrdef.outliersType = c( "LS", "LS"),
+                      usrdef.outliersDate = c( "2022-01-01", "2025-01-01"),
                       # Trading Days
                       usrdef.varEnabled = FALSE,
                       # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -138,12 +146,12 @@ konsumPi <- perHts(
                       ## Transformation
                       transform.function = "Log",
                       # Outliers
-                      outlier.enabled = TRUE,
-                      usrdef.outliersEnabled = FALSE,
-                      # usrdef.outliersType = c("AO", "AO",
-                      #                         "AO", "LS"),
-                      # usrdef.outliersDate = c("1999-10-01", "2000-10-01",
-                      #                         "2020-04-01", "2021-01-01"),
+                      outlier.enabled = FALSE,
+                      usrdef.outliersEnabled = TRUE,
+                      usrdef.outliersType = c( "AO", "LS", 
+                                               "LS"),
+                      usrdef.outliersDate = c( "2000-10-01", "2022-01-01", 
+                                               "2023-01-01"),
                       # Trading Days
                       usrdef.varEnabled = FALSE,
                       # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -151,7 +159,7 @@ konsumPi <- perHts(
                       # Easter
                       easter.type = NULL, easter.duration = 6,
                       # Arima-Model
-                      automdl.enabled = TRUE,
+                      automdl.enabled = FALSE,
                       arima.p  = 0, arima.d  = 1, arima.q  = 1,
                       arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   ## S15_P31_W0 Privater Konsum NPO -------------------------------------
@@ -161,11 +169,9 @@ konsumPi <- perHts(
                      # Outliers
                      outlier.enabled = FALSE,
                      usrdef.outliersEnabled = TRUE,
-                     usrdef.outliersType = c("TC", "LS",
-                                             "LS", "LS", 
-                                             "TC"),
-                     usrdef.outliersDate = c("2015-01-01", "2016-07-01", 
-                                             "2020-01-01", "2021-01-01", 
+                     usrdef.outliersType = c( "TC", "LS", 
+                                              "LS"),
+                     usrdef.outliersDate = c("2016-07-01", "2022-01-01", 
                                              "2023-01-01"),
                      # Trading Days
                      usrdef.varEnabled = FALSE,
@@ -174,7 +180,7 @@ konsumPi <- perHts(
                      # Easter
                      easter.type = NULL, easter.duration = 6,
                      # Arima-Model
-                     automdl.enabled = TRUE,
+                     automdl.enabled = FALSE,
                      arima.p  = 0, arima.d  = 1, arima.q  = 1,
                      arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE)
 )

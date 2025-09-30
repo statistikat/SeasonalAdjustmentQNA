@@ -14,8 +14,10 @@ bipNom <- perHts(
                  # Outliers
                  outlier.enabled = FALSE,
                  usrdef.outliersEnabled = TRUE,
-                 usrdef.outliersType = c("LS", "AO"),
-                 usrdef.outliersDate = c("2020-01-01", "2020-04-01"),
+                 usrdef.outliersType = c("LS", "AO", 
+                                         "LS", "AO"),
+                 usrdef.outliersDate = c("2020-01-01", "2020-04-01", 
+                                         "2021-04-01", "2022-01-01"),
                  # Trading Days
                  usrdef.varEnabled = FALSE,
                  # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -24,8 +26,8 @@ bipNom <- perHts(
                  easter.type = "NA", easter.duration = 6,
                  # Arima-Model
                  automdl.enabled = FALSE,
-                 arima.p  = 0, arima.d  = 0, arima.q  = 3,
-                 arima.bp = 0, arima.bd = 1, arima.bq = , arima.mu = TRUE),
+                 arima.p  = 2, arima.d  = 1, arima.q  = 1,
+                 arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = TRUE),
   ## D3 - Gütersubventionen -------------------------------------
   D3 = perTramo(bip$V[, "D3"], template = "RSA3", 
                  # Transformation 
@@ -33,12 +35,12 @@ bipNom <- perHts(
                  # Outliers 
                  outlier.enabled = FALSE,
                  usrdef.outliersEnabled = TRUE, 
-                 usrdef.outliersType = c("AO", "LS",
-                                         "AO", "TC",
-                                         "LS"),
-                 usrdef.outliersDate = c("2016-04-01", "2020-04-01",
-                                         "2020-07-01", "2021-07-01",
-                                         "2022-04-01"),
+                 usrdef.outliersType = c("AO", "LS", 
+                                         "AO", "LS", 
+                                         "AO"),
+                 usrdef.outliersDate = c("2016-04-01", "2020-04-01", 
+                                         "2020-07-01", "2021-07-01", 
+                                         "2022-01-01"),
                  # Trading Days 
                  usrdef.varEnabled = FALSE,
                  # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -48,7 +50,7 @@ bipNom <- perHts(
                  # Arima-Model 
                  automdl.enabled = FALSE, 
                  arima.p  = 1, arima.d  = 0, arima.q  = 0, 
-                 arima.bp = 1, arima.bd = 1, arima.bq = 1, arima.mu = FALSE)
+                 arima.bp = 0, arima.bd = 1, arima.bq = 0, arima.mu = FALSE)
 )
 
 # RUN ----------

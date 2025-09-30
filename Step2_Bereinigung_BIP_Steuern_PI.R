@@ -14,10 +14,8 @@ bipPi <- perHts(
                   # Outliers
                   outlier.enabled = FALSE,
                   usrdef.outliersEnabled = TRUE,
-                  usrdef.outliersType = c("AO", "LS",
-                                          "LS"),
-                  usrdef.outliersDate = c("1999-10-01", "2022-07-01",
-                                          "2023-01-01"),
+                  usrdef.outliersType = c("AO", "LS"),
+                  usrdef.outliersDate = c("1999-10-01", "2023-01-01"),
                   # Trading Days
                   usrdef.varEnabled = FALSE,
                   # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -35,12 +33,14 @@ bipPi <- perHts(
                  # Outliers
                  outlier.enabled = FALSE,
                  usrdef.outliersEnabled = TRUE,
-                 usrdef.outliersType = c("LS", "LS",
-                                         "LS", "LS",
-                                         "LS", "LS"),
-                 usrdef.outliersDate = c("1997-01-01", "2011-01-01",
-                                         "2022-01-01", "2022-04-01",
-                                         "2022-07-01", "2022-10-01"),
+                 usrdef.outliersType = c("LS", "LS", 
+                                          "LS", "AO", 
+                                          "AO", "AO", 
+                                          "LS"),
+                 usrdef.outliersDate = c("1997-01-01", "2011-01-01", 
+                                         "2022-01-01", "2022-04-01", 
+                                         "2022-07-01", "2022-10-01",
+                                         "2025-01-01"),
                  # Trading Days
                  usrdef.varEnabled = FALSE,
                  # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -52,15 +52,15 @@ bipPi <- perHts(
                  arima.p  = 0, arima.d  = 1, arima.q  = 0,
                  arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   ## D31 - Gütersubventionen -------------------------------------
-  # not seasonal
+  # No seasonalitiy in the data, only because of outliers
   D31 = perTramo(bip$PI[, "D31"], template = "RSA3", 
                  # Transformation 
                  transform.function = "Log",
                  # Outliers 
                  outlier.enabled = FALSE,
-                 usrdef.outliersEnabled = FALSE, 
-                 usrdef.outliersType = NA,
-                 usrdef.outliersDate = NA,
+                 usrdef.outliersEnabled = TRUE, 
+                 usrdef.outliersType = c("LS", "LS"),
+                 usrdef.outliersDate = c("2005-01-01", "2022-10-01"),
                  # Trading Days 
                  usrdef.varEnabled = FALSE,
                  # usrdef.var = NA, usrdef.varType = "Calendar",
