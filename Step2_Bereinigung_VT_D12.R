@@ -172,10 +172,10 @@ vert_D12 <- perHts(
                # Outliers -------------------------------------------------------------
                outlier.enabled = FALSE, 
                usrdef.outliersEnabled = TRUE, 
-               usrdef.outliersType = c("AO","TC",
-                                       "AO","AO"),
-               usrdef.outliersDate = c("2009-01-01","2013-01-01",
-                                       "2024-01-01","2025-01-01"),
+               usrdef.outliersType = c("AO","TC", 
+                                       "AO"),
+               usrdef.outliersDate = c("2009-01-01",  "2012-01-01",
+                                       "2013-01-01"),
                # Trading Days ---------------------------------------------------------
                # usrdef.varEnabled = FALSE, 
                # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -184,8 +184,8 @@ vert_D12 <- perHts(
                # easter.type = NA, easter.duration = 6,
                # Arima-Model ----------------------------------------------------------
                automdl.enabled = FALSE, ######
-               arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-               arima.bp = 0, arima.bd = 1, arima.bq = 0, arima.mu = TRUE),
+               arima.p  = 1, arima.d  = 0, arima.q  = 0, 
+               arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE),
   # =====================================================================================
   # 9
   M_N = perTramo(vtD1[, "D12_XDC_W2_M_N"], template = "RSA3", 
