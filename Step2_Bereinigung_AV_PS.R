@@ -84,7 +84,7 @@ avxPSxSAL <- perHts(
                          # Transformation -------------------------------------------------------
                          transform.function = "None",
                          # Outliers -------------------------------------------------------------
-                         outlier.enabled = TRUE, 
+                         outlier.enabled = FALSE, 
                          usrdef.outliersEnabled = TRUE, 
                          usrdef.outliersType = c("AO", "AO", 
                                                  "TC", "AO",
@@ -382,9 +382,9 @@ avxPSxSELF <- perHts(
                             transform.function = "None",
                             # Outliers -------------------------------------------------------------
                             outlier.enabled = FALSE, 
-                            # usrdef.outliersEnabled = TRUE,
-                            # usrdef.outliersType = c("LS", "LS"),
-                            # usrdef.outliersDate = c("1996-01-01", "2021-04-01"),
+                             usrdef.outliersEnabled = TRUE,
+                             usrdef.outliersType = c("AO"),
+                             usrdef.outliersDate = c("2025-04-01"),
                             # Trading Days ---------------------------------------------------------
                             # usrdef.varEnabled = FALSE, 
                             # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -490,10 +490,12 @@ avxPSxSELF <- perHts(
                             usrdef.outliersEnabled = TRUE, 
                             usrdef.outliersType = c("AO", "LS",
                                                     "LS", "AO",
-                                                    "LS","LS","AO"),
+                                                    "LS","LS","AO",
+                                                    "AO"),
                             usrdef.outliersDate = c("2010-10-01", "2009-01-01",
                                                     "1996-01-01", "2022-10-01",
-                                                    "2003-01-01","2008-07-01","2023-04-01"),
+                                                    "2003-01-01","2008-07-01","2023-04-01",
+                                                    "2024-10-01"),
                             # Trading Days ---------------------------------------------------------
                             # usrdef.varEnabled = FALSE, 
                             # usrdef.var = NA, usrdef.varType = "Calendar", 
