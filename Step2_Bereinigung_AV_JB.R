@@ -392,9 +392,9 @@ av_JB_SELF <- perHts(
                           outlier.enabled = FALSE, 
                           usrdef.outliersEnabled = TRUE, 
                           usrdef.outliersType = c("TC", "AO", 
-                                                  "AO","AO"),
+                                                  "AO","AO","AO"),
                           usrdef.outliersDate = c("1996-01-01", "2002-01-01", 
-                                                  "2025-04-01","2025-07-01"),
+                                                  "2025-04-01","2025-07-01","2025-10-01"),
                           # Trading Days ---------------------------------------------------------
                           # usrdef.varEnabled = FALSE, 
                           # usrdef.var = NA, usrdef.varType = "Calendar", 

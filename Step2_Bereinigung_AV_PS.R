@@ -382,9 +382,9 @@ avxPSxSELF <- perHts(
                             transform.function = "None",
                             # Outliers -------------------------------------------------------------
                             outlier.enabled = FALSE, 
-                             usrdef.outliersEnabled = TRUE,
-                             usrdef.outliersType = c("AO"),
-                             usrdef.outliersDate = c("2025-04-01"),
+                            # usrdef.outliersEnabled = TRUE,
+                             #usrdef.outliersType = c("AO"),
+                            # usrdef.outliersDate = c("2025-04-01"),
                             # Trading Days ---------------------------------------------------------
                             # usrdef.varEnabled = FALSE, 
                             # usrdef.var = NA, usrdef.varType = "Calendar", 
