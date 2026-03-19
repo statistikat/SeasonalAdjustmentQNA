@@ -203,3 +203,4 @@ konsumVol$run()
 output_konsumVol <- lapply(konsumVol$components, function(x){
   x$output$final$series
 })
+
