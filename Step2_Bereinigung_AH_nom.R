@@ -9,8 +9,8 @@
 # Tramo Seat Außenhandel ---------------------------
 
 ahNom <- perHts(
-  ## P6_I9 Exporte in die Eurozone -------------------------------------
-  P6_I9 = perTramo(ah$V[, "P6_I9"] %>% window(end = 2019.75), template = "RSA3", 
+  ## P6_I10 Exporte in die Eurozone -------------------------------------
+  P6_I10 = perTramo(ah$V[, "P6_I10"] %>% window(end = 2019.75), template = "RSA3", 
                    # Transformation 
                    transform.function = "Log",
                    # Outliers
@@ -28,8 +28,8 @@ ahNom <- perHts(
                    automdl.enabled = FALSE,
                    arima.p  = 1, arima.d  = 1, arima.q  = 0,
                    arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
-  ## P6_K11 Exporte in die EU- Nicht Eurozone -------------------------------------
-  P6_K11 = perTramo(ah$V[, "P6_K11"] %>% window(end = 2019.75), template = "RSA3", 
+  ## P6_K12 Exporte in die EU- Nicht Eurozone -------------------------------------
+  P6_K12 = perTramo(ah$V[, "P6_K12"] %>% window(end = 2019.75), template = "RSA3", 
                     # Transformation 
                     transform.function = "Log",
                     # Outliers
@@ -68,8 +68,8 @@ ahNom <- perHts(
                    automdl.enabled = FALSE,
                    arima.p  = 0, arima.d  = 1, arima.q  = 0,
                    arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
-  ## P7_I9 Importe aus der Eurozone -------------------------------------
-  P7_I9 = perTramo(ah$V[, "P7_I9"] %>% window(end = 2019.75), template = "RSA3", 
+  ## P7_I10 Importe aus der Eurozone -------------------------------------
+  P7_I10 = perTramo(ah$V[, "P7_I10"] %>% window(end = 2019.75), template = "RSA3", 
                    # Transformation 
                    transform.function = "Log",
                    # Outliers
@@ -87,9 +87,9 @@ ahNom <- perHts(
                    automdl.enabled = FALSE,
                    arima.p  = 0, arima.d  = 1, arima.q  = 1,
                    arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
-  ## P7_K11 Importe aus der EU- Nicht Eurozone -------------------------------------
+  ## P7_K12 Importe aus der EU- Nicht Eurozone -------------------------------------
   # Seasonality probably from the outliers in non-adjusted data
-  P7_K11 = perTramo(ah$V[, "P7_K11"] %>% window(end = 2019.75), template = "RSA3", 
+  P7_K12 = perTramo(ah$V[, "P7_K12"] %>% window(end = 2019.75), template = "RSA3", 
                     # Transformation 
                     transform.function = "Log",
                     # Outliers
