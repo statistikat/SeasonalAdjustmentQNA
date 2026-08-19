@@ -89,9 +89,9 @@ ahPi <- perHts(
                     automdl.enabled = FALSE,
                     arima.p  = 0, arima.d  = 1, arima.q  = 1,
                     arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
-  ## P6_I9 Exporte in die Eurozone -------------------------------------
+  ## P6_Î10 Exporte in die Eurozone -------------------------------------
   # No identifiable seasonality 
-  P6_I9 = perTramo(ah$PI[, "P6_I9"], template = "RSA3", 
+  P6_I10 = perTramo(ah$PI[, "P6_I10"], template = "RSA3", 
                    # Transformation 
                    transform.function = "Log",
                    # Outliers
@@ -109,9 +109,9 @@ ahPi <- perHts(
                    automdl.enabled = FALSE,
                    arima.p  = 1, arima.d  = 1, arima.q  = 0,
                    arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
-  ## P6_K11 Exporte in die EU- Nicht Eurozone -------------------------------------
+  ## P6_K12 Exporte in die EU- Nicht Eurozone -------------------------------------
   # No identifiable seasonlity 
-  P6_K11 = perTramo(ah$PI[, "P6_K11"], template = "RSA3", 
+  P6_K12 = perTramo(ah$PI[, "P6_K12"], template = "RSA3", 
                     # Transformation 
                     transform.function = "Log",
                     # Outliers
@@ -149,9 +149,9 @@ ahPi <- perHts(
                    automdl.enabled = FALSE,
                    arima.p  = 0, arima.d  = 1, arima.q  = 1,
                    arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
-  ## P7_I9 Importe aus der Eurozone -------------------------------------
+  ## P7_Î10 Importe aus der Eurozone -------------------------------------
   # No identifiable seasonalitiy 
-  P7_I9 = perTramo(ah$PI[, "P7_I9"], template = "RSA3", 
+  P7_I10 = perTramo(ah$PI[, "P7_I10"], template = "RSA3", 
                    # Transformation 
                    transform.function = "Log",
                    # Outliers
@@ -169,9 +169,9 @@ ahPi <- perHts(
                    automdl.enabled = FALSE,
                    arima.p  = 0, arima.d  = 1, arima.q  = 1,
                    arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
-  ## P7_K11 Importe aus der EU- Nicht Eurozone -------------------------------------
+  ## P7_K12 Importe aus der EU- Nicht Eurozone -------------------------------------
   # No identifiable seasonality 
-  P7_K11 = perTramo(ah$PI[, "P7_K11"], template = "RSA3", 
+  P7_K12 = perTramo(ah$PI[, "P7_K12"], template = "RSA3", 
                     # Transformation 
                     transform.function = "Log",
                     # Outliers

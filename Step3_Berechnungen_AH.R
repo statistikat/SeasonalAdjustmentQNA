@@ -33,8 +33,8 @@ ahY_sums <- lapply(c("V", "Y"), function(b){
     transmute(P6_W1 = P61_W1 + P62_W1,
               P7_W1 = P71_W1 + P72_W1,
               B11_W1 = (P71_W1 + P72_W1) - (P61_W1 + P62_W1),
-              P6_B6 = P6_I9 + P6_K11,
-              P7_B6 = P7_I9 + P7_K11) %>%
+              P6_B6 = P6_I10 + P6_K12,
+              P7_B6 = P7_I10 + P7_K12) %>%
     ts(start = start(ahY[[b]]), 
        frequency = frequency(ahY[[b]]))
 }) %>%
