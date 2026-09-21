@@ -36,10 +36,8 @@ vert_D11 <- perHts(
                  # Outliers -------------------------------------------------------------
                  outlier.enabled = FALSE, 
                  usrdef.outliersEnabled = TRUE, 
-                 usrdef.outliersType = c("AO", "LS",
-                                         "LS", "LS"),
-                 usrdef.outliersDate = c("2002-01-01", "2009-04-01", 
-                                         "2009-07-01", "2020-01-01"),
+                 usrdef.outliersType = c("TC","LS", "LS"),
+                 usrdef.outliersDate = c("2009-04-01","2009-04-01","2020-01-01"),
                  # Trading Days ---------------------------------------------------------
                  # usrdef.varEnabled = FALSE, 
                  # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -48,8 +46,8 @@ vert_D11 <- perHts(
                  # easter.type = NA, easter.duration = 6,
                  # Arima-Model ----------------------------------------------------------
                  automdl.enabled = FALSE, 
-                 arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                 arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+                 arima.p  = 0, arima.d  = 1, arima.q  = 0, 
+                 arima.bp = 1, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
   # 3
   C = perTramo(vtD1[, "D11_XDC_W2_C"], template = "RSA3",
@@ -103,11 +101,11 @@ vert_D11 <- perHts(
                  outlier.enabled = FALSE, 
                  usrdef.outliersEnabled = TRUE, 
                  usrdef.outliersType = c("LS", "TC",
-                                         "TC", "TC",
-                                         "LS"),
+                                         "TC", "TC"),
                  usrdef.outliersDate = c("2020-04-01", "2021-01-01",
-                                         "2020-01-01", "2008-01-01",
-                                         "2021-04-01"),
+                                         "2020-01-01", "2008-01-01"),
+                 outlier.usedefcv = FALSE,
+                 outlier.cv = 3.55, # LS 2026 verschlechtert die Diagnostics
                  # Trading Days ---------------------------------------------------------
                  # usrdef.varEnabled = FALSE, 
                  # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -148,8 +146,10 @@ vert_D11 <- perHts(
                # Outliers -------------------------------------------------------------
                outlier.enabled = FALSE, 
                usrdef.outliersEnabled = TRUE, 
-               usrdef.outliersType = c("AO"),
-               usrdef.outliersDate = c("2014-10-01"),
+               usrdef.outliersType = c("AO", "TC",
+                                       "TC", "LS"),
+               usrdef.outliersDate = c("2008-01-01","2014-01-01",
+                                       "2015-01-01","2023-01-01"),
                # Trading Days ---------------------------------------------------------
                # usrdef.varEnabled = FALSE, 
                # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -159,7 +159,7 @@ vert_D11 <- perHts(
                # Arima-Model ----------------------------------------------------------
                automdl.enabled = FALSE, ######
                arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-               arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE),
+               arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # =====================================================================================
   # 8
   L = perTramo(vtD1[, "D11_XDC_W2_L"], template = "RSA3", 
@@ -168,10 +168,10 @@ vert_D11 <- perHts(
                # Outliers -------------------------------------------------------------
                outlier.enabled = FALSE, 
                usrdef.outliersEnabled = TRUE, 
-               usrdef.outliersType = c("AO", "TC",
-                                       "AO"),
-               usrdef.outliersDate = c("2009-01-01", "2012-01-01",
-                                       "2013-01-01"),
+               usrdef.outliersType = c("TC", "AO",
+                                       "TC", "TC"),
+               usrdef.outliersDate = c("2009-01-01", "2011-01-01",
+                                       "2012-01-01", "2013-01-01"),
                # Trading Days ---------------------------------------------------------
                # usrdef.varEnabled = FALSE, 
                # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -216,8 +216,8 @@ vert_D11 <- perHts(
                  # Outliers -------------------------------------------------------------
                  outlier.enabled = FALSE, 
                  usrdef.outliersEnabled = TRUE,
-                 usrdef.outliersType = c("LS", "LS"),
-                 usrdef.outliersDate = c("2023-01-01", "2024-01-01"),
+                 usrdef.outliersType = c("LS", "LS", "TC"),
+                 usrdef.outliersDate = c("2023-01-01", "2024-01-01", "2026-01-01"),
                  outlier.usedefcv = FALSE,
                  outlier.cv = 3.8,
                  # Trading Days ---------------------------------------------------------
@@ -256,6 +256,17 @@ vert_D11 <- perHts(
 )
 
 vert_D11$run()
+
+# # check if NEW outliers are detected
+# source("get_new_outliers.R")
+# (tsnames <- names(vert_D11$components))
+# for(i in seq_along(tsnames)) {
+#   cat(i,":",tsnames[i],"\n")
+#   oldres <- vert_D11$getComponent(tsnames[i])
+#   print(get_new_outliers(oldres))
+#   cat("\n")
+# }
+
 
 output_vtD11 <- lapply(vert_D11$components, function(x){
   x$output$final$series

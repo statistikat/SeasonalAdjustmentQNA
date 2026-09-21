@@ -2,9 +2,18 @@
 title: "QNA_Saisonbereinigung"
 author: "Angelika Meraner"
 date: "`r Sys.Date()`"
-output: html_document
+output:
+  html_document:
+    theme: default
 ---
-
+<style>
+body {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+</style>
 ```{r include=FALSE}
 knitr::opts_chunk$set(comment = NA)
 require(data.table)
@@ -104,6 +113,21 @@ Outliers from `newres` not in `oldres`:
 rownames(blanew)[which(!rownames(blanew) %in% rownames(blaold))]
 ```
 
+Check if any outliers detected for `oldres` are new:
+```{r warning=FALSE,message=FALSE, echo=FALSE}
+source("get_new_outliers.R")
+get_new_outliers(oldres)
+```
+
+
+Summary of diff between original and adjusted for `oldres`:
+```{r warning=FALSE,message=FALSE, echo=FALSE}
+summary(oldres$ts-oldres$adjusted)
+```
+Summary of diff between original and adjusted for `newres`:
+```{r warning=FALSE,message=FALSE, echo=FALSE}
+summary(newres$ts-newres$adjusted)
+```
 
 :::: {.columns}
 

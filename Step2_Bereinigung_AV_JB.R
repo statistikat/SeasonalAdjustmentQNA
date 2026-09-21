@@ -19,9 +19,9 @@ av_JB_SAL <- perHts(
                          outlier.enabled = FALSE,
                          usrdef.outliersEnabled = TRUE, 
                          usrdef.outliersType = c("TC", "AO",
-                                                 "AO", "AO"),
+                                                 "AO", "AO","AO"),
                          usrdef.outliersDate = c("2007-01-01", "2008-01-01",
-                                                 "2008-10-01", "2020-04-01"),
+                                                 "2008-10-01", "2020-04-01","2009-07-01"),
                          # Trading Days ---------------------------------------------------------
                          # usrdef.varEnabled = FALSE, 
                          # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -31,7 +31,7 @@ av_JB_SAL <- perHts(
                          # Arima-Model ----------------------------------------------------------
                          automdl.enabled = FALSE, 
                          arima.p  = 1, arima.d  = 0, arima.q  = 0, 
-                         arima.bp = 1, arima.bd = 1, arima.bq = 0, arima.mu = FALSE),
+                         arima.bp = 1, arima.bd = 1, arima.bq = 0, arima.mu = TRUE),
   # ====================================================================================
   # 2
   SALxJBxW2xBTE = perTramo(av[, "SALxJBxW2xBTE"], template = "RSA3", 
@@ -40,8 +40,10 @@ av_JB_SAL <- perHts(
                            # Outliers -------------------------------------------------------------
                            outlier.enabled = FALSE,
                            usrdef.outliersEnabled = TRUE, 
-                           usrdef.outliersType = c("TC", "LS"),
-                           usrdef.outliersDate = c("2013-01-01","2020-04-01"),
+                           usrdef.outliersType = c("TC", "LS",
+                                                   "LS"),
+                           usrdef.outliersDate = c("2013-01-01","2020-04-01",
+                                                   "2009-07-01"),
                            # Trading Days ---------------------------------------------------------
                            # usrdef.varEnabled = FALSE, 
                            # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -106,12 +108,18 @@ av_JB_SAL <- perHts(
                            # Outliers -------------------------------------------------------------
                            outlier.enabled = FALSE, 
                            usrdef.outliersEnabled = TRUE, 
-                           usrdef.outliersType = c("LS", "LS",
+                           usrdef.outliersType = c("TC", "TC",
+                                                   "LS", "AO", 
+                                                   "LS", "LS",
+                                                   "AO", "AO",
                                                    "AO", "AO", 
-                                                   "AO", "AO"),
-                           usrdef.outliersDate = c("2020-01-01", "2020-04-01",
-                                                   "2020-04-01", "2020-10-01", 
-                                                   "2021-01-01", "2021-04-01"),
+                                                   "LS"),
+                           usrdef.outliersDate = c("1998-07-01", "2008-01-01",
+                                                   "2009-04-01", "2012-10-01", 
+                                                   "2020-01-01", "2020-04-01",
+                                                   "2020-04-01", "2020-10-01",
+                                                   "2021-01-01", "2021-04-01", 
+                                                   "2022-04-01"),
                            # Trading Days ---------------------------------------------------------
                            # usrdef.varEnabled = FALSE, 
                            # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -195,21 +203,21 @@ av_JB_SAL <- perHts(
                            # Outliers -------------------------------------------------------------
                            outlier.enabled = FALSE, 
                            usrdef.outliersEnabled = TRUE, 
-                           usrdef.outliersType = c("LS", "TC",
-                                                   "TC","AO",
-                                                   "TC","AO",
-                                                   "TC"),
-                           usrdef.outliersDate = c("2001-10-01", "2002-01-01",
-                                                   "2004-01-01","2009-10-01",
-                                                   "2009-01-01", "2013-01-01",
-                                                   "2020-04-01"),
-                           # Trading Days ---------------------------------------------------------
-                           # usrdef.varEnabled = FALSE, 
-                           # usrdef.var = NA, usrdef.varType = "Calendar", 
-                           # tradingdays.option = "UserDefined",
-                           # Easter ---------------------------------------------------------------
-                           # easter.type = NA, easter.duration = 6,
-                           # Arima-Model ----------------------------------------------------------
+                           # usrdef.outliersType = c("LS", "TC",
+                           #                         "TC","AO",
+                           #                         "TC","AO",
+                           #                         "TC"),
+                           # usrdef.outliersDate = c("2001-10-01", "2002-01-01",
+                           #                         "2004-01-01","2009-10-01",
+                           #                         "2009-01-01", "2013-01-01",
+                           #                         "2020-04-01"),
+                           usrdef.outliersType = c("TC",
+                                                   "AO",
+                                                   "TC","AO"),
+                           usrdef.outliersDate = c("2002-01-01",
+                                                   "2009-10-01",
+                                                   "2009-01-01", "2013-01-01"),
+                          # Arima-Model ----------------------------------------------------------
                            automdl.enabled = FALSE, 
                            arima.p  = 0, arima.d  = 1, arima.q  = 0, 
                            arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
@@ -242,6 +250,16 @@ av_JB_SAL <- perHts(
 )
 
 av_JB_SAL$run()
+
+# # check if NEW outliers are detected
+# source("get_new_outliers.R")
+# tsnames <- names(av_JB_SAL$components)
+# for(i in seq_along(tsnames)) {
+#   cat(i,":",tsnames[i],"\n")
+#   oldres <- av_JB_SAL$getComponent(tsnames[i])
+#   print(get_new_outliers(oldres))
+#   cat("\n")
+# }
 
 
 av_Ka = perTramo(window(av[, "SALxJBxW2xK"], end = c(2003,4)), template = "RSA3",
@@ -374,9 +392,9 @@ av_JB_SELF <- perHts(
                           usrdef.outliersType = c("LS", "LS"),
                           usrdef.outliersDate = c("1996-01-01", "2008-01-01"),
                           # Trading Days ---------------------------------------------------------
-                          usrdef.varEnabled = TRUE, 
-                          usrdef.var = td7, usrdef.varType = "Calendar", 
-                          tradingdays.option = "UserDefined",
+                          # usrdef.varEnabled = TRUE, 
+                          # usrdef.var = td7, usrdef.varType = "Calendar", 
+                          # tradingdays.option = "UserDefined",
                           # Easter ---------------------------------------------------------------
                           # easter.type = NA, easter.duration = 6,
                           # Arima-Model ----------------------------------------------------------
@@ -474,9 +492,9 @@ av_JB_SELF <- perHts(
                           outlier.enabled = FALSE, 
                           usrdef.outliersEnabled = TRUE, 
                           usrdef.outliersType = c("LS", "LS",
-                                                  "TC"),
+                                                  "TC", "LS"),
                           usrdef.outliersDate = c("2003-01-01", "2005-01-01",
-                                                  "2007-07-01"),
+                                                  "2007-07-01", "2023-01-01"),
                           # Trading Days ---------------------------------------------------------
                           # usrdef.varEnabled = TRUE,
                           # usrdef.var = td7, usrdef.varType = "Calendar",
@@ -496,8 +514,8 @@ av_JB_SELF <- perHts(
                             # Outliers -------------------------------------------------------------
                             outlier.enabled = FALSE, 
                             usrdef.outliersEnabled = TRUE, 
-                            usrdef.outliersType = c("TC"),
-                            usrdef.outliersDate = c("1995-10-01"),
+                            usrdef.outliersType = c("TC","AO"),
+                            usrdef.outliersDate = c("1995-10-01","2022-01-01"),
                             # Trading Days ---------------------------------------------------------
                             # usrdef.varEnabled = FALSE, 
                             # usrdef.var = NA, usrdef.varType = "Calendar", 
@@ -557,6 +575,16 @@ av_JB_SELF <- perHts(
 )
 
 av_JB_SELF$run()
+
+# # check if NEW outliers are detected
+# source("get_new_outliers.R")
+# tsnames <- names(av_JB_SELF$components)
+# for(i in seq_along(tsnames)) {
+#   cat(i,":",tsnames[i],"\n")
+#   oldres <- av_JB_SELF$getComponent(tsnames[i])
+#   print(get_new_outliers(oldres))
+#   cat("\n")
+# }
 
 
 # gtrennt:
