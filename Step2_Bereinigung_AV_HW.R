@@ -283,7 +283,7 @@ av_HW_SELF <- perHts(
                     # Arima-Model ----------------------------------------------------------
                     automdl.enabled = FALSE, 
                     arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                    arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+                    arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE),
   # ====================================================================================
   # 2 # Identifiable seasonality not present
   SELFxHWxW2xBTE = perTramo(av[, "SELFxHWxW2xBTE"], template = "RSA3", 
@@ -303,7 +303,7 @@ av_HW_SELF <- perHts(
                       # Arima-Model ----------------------------------------------------------
                       automdl.enabled = FALSE, 
                       arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                      arima.bp = 0, arima.bd = 0, arima.bq = 1, arima.mu = FALSE),
+                      arima.bp = 0, arima.bd = 0, arima.bq = 1, arima.mu = TRUE),
   # ====================================================================================
   # 3 # Identifiable seasonality not present
   SELFxHWxW2xC = perTramo(av[, "SELFxHWxW2xC"], template = "RSA3",
@@ -356,7 +356,7 @@ av_HW_SELF <- perHts(
                             outlier.enabled = FALSE, 
                             usrdef.outliersEnabled = TRUE, 
                             usrdef.outliersType = c("AO",  
-                                                    "TC"),
+                                                    "AO"),
                             usrdef.outliersDate = c("2020-04-01",
                                                     "2020-10-01"),
                             # Trading Days ---------------------------------------------------------
@@ -367,7 +367,7 @@ av_HW_SELF <- perHts(
                             # easter.type = NA, easter.duration = 6,
                             # Arima-Model ----------------------------------------------------------
                             automdl.enabled = FALSE, 
-                            arima.p  = 1, arima.d  = 1, arima.q  = 0, 
+                            arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                             arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE),
   # ====================================================================================
   # 6
@@ -408,7 +408,7 @@ av_HW_SELF <- perHts(
                     # Arima-Model ----------------------------------------------------------
                     automdl.enabled = FALSE, ######
                     arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                    arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
+                    arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = TRUE),
   # =====================================================================================
   # 8 # Identifiable seasonality not present
   SELFxHWxW2xL = perTramo(av[, "SELFxHWxW2xL"], template = "RSA3", 
