@@ -28,8 +28,8 @@ source("get_new_outliers.R")
 #########################
 
 # Input-Zeitreihenobjekt definieren (wird in anderem Skript eingelesen)
- indat <- copy(av)
-# indat <- copy(vtD1)
+# indat <- copy(av)
+ indat <- copy(vtD1)
 
 # Hierarchische Objekte aus den einzelnen Bereinigungs-Skripten klonen um alte/bisherige Einstellungen zu bekommen.
 
@@ -37,11 +37,11 @@ source("get_new_outliers.R")
 # Mit Skript Step2_Bereinigung_AV_HW.R hierarchisches Objekt erzeugen und dieses dann klonen
 # htsobj <- av_HW_SAL$clone()
 
-htsobj <- avxPSxSELF$clone(deep = TRUE)
+htsobj <- vert_D12$clone(deep = TRUE)
 # bei vert_D11:
 # names(htsobj$components) <- paste0("D11_XDC_W2_",names(htsobj$components))
 # bei vert_D12:
-#names(htsobj$components) <- paste0("D12_XDC_W2_",names(htsobj$components))
+names(htsobj$components) <- paste0("D12_XDC_W2_",names(htsobj$components))
 
 
 #########################
@@ -75,7 +75,7 @@ cat("\n")
 length(tsnames)
 # Alle i einzeln durchgehen (so viele, wie es zu bereinigende Reihen gibt, also length(tsnames))
 #
-i <- 1
+i <- 10
 #
 # # Nach bestimmtem Reihennamen suchen
 # which(tsnames == "SELFxHWxW2xK")
@@ -125,25 +125,24 @@ sortByDate(oldres$output$regarima$regression.coefficients)
 #########################
 ## Varianten ausprobieren
 #########################
-
-newres <- perTramo(indat[,  tsnames[i]], template = "RSA3",
-                 # Transformation -------------------------------------------------------
-                 transform.function = "None",
-                 # Outliers -------------------------------------------------------------
-                 outlier.enabled = TRUE, 
-                 usrdef.outliersEnabled = TRUE, 
-                 usrdef.outliersType = c("TC"),
-                 usrdef.outliersDate = c("1996-01-01"),
-                 # Trading Days ---------------------------------------------------------
-                 # usrdef.varEnabled = FALSE, 
-                 # usrdef.var = NA, usrdef.varType = "Calendar", 
-                 # tradingdays.option = "UserDefined",
-                 # Easter ---------------------------------------------------------------
-                 # easter.type = NA, easter.duration = 6,
-                 # Arima-Model ----------------------------------------------------------
-                 automdl.enabled = FALSE, 
-                 arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                 arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE)
+rm(newres)
+newres <- perTramo(indat[,  tsnames[i]],  template = "RSA3", 
+                   # Transformation -------------------------------------------------------
+                   transform.function = "Log",
+                   # Outliers -------------------------------------------------------------
+                   outlier.enabled = TRUE, 
+                   usrdef.outliersEnabled = TRUE, 
+                   # usrdef.outliersType = c("LS","LS"),
+                   # usrdef.outliersDate = c("2023-01-01","2024-01-01"),                   # Trading Days ---------------------------------------------------------
+                   # usrdef.varEnabled = FALSE, 
+                   # usrdef.var = NA, usrdef.varType = "Calendar", 
+                   # tradingdays.option = "UserDefined",
+                   # Easter ---------------------------------------------------------------
+                   # easter.type = NA, easter.duration = 6,
+                   # Arima-Model ----------------------------------------------------------
+                   automdl.enabled = FALSE, 
+                   arima.p  = 1, arima.d  = 1, arima.q  = 0, 
+                   arima.bp = 0, arima.bd = 1, arima.bq = 1)
 newres$run()
 # sortByDate(newres$output$regarima$regression.coefficients)
 # outlier.usedefcv = FALSE,
@@ -154,7 +153,7 @@ newres$run()
 
 # newres$plot(forecasts=FALSE,annualComparison=2)
 # oldres$plot(forecasts=FALSE,annualComparison=2) 
-
+tsname <- tsnames[i]
 rmarkdown::render("Diagonistics_QNA.Rmd",
                   params = list(
                     i = i,
@@ -287,7 +286,7 @@ newres <- perTramo(window(av[, "SELFxPSxW2xC"], end = c(2008,4)), template = "RS
                    # Arima-Model ----------------------------------------------------------
                    automdl.enabled = FALSE, ######
                    arima.p  = 1, arima.d  = 0, arima.q  = 0,
-                   arima.bp = 1, arima.bd = 1, arima.bq = 0, arima.mu = FALSE)
+                   arima.bp = 1, arima.bd = 1, arima.bq = 0)
 
 
 newres$run()
@@ -334,7 +333,6 @@ quality_report <- vert_D12$generateQrTable()
 write.csv2(quality_report, "QR_vert_D12.csv")
 
 
-
 library(dygraphs)
 library(xts)
 
@@ -351,7 +349,21 @@ dygraph(daten_fuer_dygraph, main = "Diagramm aus 3 ts-Objekten") %>%
   dyRangeSelector() # Fügt einen praktischen Schieberegler unten hinzu
 
 
+oldres$output$regarima$regression.coefficients
+newres$output$regarima$regression.coefficients
+oldadj <- oldres$adjusted
+newadj <- newres$adjusted
+diff <- oldadj-newadj
+summary(oldadj)
+summary(newadj)
+summary(diff)
+# 4. Daten zu einer Matrix verbinden und in ein xts-Objekt umwandeln
+daten_matrix <- cbind(oldadj = oldadj, newadj = newadj, diff = diff)
+daten_fuer_dygraph <- as.xts(daten_matrix)
 
+dygraph(daten_fuer_dygraph, main = tsname) %>%
+  dyOptions(colors = c("blue", "red", "green")) %>% # Farben anpassen
+  dyRangeSelector() # Fügt einen praktischen Schieberegler unten hinzu
 
 
 forecast::auto.arima(SALxHWxW2xL$ts)

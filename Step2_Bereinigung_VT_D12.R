@@ -92,7 +92,7 @@ vert_D12 <- perHts(
                  # Arima-Model ----------------------------------------------------------
                  automdl.enabled = FALSE, 
                  arima.p  = 0, arima.d  = 1, arima.q  = 1, 
-                 arima.bp = 0, arima.bd = 1, arima.bq = 1),
+                 arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE),
   # ====================================================================================
   # 5
   GTI = perTramo(vtD1[, "D12_XDC_W2_GTI"] , template = "RSA3",
@@ -102,20 +102,20 @@ vert_D12 <- perHts(
                  outlier.enabled = FALSE, 
                  usrdef.outliersEnabled = TRUE, 
                  usrdef.outliersType = c("TC", "TC",
-                                         "LS", "AO"),
-                 usrdef.outliersDate = c("2008-01-01", "2020-01-01",
-                                         "2020-04-01", "2021-01-01"),
-                 outlier.usedefcv = FALSE,
-                 outlier.cv = 3.6, # LS 2026 verschlechtert die Diagnostics
+                                         "AO"),
+                 usrdef.outliersDate = c("2008-01-01", "2020-04-01",
+                                         "2021-01-01"),
+                 # outlier.usedefcv = FALSE,
+                 # outlier.cv = 3.6, # LS 2026 verschlechtert die Diagnostics
                  # Trading Days ---------------------------------------------------------
                  # usrdef.varEnabled = FALSE,
                  # usrdef.var = NA, usrdef.varType = "Calendar",
                  # tradingdays.option = "UserDefined",
                  # Easter ---------------------------------------------------------------
-                 # easter.type = NA, easter.duration = 6,2, 1, 0, 0, 1, 1
+                 # easter.type = NA, easter.duration = 6,
                  # Arima-Model ----------------------------------------------------------
                  automdl.enabled = FALSE, 
-                 arima.p  = 2, arima.d  = 1, arima.q  = 0, 
+                 arima.p  = 0, arima.d  = 1, arima.q  = 1, 
                  arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   # ====================================================================================
   # 6
@@ -217,7 +217,7 @@ vert_D12 <- perHts(
                  # Trading Days ---------------------------------------------------------
                  # usrdef.varEnabled = FALSE, 
                  # usrdef.var = NA, usrdef.varType = "Calendar", 
-                 # tradingdays.option = "UserDefined",1, 0, 0, 0, 1, 0
+                 # tradingdays.option = "UserDefined",
                  # Easter ---------------------------------------------------------------
                  # easter.type = NA, easter.duration = 6,
                  # Arima-Model ----------------------------------------------------------

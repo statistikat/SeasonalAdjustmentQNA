@@ -118,6 +118,11 @@ Check if any outliers detected for `oldres` are new:
 source("get_new_outliers.R")
 get_new_outliers(oldres)
 ```
+Check if any outliers detected for `newres` are new:
+```{r warning=FALSE,message=FALSE, echo=FALSE}
+source("get_new_outliers.R")
+get_new_outliers(newres)
+```
 
 
 Summary of diff between original and adjusted for `oldres`:
@@ -221,11 +226,32 @@ Signif. codes: 0.1 \`\*\*\*\´ 0.05 \`\*\*\´
 H0 (no conditional heteroscedasticity of residuals) is not rejected at significance levels >= 0.05\
 Signif. codes: 0.1 \`\*\*\*\´ 0.05 \`\*\*\´
 
+<!-- ### Stable Seasonality: -->
+<!-- $H_{0}$: no stable seasonality.\ -->
+<!-- If the null hypothesis of no stable seasonality is rejected significance level < 0.01 (?? ambiguous in the literature) then the series is considered to be seasonal. \ -->
+<!-- https://sylwiagrudkowska.github.io/JDemetra-documentation/pages/theory/Tests_combined.html -->
+
 ### Stable Seasonality:
-$H_{0}$: no stable seasonality.\
+
+The combined seasonality test in JDemetra+ consists of three tests:
+
+- **Kruskal-Wallis test**
+  - $H_0$: no stable seasonality
+  - A small p-value indicates the presence of stable seasonality.
+
+- **Test for the presence of seasonality assuming stability**
+  - $H_0$: no stable seasonality
+  - A small p-value indicates the presence of stable seasonality.
+
+- **Evolutive seasonality test (moving seasonality test)**
+  - $H_0$: the seasonal pattern is stable over time (no change in seasonality across years).
+  - A large p-value indicates that the seasonality is stable over time.
+  - A small p-value indicates evidence of changing (moving) seasonality.
+
+A series is considered to exhibit identifiable seasonality when the first two tests reject the null hypothesis of no seasonality and there is no evidence of strong moving seasonality.
 If the null hypothesis of no stable seasonality is rejected significance level < 0.01 (?? ambiguous in the literature) then the series is considered to be seasonal. \
 https://sylwiagrudkowska.github.io/JDemetra-documentation/pages/theory/Tests_combined.html
-
+https://sylwiagrudkowska.github.io/JDemetra-documentation/pages/theory/Tests_moving.html
 
 ### Residual Seasonality:
 $H_{0}$: no seasonality.\
