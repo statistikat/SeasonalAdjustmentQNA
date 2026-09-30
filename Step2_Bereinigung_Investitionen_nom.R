@@ -38,9 +38,9 @@ investNom <- perHts(
                    outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE,
                    usrdef.outliersType = c("AO", "LS",
-                                           "AO", "LS"),
+                                           "LS"),
                    usrdef.outliersDate = c("2021-07-01", "2021-10-01", 
-                                           "2022-04-01", "2023-07-01"),
+                                           "2023-07-01"),
                    # Trading Days
                    usrdef.varEnabled = FALSE,
                    # usrdef.var = NA, usrdef.varType = "Calendar",

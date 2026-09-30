@@ -25,7 +25,7 @@ bipPi <- perHts(
                   # Arima-Model
                   automdl.enabled = FALSE,
                   arima.p  = 0, arima.d  = 1, arima.q  = 1,
-                  arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE),
+                  arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   ## D21 - Gütersteuern -------------------------------------
   D21 = perTramo(bip$PI[, "D21"] , template = "RSA3",
                  # Transformation
@@ -34,13 +34,13 @@ bipPi <- perHts(
                  outlier.enabled = FALSE,
                  usrdef.outliersEnabled = TRUE,
                  usrdef.outliersType = c("LS", "LS", 
-                                          "LS", "AO", 
-                                          "AO", "AO", 
-                                          "LS"),
+                                         "LS", "LS", 
+                                         "AO", "LS", 
+                                         "AO"),
                  usrdef.outliersDate = c("1997-01-01", "2011-01-01", 
-                                         "2022-01-01", "2022-04-01", 
-                                         "2022-07-01", "2022-10-01",
-                                         "2025-01-01"),
+                                         "2022-01-01", "2022-07-01", 
+                                         "2024-01-01", "2025-01-01", 
+                                         "2025-04-01"),
                  # Trading Days
                  usrdef.varEnabled = FALSE,
                  # usrdef.var = NA, usrdef.varType = "Calendar",

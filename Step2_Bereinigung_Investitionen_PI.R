@@ -16,13 +16,9 @@ investPi <- perHts(
                  outlier.enabled = FALSE,
                  usrdef.outliersEnabled = TRUE,
                  usrdef.outliersType = c("AO", "AO", 
-                                         "AO", "AO", 
-                                         "LS", "AO",
-                                         "LS"),
-                 usrdef.outliersDate = c("1008-01-01", "2009-01-01", 
-                                         "2011-10-01", "2021-01-01", 
-                                         "2021-10-01", "2022-01-01",
-                                         "2023-10-01"),
+                                         "AO", "LS"),
+                 usrdef.outliersDate = c("2008-01-01", "2009-01-01", 
+                                         "2011-10-01", "2021-10-01"),
                  usrdef.varEnabled = FALSE,
                  # usrdef.var = NA, usrdef.varType = "Calendar",
                  # tradingdays.option = "UserDefined",
@@ -40,9 +36,11 @@ investPi <- perHts(
                    outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE,
                    usrdef.outliersType = c("AO", "LS", 
-                                           "AO", "LS"),
+                                           "AO", "LS", 
+                                           "TC", "AO"),
                    usrdef.outliersDate = c("2021-04-01", "2021-07-01", 
-                                           "2022-04-01", "2022-07-01"),
+                                           "2022-04-01", "2022-07-01", 
+                                           "2023-01-01", "2024-01-01"),
                    # Trading Days
                    usrdef.varEnabled = FALSE,
                    # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -51,7 +49,7 @@ investPi <- perHts(
                    easter.type = NULL, easter.duration = 6,
                    # Arima-Model
                    automdl.enabled = FALSE,
-                   arima.p  = 1, arima.d  = 1, arima.q  = 0,
+                   arima.p  = 2, arima.d  = 1, arima.q  = 0,
                    arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   ## N112G Nicht-Wohnbauinvestitionen -------------------------------------
   N112G = perTramo(invest$PI[, "N112G"], template = "RSA3",
@@ -60,8 +58,8 @@ investPi <- perHts(
                    # Outliers
                    outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE,
-                   usrdef.outliersType = c("LS"),
-                   usrdef.outliersDate = c("2022-04-01"),
+                   usrdef.outliersType = c("LS", "LS"),
+                   usrdef.outliersDate = c("2021-04-01", "2022-04-01"),
                    # Trading Days
                    usrdef.varEnabled = FALSE,
                    # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -70,8 +68,8 @@ investPi <- perHts(
                    easter.type = NULL, easter.duration = 6,
                    # Arima-Model
                    automdl.enabled = FALSE,
-                   arima.p  = 0, arima.d  = 1, arima.q  = 1,
-                   arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+                   arima.p  = 0, arima.d  = 1, arima.q  = 0,
+                   arima.bp = 1, arima.bd = 0, arima.bq = 0, arima.mu = FALSE),
   ## N1131G  Fahrzeuginvestitionen -------------------------------------
   # No identifiable seasonality 
   # Warning kommt vom perHts, als einzelne Reihe ausgefürht keine Warning
@@ -98,7 +96,7 @@ investPi <- perHts(
                     arima.p  = 0, arima.d  = 1, arima.q  = 1,
                     arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   ## N1132G IKT -Investitionen -------------------------------------
-  # Keine Saisonalität 
+  # No identifiable seasonality
   N1132G = perTramo(invest$PI[, "N1132G"], template = "RSA3", 
                     # Transformation
                     transform.function = "Log",
@@ -145,7 +143,7 @@ investPi <- perHts(
                    arima.p  = 1, arima.d  = 1, arima.q  = 0,
                    arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   ## N115G Nutztiere und Nutzpflanzen -------------------------------------
-  # No identifiable Seasonality  
+  # No identifiable seasonality  
   N115G = perTramo(invest$PI[, "N115G"], template = "RSA3", 
                    # Transformation 
                    transform.function = "Log",

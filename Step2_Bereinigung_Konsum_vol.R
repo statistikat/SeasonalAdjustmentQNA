@@ -5,7 +5,7 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~
 # konsum muss geladen sein 
 
-# Tramo Seat Entstehung ---------------------------
+# Tramo Seat Konsum ---------------------------
 konsumVol <- perHts(
   ## S13_P31_W0 Individualkonsum Staat -------------------------------------
   S13_P31_W0 = perTramo(konsum$L[, "S13_P31_W0"] , template = "RSA3",
@@ -15,7 +15,7 @@ konsumVol <- perHts(
                    outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE,
                    usrdef.outliersType = c("AO", "AO",
-                                           "AO"),
+                                           "TC"),
                    usrdef.outliersDate = c("1999-10-01", "2000-10-01",
                                            "2020-04-01"),
                    # Trading Days
@@ -27,7 +27,7 @@ konsumVol <- perHts(
                    # Arima-Model
                    automdl.enabled = FALSE,
                    arima.p  = 1, arima.d  = 0, arima.q  = 0,
-                   arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+                   arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = TRUE),
   ## S13_P32_W0  Kollektivkonsum Staat -------------------------------------
   S13_P32_W0 = perTramo(konsum$L[, "S13_P32_W0"] , template = "RSA3",
                # Transformation
@@ -111,11 +111,11 @@ konsumVol <- perHts(
                                              "2020-07-01", "2021-04-01", 
                                              "2021-07-01", "2022-04-01"), 
                      # Trading Days 
-                     usrdef.varEnabled = TRUE,
+                     usrdef.varEnabled = FALSE,
                      usrdef.var = td5, usrdef.varType = "Calendar",
                      tradingdays.option = "UserDefined",
                      # Easter 
-                     easter.type = "IncludeEaster", easter.duration = 6,
+                     easter.type = NULL, easter.duration = 6,
                      # Arima-Model 
                      automdl.enabled = FALSE, 
                      arima.p  = 0, arima.d  = 1, arima.q  = 1, 
@@ -179,8 +179,8 @@ konsumVol <- perHts(
                       # Outliers 
                       outlier.enabled = FALSE,
                       usrdef.outliersEnabled = TRUE, 
-                      usrdef.outliersType = c("AO", "AO",
-                                              "LS", "LS"),
+                      usrdef.outliersType = c("TC", "AO",
+                                              "TC", "LS"),
                       usrdef.outliersDate = c("2015-01-01", "2020-01-01",
                                               "2021-01-01", "2023-01-01"),
                       # Trading Days 
@@ -191,8 +191,8 @@ konsumVol <- perHts(
                       easter.type = NULL, easter.duration = 6,
                       # Arima-Model 
                       automdl.enabled = FALSE, 
-                      arima.p  = 1, arima.d  = 1, arima.q  = 2, 
-                      arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = TRUE)
+                      arima.p  = 0, arima.d  = 1, arima.q  = 1, 
+                      arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE)
 )
 
 

@@ -32,16 +32,20 @@ bipVol <- perHts(
                    arima.p  = 0, arima.d  = 1, arima.q  = 1,
                    arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   ## D21 - Gütersteuern -------------------------------------
-  D21 = perTramo(bip$L[, "D21"] , template = "RSA3",
+  D21 = perTramo(bip$L[, "D21"]  , template = "RSA3",
                # Transformation
                transform.function = "Log",
                # Outliers
                outlier.enabled = FALSE,
                usrdef.outliersEnabled = TRUE,
-               usrdef.outliersType = c("AO", "AO", 
-                                       "AO", "AO"),
-               usrdef.outliersDate = c("2020-04-01", "2020-07-01",
-                                       "2020-10-01", "2021-01-01"),
+               usrdef.outliersType = c("LS", "TC", 
+                                       "AO", "AO", 
+                                       "LS", "AO", 
+                                       "TC", "AO"),
+               usrdef.outliersDate = c("1996-01-01", "1999-07-01", 
+                                       "2000-01-01", "2000-07-01", 
+                                       "2020-01-01", "2020-04-01", 
+                                       "2021-07-01", "2022-01-01" ), 
                # Trading Days
                usrdef.varEnabled = FALSE,
                # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -50,8 +54,8 @@ bipVol <- perHts(
                easter.type = "NA", easter.duration = 6,
                # Arima-Model
                automdl.enabled = FALSE,
-               arima.p  = 0, arima.d  = 1, arima.q  = 1,
-               arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
+               arima.p  = 3, arima.d  = 1, arima.q  = 0,
+               arima.bp = 0, arima.bd = 0, arima.bq = 0, arima.mu = TRUE),
   ## D31 - Gütersubventionen -------------------------------------
   D31 = perTramo(bip$L[, "D31"], template = "RSA3", 
                # Transformation 
@@ -60,9 +64,11 @@ bipVol <- perHts(
                outlier.enabled = FALSE,
                usrdef.outliersEnabled = TRUE, 
                usrdef.outliersType = c("AO", "AO",
-                                       "LS", "LS"),
+                                       "LS", "LS",
+                                       "AO"),
                usrdef.outliersDate = c("2002-04-01", "2005-01-01",
-                                       "2022-01-01", "2024-01-01"),
+                                       "2022-01-01", "2022-10-01", 
+                                       "2025-01-01"),
                # Trading Days 
                usrdef.varEnabled = FALSE,
                # usrdef.var = NA, usrdef.varType = "Calendar",

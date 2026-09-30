@@ -71,10 +71,10 @@ investVol <- perHts(
                    usrdef.outliersEnabled = TRUE, 
                    usrdef.outliersType = c("LS", "LS", 
                                            "LS", "AO", 
-                                           "LS"),
+                                           "TC", "AO"),
                    usrdef.outliersDate = c("2003-01-01", "2009-01-01", 
                                            "2020-01-01", "2020-04-01", 
-                                           "2024-01-01"),
+                                           "2021-01-01", "2022-01-01"),
                    # Trading Days
                    usrdef.varEnabled = FALSE,
                    # usrdef.var = NA, usrdef.varType = "Calendar",

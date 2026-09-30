@@ -52,7 +52,7 @@ ahVol <- perHts(
                    # Outliers
                    outlier.enabled = FALSE,
                    usrdef.outliersEnabled = TRUE,
-                   usrdef.outliersType = c("AO", "AO",
+                   usrdef.outliersType = c("AO", "LS",
                                            "LS","AO", 
                                            "AO", "LS"),
                    usrdef.outliersDate = c("2000-10-01", "2009-01-01", 
@@ -154,14 +154,15 @@ ahVol <- perHts(
                    arima.p  = 0, arima.d  = 1, arima.q  = 1,
                    arima.bp = 0, arima.bd = 1, arima.bq = 1, arima.mu = FALSE),
   ## P6_D6 Exporte in Drittläner /Nicht-EU -------------------------------------
+  # Keine Saisonalität 
   P6_D6 = perTramo(ah$L[, "P6_D6"], template = "RSA3", 
                    # Transformation 
                    transform.function = "Log",
                    # Outliers
                    outlier.enabled = FALSE,
-                   usrdef.outliersEnabled = TRUE,
-                   usrdef.outliersType = c("AO"),
-                   usrdef.outliersDate = c("2020-04-01"),
+                   usrdef.outliersEnabled = FALSE,
+                   #  usrdef.outliersType = NULL,
+                   #  usrdef.outliersDate = NULL,
                    # Trading Days
                    usrdef.varEnabled = FALSE,
                    # usrdef.var = NA, usrdef.varType = "Calendar",
@@ -182,7 +183,7 @@ ahVol <- perHts(
                    usrdef.outliersType = c("AO", "AO"),
                    usrdef.outliersDate = c("2020-04-01", "2020-07-01"),
                    # Trading Days
-                   usrdef.varEnabled = TRUE,
+                   usrdef.varEnabled = FALSE,
                    # usrdef.var = NA, usrdef.varType = "Calendar",
                    # tradingdays.option = "UserDefined",
                    # Easter
@@ -205,9 +206,9 @@ ahVol <- perHts(
                                             "2015-04-01","2017-10-01", 
                                             "2020-04-01"),
                     # Trading Days
-                    usrdef.varEnabled = TRUE,
-                    usrdef.var = td5, usrdef.varType = "Calendar",
-                    tradingdays.option = "UserDefined",
+                    usrdef.varEnabled = FALSE,
+                    # usrdef.var = td5, usrdef.varType = "Calendar",
+                    # tradingdays.option = "UserDefined",
                     # Easter
                     easter.type = NULL, easter.duration = 6,
                     # Arima-Model
