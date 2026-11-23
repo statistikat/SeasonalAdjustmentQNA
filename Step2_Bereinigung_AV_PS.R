@@ -472,9 +472,11 @@ avxPSxSELF <- perHts(
                           outlier.enabled = FALSE, 
                           usrdef.outliersEnabled = TRUE,
                           usrdef.outliersType = c("LS", "TC",
-                                                  "LS", "AO", "TC"),
+                                                  "LS", "AO", 
+                                                  "TC", "TC"),
                           usrdef.outliersDate = c("2005-01-01", "2021-07-01",
-                                                  "2003-01-01", "2023-07-01", "2011-01-01"),
+                                                  "2003-01-01", "2023-07-01",
+                                                  "2011-01-01", "2026-01-01"),
                           # Trading Days ---------------------------------------------------------
                           # usrdef.varEnabled = FALSE,
                           # usrdef.var = td7, usrdef.varType = "Calendar",

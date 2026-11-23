@@ -439,6 +439,8 @@ av_HW_SELF <- perHts(
                       # usrdef.outliersEnabled = FALSE,
                       # usrdef.outliersType = NA,
                       # usrdef.outliersDate = NA,
+                      outlier.usedefcv = FALSE,
+                      outlier.cv = 3.97,
                       # Trading Days ---------------------------------------------------------
                       # usrdef.varEnabled = FALSE, 
                       # usrdef.var = NA, usrdef.varType = "Calendar", 
